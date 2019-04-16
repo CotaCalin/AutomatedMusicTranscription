@@ -1,0 +1,42 @@
+Content
+1 Introduction
+  1.1 Purpose
+  1.2 Problem
+  
+2 Theoretical Background
+  2.1 Introduction to Deep Learning
+  2.2 Neural Networks
+    2.2.1 Brief History
+    2.2.2 Components of an artificial neuron
+    2.2.3 Overfitting
+  2.3 Deep Learning for Automated Music Transcription
+    2.3.1 Reccurent Neural Networks
+    2.3.2 Convolutional Neural Networks
+  2.4 Automated Music Transcription
+    2.4.1 Midi format
+    2.4.2 Spectrograms
+  2.5 Summary
+  
+3 Related Work
+  3.1 State-of-the-art in AMT
+    3.1.1 Non-Negative Matrix Factorization
+    3.1.2 Convolutional Neural Networks
+  3.2 Products
+  
+4 Solution
+  4.1 Foundations
+  4.2 Spectrograms
+  
+5 Evaluation
+  5.1 Datasets
+  5.2 Framework Implementation
+    5.2.1 Preprocessing
+    5.2.2 Deep learning model
+  5.3 Results and Discussion
+    5.3.1 Baseline results
+    5.3.2 Effect of CNN approach
+    5.3.3 Effect of using spectrograms
+
+6 Conclusion and Future Work
+List of acronyms
+Bibliography
