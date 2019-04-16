@@ -1,1 +1,21 @@
+2.1 Introduction to deep learning
 
+This section briefly introduces the concept of deep learning.
+  Machine learning (ML) is the scientific study of algorithms and statistical models that computer systems use to effectively perform a specific task without using explicit instructions, relying on patterns and inference instead. Machine learning algorithms build a mathematical model of sample data, known as "training data", in order to make predictions or decisions without being explicitly programmed to perform the task. Machine learning algorithms are used in a wide variety of applications, such as email filtering, and computer vision, where it is infeasible to develop an algorithm of specific instructions for performing the task. The represantation of data fed into a ML algorithm plays a major role, as it affects the algorithm’s ability to efficiently extract signals and make decisions. Thus, it is important to carefully select the information included in such a representation. Formally, the representation is com- posed of multiple features extracted from raw data. The process of creating new features requires good and intuitive understanding of the data at hand, becoming incrementally time-consuming with the sophistication of the new features. Thus, the biggest challenge of handcrafted features is deciding which features are important and relevant to the problem [Goodfellow et al., 2016].
+  
+  
+  2.2 Neural Networks
+    This section introduces the main concepts related to neural networks. Neural networks have been around since the 1940s and could initially handle only one hidden layer. But with the development of technologies and hardware it became possible to build deeper, more effective architectures, which leads to deep learning as we know it today. This makes the study of neural networks in our context an interesting starting point, before diving deeper into concepts related to NLP.
+  2.2.1 Brief History
+  Initially, neural networks were inspired by how the biological brain works, which is why deep learning was also called artificial neural networks (ANNs) [Goodfellow et al., 2016]. In biology, a neuron is the cell that receives, processes and transmits information to other neurons through connections called synapses [neu, 2018]. On the other hand, artificial neurons are defined as computational units (usually mathematical functions) that take one or more inputs and generate an output.
+McCulloch and Pits designed an initial version of the neuron as a linear model in 1943, aiming to replicate brain function [McCulloch and Pitts, 1943]:
+  f(x,w)=x1w1 +x2w2 +...+xnwn
+  where x1, ..., xn are the input values and w1, ..., w2 is a set of hand-chosen weights.
+  
+  
+  
+  
+  
+  [Goodfellow et al., 2016] Goodfellow, I., Bengio, Y., and Courville, A. (2016). Deep Learning. MIT Press. http://www.deeplearningbook.org.
+  [neu, 2018] (2018). Neuron. Wikipedia. https://en.wikipedia.org/wiki/Neuron.
+  [McCulloch and Pitts, 1943] McCulloch, W. S. and Pitts, W. (1943). A logical calculus of the ideas immanent in nervous activity. The bulletin of mathematical biophysics, 5(4):115–133.
