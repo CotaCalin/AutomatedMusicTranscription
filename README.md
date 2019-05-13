@@ -1,2 +1,4 @@
 # AutomatedMusicTranscription
-Diploma thesis
+Diploma thesis.
+
+Automated music transcription for piano using CNN.
