@@ -6,7 +6,7 @@ I.~Goodfellow, Y.~Bengio, and A.~Courville, {\em Deep Learning}.
 \newblock \url{http://www.deeplearningbook.org}.
 
 \bibitem{neuron}
-``{Neuron}.'' \url{https://en.wikipedia.org/wiki/Neuron}, 2018.
+``{Neuron}.'' \url{https://en.wikipedia.org/wiki/Neuron}.
 
 \bibitem{REF:11}
 W.~.~P. McCulloch, {\em A logical calculus of the ideas immanent in nervous
@@ -23,6 +23,17 @@ B.~C. Bangal, {\em Automatic generation control of interconnected power systems
 \bibitem{REF:13}
 {\em {Everything you need to know about Neural Networks }}.
 \newblock 2018.
+
+\bibitem{cnn}
+``{Convolutional neural networks}.''
+  \url{https://en.wikipedia.org/wiki/Convolutional_neural_network}.
+
+\bibitem{physics_of_sound}
+``{Physics of sound}.''
+  \url{https://method-behind-the-music.com/mechanics/physics/}.
+
+\bibitem{speed_of_sound}
+``{Speed of sound}.'' \url{https://en.wikipedia.org/wiki/Speed_of_sound}.
 
 \bibitem{REF:1}
 D.~G. Morin, {\em Deep neural networks for piano music transcription}.

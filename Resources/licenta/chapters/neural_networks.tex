@@ -1,14 +1,15 @@
 \subsection{Neural Networks}
-\paragraph{
-	This section introduces the main concepts related to neural networks. Neural networks have been around since the 1940s and could initially handle only one hidden layer. But with the development of technologies and hardware it became possible to build deeper, more effective architectures, which leads to deep learning as we know it today.
-}
+This section introduces the main concepts related to neural networks. Neural networks have been around since the 1940s and could initially handle only one hidden layer. But with the development of technologies and hardware it became possible to build deeper, more effective architectures, which leads to deep learning as we know it today. \par
+
 
 
 \subsubsection{Brief History}
-\paragraph{
-	At first, neural networks were inspired by how the biological brain works, which is why deep learning was also called artificial neural networks (ANNs)\cite{Goodfellow-et-al-2016}. In biology, a neuron is the cell that receives, processes and transmits information to other neurons through connections called synapses \cite{neuron}. On the other hand, artificial neurons are defined as computational units (usually mathematical functions) that take one or more inputs and generate an output.
-	McCulloch and Pits designed an initial version of the neuron as a linear model in 1943, aiming to replicate brain function \cite{REF:11}:
-}
+
+
+At first, neural networks were inspired by how the biological brain works, which is why deep learning was also called artificial neural networks (ANNs)\cite{Goodfellow-et-al-2016}. In biology, a neuron is the cell that receives, processes and transmits information to other neurons through connections called synapses \cite{neuron}. On the other hand, artificial neurons are defined as computational units (usually mathematical functions) that take one or more inputs and generate an output. \par
+
+McCulloch and Pits designed an initial version of the neuron as a linear model in 1943, aiming to replicate brain function \cite{REF:11}:
+
 
 \begin{equation}
 f(x,w)=x1*w1 +x2*w2 +...+xn*wn
@@ -16,15 +17,15 @@ f(x,w)=x1*w1 +x2*w2 +...+xn*wn
 where $x_1, ..., x_n$ are the input values and $w_1, ..., w_2$ is a set of hand-chosen weights.
 
 \subsubsection{Components of an artificial neural network}
-\paragraph{
-	A simple artificial neural network (ANN) consists of input layer, hidden layer and output layer, where the values of the hidden layer are used as inputs for the output layer. A network with several layers is known as a deep neural network. Data flows through the neurons of the layer. Each neuron transforms the input it receives and sends it to the next layer. The neurons share the same characteristics regardless of the layer they are part of.
-}
 
-\paragraph{
-	The Neuron, also called node, is the basic unit of a neural network. It's main components include inputs,
-	weights, activation function and output(s). From a high level point of view the inputs are multiplied by 
-	weights, then an activation function is applied to the result and finally, another function computes the output\cite{REF:12}\cite{REF:13}.
-}
+A simple artificial neural network (ANN) consists of input layer, hidden layer and output layer, where the values of the hidden layer are used as inputs for the output layer. A network with several layers is known as a deep neural network. Data flows through the neurons of the layer. Each neuron transforms the input it receives and sends it to the next layer. The neurons share the same characteristics regardless of the layer they are part of. \par
+
+
+
+The Neuron, also called node, is the basic unit of a neural network. It's main components include inputs,
+weights, activation function and output(s). From a high level point of view the inputs are multiplied by 
+weights, then an activation function is applied to the result and finally, another function computes the output\cite{REF:12}\cite{REF:13}. \par
+
 
 \begin{itemize}
 	\item Weights are defined as adaptive coefficients, whose values are changed during the learning process. They represent the strength of the connection between units. A weight decides how much impact the input will have on the output.
@@ -61,13 +62,11 @@ where $x_1, ..., x_n$ are the input values and $w_1, ..., w_2$ is a set of hand-
 \clearpage
 \subsubsection{Underfitting and Overfitting}
 %reformulat + surse noi
-\paragraph{
-	Neural networks are able to learn complicated non-linear functions to fit any training set. On the downside, this may lead to overfitting where the neural network learns the training data so well that it is unable to generalize on new, unseen data. This problem can especially occur on datasets with a small amount of data to learn from.
-}
 
-\paragraph{
-	Underfitting, the counterpart of overfitting, happens when a machine learning model isn’t complex enough to accurately capture relationships between a dataset’s features and a target variable. An underfitted model results in problematic outcomes on new data, or data that it wasn’t trained on, and many times performs poorly even on training data. 
-}
+Neural networks are able to learn complicated non-linear functions to fit any training set. On the downside, this may lead to overfitting where the neural network learns the training data so well that it is unable to generalize on new, unseen data. This problem can especially occur on datasets with a small amount of data to learn from. \par
+
+Underfitting, the counterpart of overfitting, happens when a machine learning model isn’t complex enough to accurately capture relationships between a dataset’s features and a target variable. An underfitted model results in problematic outcomes on new data, or data that it wasn’t trained on, and many times performs poorly even on training data. \par
+
 
 
 \begin{figure}[h]
