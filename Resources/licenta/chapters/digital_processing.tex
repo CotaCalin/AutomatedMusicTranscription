@@ -1,0 +1,15 @@
+\subsection{Digital Signal Processing}
+Digital Signal processing (DSP) is an engineering field focused on analyzing and altering digital signals. It takes real-world signals like voice, audio, video and then mathematically manipulates them. \cite{dsp} \par
+
+Signals need to be processed so that the information they contain can be displayed, analyzed or converted to another type of signal. Analog-to-Digital converters take signals from the real-world and turns them into binary digital format. At this point the DSP takes over by capturing the digitized information and processes it, later to be fed back for use in the real-world. \par
+
+\subsubsection{Discrete Fourier Transformation}
+The Discrete Fourier Transformation (DFT) is one of the most important operation of DSP. It is any quantity or signal that varies over time, such as the pressure of a sound wave, sampled over a finite time interval (often defined by a window function). \cite{discrete} \par
+
+\begin{equation}
+X[k] = \dfrac{1}{N} \sum_{j=0}^{N-1}(x[j] \cdot e^ {-j \cdot( \dfrac{2\pi}{N}) ) \cdot n \cdot k }  \text{ for k = 0...N-1}
+\end{equation}
+
+The DFT tells you what frequencies are present in your signal and in what proportions.
+\par
+It has a complexity of $O(n^2)$ so in practice the Fast Fourier Transform (FFT) algorithm is used instead. FFT runs in $O(n\cdot log(n))$

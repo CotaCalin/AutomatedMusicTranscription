@@ -35,6 +35,15 @@ B.~C. Bangal, {\em Automatic generation control of interconnected power systems
 \bibitem{speed_of_sound}
 ``{Speed of sound}.'' \url{https://en.wikipedia.org/wiki/Speed_of_sound}.
 
+\bibitem{dsp}
+``{Digital Signal Processing}.''
+  \url{https://www.analog.com/en/design-center/landing-pages/001/beginners-guide-to-dsp.html}.
+
+\bibitem{discrete}
+G.~Sahidullah, Md.;~Saha, {\em A Novel Windowing Technique for Efficient
+  Computation of MFCC for Speaker Recognition}.
+\newblock IEEE Signal Processing Letters. 20 (2): 149–152, 2013.
+
 \bibitem{REF:1}
 D.~G. Morin, {\em Deep neural networks for piano music transcription}.
 \newblock 2017.
