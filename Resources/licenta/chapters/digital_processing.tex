@@ -13,3 +13,27 @@ X[k] = \dfrac{1}{N} \sum_{j=0}^{N-1}(x[j] \cdot e^ {-j \cdot( \dfrac{2\pi}{N}) )
 The DFT tells you what frequencies are present in your signal and in what proportions.
 \par
 It has a complexity of $O(n^2)$ so in practice the Fast Fourier Transform (FFT) algorithm is used instead. FFT runs in $O(n\cdot log(n))$
+
+\subsubsection{Short-Term Fourier Transform}
+While DFT is really good by itself, if used on an entire song it would only tell what frequencies exist, but not when they occur. This is where Short-Term Fourier Transform (STFT) comes in handy. It computes DFT over a full signal, but in small segments. Because of this we can see how frequencies change over time, which makes it a good way to compute spectrograms. (see Figure 4) 
+
+\begin{figure}[h]
+	\caption[Spectrogram using Short-Term Fourier Transform]{ Spectrogram using STFT \\
+	source: https://en.wikipedia.org/wiki\/short-time\_fourier\_transform }
+	\centering
+	\includegraphics[width=1\textwidth, height=\textheight, keepaspectratio]{"resources/STFT_spectrogram"}
+\end{figure}
+
+
+\subsubsection{Constant-Q Transform}
+In general, the transform is well suited to musical data, and this can be seen in some of its advantages compared to the fast Fourier transform. As the output of the transform is effectively amplitude/phase against log frequency, fewer frequency bins are required to cover a given range effectively, and this proves useful where frequencies span several octaves. As the range of human hearing covers approximately ten octaves from 20 Hz to around 20 kHz, this reduction in output data is significant. \cite{constant_q} \par
+ See Figure 5 for a comparison between Constant-Q transform and STFT.
+%work on this more
+
+
+%maybe change this later
+\begin{figure}[h]
+	\caption[Constant Q vs STFT spectrogram of C major scale]{ Constant Q (left) vs STFT (right) spectrogram of C major scale}
+	\centering
+	\includegraphics[width=1\textwidth, height=\textheight, keepaspectratio]{"resources/Q_vs_STFT"}
+\end{figure}
