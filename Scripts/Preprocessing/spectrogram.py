@@ -24,16 +24,14 @@ class SpectrogramBuilder():
     def get_wavs(self):
         ret = []
         for wav_file in os.listdir(self.__wavPath):
-            ret.append(os.path.join(self.__wavPath, wav_file))
+            if wav_file.endswith(".wav"):
+                ret.append(os.path.join(self.__wavPath, wav_file))
 
         return ret
 
     def build_spectrograms(self):
         for wavfile in self.__wav_files:
-            #self.__build_spectrogram(wavfile)
             self.graph_spectrogram(wavfile)
-            #plotstft(wavfile)
-            #input()
 
     def __build_spectrogram(self, filePath):
         sample_rate, samples = wavfile.read(filePath)
@@ -48,26 +46,14 @@ class SpectrogramBuilder():
         plt.xlabel('Time [sec]')
         plt.show()
 
-    # def graph_spectrogram(self, wav_file):
-    #     sound_info, frame_rate = self.get_wav_info(wav_file)
-    #     pylab.figure(num=None, figsize=(19, 12))
-    #     pylab.subplot(111)
-    #     pylab.title('spectrogram of %r' % wav_file)
-    #     pylab.specgram(sound_info, Fs=frame_rate)
-    #     destinationPath = "c:\\Work\\licenta\\scripts\\spectrograms"
-    #     fileName = 'spectrogram_{0}.png'.format(wav_file.split("\\")[-1])
-
-    #     pylab.savefig(os.path.join(destinationPath, fileName))
-    #     pylab.close('all')
-
     def graph_spectrogram(self, wav_file):
         # Q Transform
         y, sr = librosa.load(wav_file)
         C = np.abs(librosa.cqt(y, sr=sr))
         librosa.display.specshow(librosa.amplitude_to_db(C, ref=np.max),
-                                sr=sr, x_axis='time', y_axis='cqt_hz')
-        plt.colorbar(format='%+2.0f dB')
-        plt.title('spectrogram of %r' % wav_file)
+                                sr=sr)#, x_axis='time', y_axis='cqt_hz')
+        #plt.colorbar(format='%+2.0f dB')
+        #plt.title('spectrogram of %r' % wav_file)
         plt.tight_layout()
         fileName = 'spectrogram_{0}.png'.format(wav_file.split("\\")[-1])
         plt.savefig(os.path.join(self.__destinationPath, fileName), bbox_inches="tight")

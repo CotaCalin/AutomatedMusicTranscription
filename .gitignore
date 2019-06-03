@@ -2,6 +2,10 @@
 node_modules/
 someOtherfoler/
 Output/
+models/
+baseline/
+saved_models/
+test/
 
 # Compiled source #
 ###################
