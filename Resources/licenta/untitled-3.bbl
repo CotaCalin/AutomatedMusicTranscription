@@ -28,16 +28,20 @@ B.~C. Bangal, {\em Automatic generation control of interconnected power systems
 ``{Convolutional neural networks}.''
   \url{https://en.wikipedia.org/wiki/Convolutional_neural_network}.
 
+\bibitem{cnn_git}
+``Convolutional neural networks.''
+  \url{https://cs231n.github.io/convolutional-networks/}.
+
+\bibitem{dsp}
+``{Digital Signal Processing}.''
+  \url{https://www.analog.com/en/design-center/landing-pages/001/beginners-guide-to-dsp.html}.
+
 \bibitem{physics_of_sound}
 ``{Physics of sound}.''
   \url{https://method-behind-the-music.com/mechanics/physics/}.
 
 \bibitem{speed_of_sound}
 ``{Speed of sound}.'' \url{https://en.wikipedia.org/wiki/Speed_of_sound}.
-
-\bibitem{dsp}
-``{Digital Signal Processing}.''
-  \url{https://www.analog.com/en/design-center/landing-pages/001/beginners-guide-to-dsp.html}.
 
 \bibitem{discrete}
 G.~Sahidullah, Md.;~Saha, {\em A Novel Windowing Technique for Efficient
@@ -52,8 +56,28 @@ G.~Sahidullah, Md.;~Saha, {\em A Novel Windowing Technique for Efficient
 Z.~Duan and E.~Benetos, {\em Automatic Music Transcription}.
 \newblock 2015.
 
+\bibitem{music_retrieval}
+``Music information retrieval evaluation exchange..'' \url{http://www.music-ir.
+  org/mirex/wiki/2017:Multiple_Fundamental_Frequency_
+  Estimation_\%26_Tracking_Results_-_MIREX_Dataset}.
+
 \bibitem{transcription}
 ``{Transcription}.'' \url{https://en.wikipedia.org/wiki/Transcription_(music)}.
+
+\bibitem{glass_ceiling}
+E.~S. D. H.~A. Klapuri, {\em Automatic music transcription: Breaking the glass
+  ceiling}.
+\newblock 2012.
+
+\bibitem{instrument_identification}
+A.~Livshin and X.~Rodet., {\em Musical instrument identification in continuous
+  recordings}.
+\newblock 2004.
+
+\bibitem{semi-automatic}
+H.~K.~S. Dixon and A.~Klapuri, {\em Multi-template shift-variant non-negative
+  matrix deconvolution for semi-automatic music transcription}.
+\newblock 2012.
 
 \bibitem{REF:1}
 D.~G. Morin, {\em Deep neural networks for piano music transcription}.
@@ -109,5 +133,18 @@ J.~Sleep, {\em AUTOMATIC MUSIC TRANSCRIPTION WITH CONVOLUTIONAL NEURAL NETWORKS
   USING INTUITIVE FILTER SHAPES}.
 \newblock A Thesis presented to the Faculty of California Polytechnic State
   University, San Luis Obispo, 2017.
+
+\bibitem{benetos}
+S.~D.~E. Benetos, {\em A shift-invariant latent variable model for automatic
+  music transcription}.
+\newblock 2013.
+
+\bibitem{maps}
+V.~E.~R. Badeau and B.~David, {\em Multipitch estimation of piano sounds using
+  a new probabilistic spectral smoothness principle}.
+\newblock 2008.
+
+\bibitem{one-hot}
+``One-hot encoding.'' \url{https://en.wikipedia.org/wiki/One-hot}.
 
 \end{thebibliography}

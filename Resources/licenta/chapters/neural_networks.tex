@@ -50,10 +50,10 @@ weights, then an activation function is applied to the result and finally, anoth
 
 	
 	\begin{figure}[h]
+		\caption[Common activation functions]{Common activation functions.\\
+			Source: http://prog3.com/sbdm/blog/cyh24/article/details/50593400 }
 		\centering
 		\includegraphics[width=1\textwidth, height=\textheight, keepaspectratio]{activation}
-		\caption[Common activation functions]{Common activation functions.\\
-		 	Source: http://prog3.com/sbdm/blog/cyh24/article/details/50593400 }
 	\end{figure}
 	\item The output is usually the result of an activation function.
 	
@@ -68,13 +68,34 @@ Neural networks are able to learn complicated non-linear functions to fit any tr
 Underfitting, the counterpart of overfitting, happens when a machine learning model isn’t complex enough to accurately capture relationships between a dataset’s features and a target variable. An underfitted model results in problematic outcomes on new data, or data that it wasn’t trained on, and many times performs poorly even on training data. \par
 
 
-
 \begin{figure}[h]
 	\caption[Example of overfitting and underfitting]{Example of overfitting and underfitting
 		\\ image source vitalflux.com}
 	\centering
 	\includegraphics[width=1\textwidth, height=\textheight, keepaspectratio]{"resources/overfitting"}
 \end{figure}
+
+\subsubsection{Convolutional Neural Networks}
+\par
+Convolutional Neural Networks (CNNs) are a class of Deep Neural Networks,
+specialized in analyzing images. They were inspired by biological processes.
+The connectivity pattern between neurons resembles the animal visual cortex.
+\cite{cnn} \par
+
+\begin{figure}[h]
+	\centering
+	\caption[Typical convolutional neural network architecture]{Typical CNN architecture
+		\\ image source https://en.wikipedia.org/wiki/File:Typical\_cnn.png}
+	\label{fig:cnn}
+	\includegraphics[width=1.1\textwidth, height=1.5\textheight, keepaspectratio]{"resources/typical_cnn"}
+\end{figure}
+
+\par
+A convolutional neural network consists of an input and an output layer, as well as multiple hidden layers. The hidden layers are typically convolutional layers, RELU layers, pooling layers, fully connected layers and normalization layers. \cite{cnn_git}
+
+\begin{itemize}
+	\item \textbf{Pooling} layers reduce the dimension of the data by combining the outputs of neuron clusters at one layer into a single neuron in the next layer. 
+\end{itemize}
 
 
 %vitalflux.com/ image source. overfitting.png

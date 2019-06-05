@@ -1,0 +1,38 @@
+\subsection{Input Representation}
+The data set used was the MAPS database. It is a piano database for multi pitch estimation and automatic transcription of music. It contains MIDI-annotated piano recordings, composed of isolated notes, random-pitch chords, usual musical chords and pieces of music. It provides a diverse range of sounds from various recording conditions. \cite{maps}
+\par
+The recordings are CD quality (16-bit, $44-kHz$ sampled stereo audio) and the related aligned MIDI files contain the ground truth. The overall size of the database is 40GB. 
+\par
+Working with sound in neural networks is different from dealing with images. The input contains audio files so before feeding it to the network we need to turn it into a visual representation. The most common way to represent a sound is the audio representation in the time domain. (Figure \ref{fig:waveform})
+
+\begin{figure}[h]
+	\caption[Exampple of audio representation in the time domain]{ Exampple of audio representation in the time domain \\
+		source: https://towardsdatascience.com/music-genre-classification-with-python-c714d032f0d8 }
+	\centering
+	\label{fig:waveform}
+	\includegraphics[width=1\textwidth, height=\textheight, keepaspectratio]{"resources/waveform"}
+\end{figure}
+
+The figure \ref{fig:waveform} shows the evolution in time of the song and you can see the oscillation of the signal. the Y axis represents the amplitude while the X is the time. In this representation it's not possible to distinguish the notes that are playing. Because of this we need a better representation. This is where the Fourier Transformations come in handy. Using the transformation on the data we get a representation over frequency instead of time. It is also known as a spectrum. The spectrum reveals relevant information that's crucial to analyse the audio. (Figure \ref{fig:cq_vs_stft})
+
+\par
+To compute the Constant-Q transform, the library \textit{Librosa} will be used, in particular the method called \textit{librosa.cqt}.
+The parameters that we will use are:
+\begin{itemize}
+	\item \textbf{y}: Audio signal
+	\item \textbf{sr}: Sampling rate
+	\item \textbf{fmin}: Minimum frequency
+	\item \textbf{n\_bins}: Number of frequency bins
+	\item \textbf{bins\_per\_octave}: Number of bins per octave
+	\item \textbf{hop\_length}: Number of samples between successive CQT columns
+\end{itemize}
+\par
+
+The result of the librosa function is a matrix with the size of the number of windows that can fit in the data provided (y), and the number of bins. This matrix is then split into chunks of length equal to the window size. The chunks are then stored inside a binary file, which will be used later by a generator to feed the training.
+
+\subsection{Labeling}
+A supervised machine learning model needs the data to be labeled. As it was explained in the subsection above, the input song is going to be represented in the frequency domain. The labeling will be provided using the MIDI files associated with the input \textit{.wav} files. They contain information about the notes playing at a certain time. The labels will be arrays showing the played notes represented with a \textit{one-hot encoding}.
+\par
+
+One-hot encoding is a widely used technique in neural networks. It consists of creating an array of boolean values. \cite{one-hot} In this case, every column symbolizes a possible note that can be played in a certain moment. Because of this there are as many columns as possible notes (88). This will be done per window, so the goal is to see which notes are played in a certain window. A value of 1 in a cell means that the specific musical note has been played during that window, while a value of 0 is the opposite.
+
