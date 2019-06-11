@@ -32,7 +32,7 @@ class SpectrogramBuilder():
     def build_spectrograms(self):
         for wavfile in self.__wav_files:
             self.graph_spectrogram(wavfile)
-
+            pass
     def __build_spectrogram(self, filePath):
         sample_rate, samples = wavfile.read(filePath)
         frequencies, times, spectrogram = signal.spectrogram(samples, sample_rate)
@@ -47,6 +47,7 @@ class SpectrogramBuilder():
         plt.show()
 
     def graph_spectrogram(self, wav_file):
+        pass
         # Q Transform
         y, sr = librosa.load(wav_file)
         C = np.abs(librosa.cqt(y, sr=sr))
@@ -54,7 +55,7 @@ class SpectrogramBuilder():
                                 sr=sr)#, x_axis='time', y_axis='cqt_hz')
         #plt.colorbar(format='%+2.0f dB')
         #plt.title('spectrogram of %r' % wav_file)
-        plt.tight_layout()
+        #plt.tight_layout()
         fileName = 'spectrogram_{0}.png'.format(wav_file.split("\\")[-1])
         plt.savefig(os.path.join(self.__destinationPath, fileName), bbox_inches="tight")
         plt.close('all')

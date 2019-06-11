@@ -9,7 +9,8 @@ class UIMain:
         self.__controller = controller
         self.__handlers = {
              "0" : self.__exit,
-             "1" : self.__train
+             "1" : self.__train,
+             "2" : self.__predict
         }
 
         self.__trainHandler = {
@@ -23,6 +24,7 @@ class UIMain:
         s =  "Automatic Music Transcription - Thesis Menu:\n"
         s += "\t 0 Exit\n"
         s += "\t 1 Train\n"
+        s += "\t 2 Predict\n"
         print(s)
 
     @staticmethod
@@ -47,6 +49,15 @@ class UIMain:
     def __exit(self):
         print("Exitting. Bye bye")
         exit(0)
+
+    def __predict(self):
+        i = input("Song Path (wav format):")
+        try:
+            PathValidator(i)
+            self.__logger.logInfo("Begin prediction for {0}".format(i))
+            self.__controller.predict(i)
+        except Exception as e:
+            self.__logger.logError(e)
 
     def __train(self):
         self.__printTrainMenu()

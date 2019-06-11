@@ -26,7 +26,7 @@ def readmm(d,args):
 
 class DataGen:
     def __init__(self, dirpath, batch_size,num_files=1, args=None):
-        print('initializing gen for '+dirpath)
+        #print('initializing gen for '+dirpath)
 
         self.mmdirs =  os.listdir(dirpath)
         self.spe = 0 #steps per epoch
@@ -39,17 +39,20 @@ class DataGen:
 
         self.batch_size = batch_size
         self.current_file_idx = 0
-        print('starting with ', self.mmdirs[self.current_file_idx:self.current_file_idx+self.num_files])
+        #print('starting with ', self.mmdirs[self.current_file_idx:self.current_file_idx+self.num_files])
         for j in range(self.num_files):
             mmdir = os.path.join(self.dir,self.mmdirs[self.current_file_idx+j])
             i,o = readmm(mmdir,args)
             if j == 0:
                 self.inputs,self.outputs = i,o
-                print('set inputs,outputs')
+                #print('set inputs,outputs')
+                #print(self.outputs)
+
             else:
                 self.inputs = np.concatenate((self.inputs,i))
                 self.outputs = np.concatenate((self.outputs,o))
-                print('concatenated')
+                #print(self.outputs)
+                #print('concatenated')
             self.current_file_idx = (self.current_file_idx + 1) % len(self.mmdirs)
         self.i = 0
 
@@ -63,7 +66,7 @@ class DataGen:
                 x,y = self.inputs[self.i*self.batch_size:],self.outputs[self.i*self.batch_size:]
                 self.i = 0
                 if len(self.mmdirs) > 1: # no need to open any new files if we only deal with one, like for validation
-                    print('switching to ', self.mmdirs[self.current_file_idx:self.current_file_idx+self.num_files])
+                    #print('switching to ', self.mmdirs[self.current_file_idx:self.current_file_idx+self.num_files])
                     for j in range(self.num_files):
                         mmdir = os.path.join(self.dir,self.mmdirs[self.current_file_idx+j])
                         i,o = readmm(mmdir,args)

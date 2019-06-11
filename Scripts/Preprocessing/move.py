@@ -72,17 +72,17 @@ def splitInput(inputPath):
                 "MidiPitch" : []
                 }
 
-        with open(txtFilePath) as f:
+        #with open(txtFilePath) as f:
             #print(f.read())
-            for line in f.read().splitlines():
-                if "OnsetTime" in line:
-                    continue
-
-                line = line.replace("\t", " ")
-                line = line.split(" ")
-                midiDict["OnsetTime"].append(float(line[0]))
-                midiDict["OffsetTime"].append(float(line[1]))
-                midiDict["MidiPitch"].append(int(line[2]))
+            #for line in f.read().splitlines():
+            #    if "OnsetTime" in line:
+            #        continue
+#
+             #   line = line.replace("\t", " ")
+            #    line = line.split(" ")
+             #   midiDict["OnsetTime"].append(float(line[0]))
+              ##  midiDict["OffsetTime"].append(float(line[1]))
+              #  midiDict["MidiPitch"].append(int(line[2]))
 
         myaudio = AudioSegment.from_file(filePath , "wav")
 
@@ -102,9 +102,9 @@ def splitInput(inputPath):
             destination = os.path.join(CHUNKS_OUTPUT_DIR, chunk_name)
             chunk.export(destination, format="wav")
 
-            with open(destination+".txt", 'w') as f:
-                json.dump(dumpDict, f, sort_keys=True,
-                        indent=4, separators=(',', ': '))
+            #with open(destination+".txt", 'w') as f:
+            #    json.dump(dumpDict, f, sort_keys=True,
+            #            indent=4, separators=(',', ': '))
 
 
         #input()
@@ -121,7 +121,7 @@ if "__main__" == __name__:
         exit()
     cwd = sys.argv[1]
 
-    #splitInput(cwd)
+    splitInput(cwd)
 
-    builder = SpectrogramBuilder("d:\\git\\licenta\\AutomatedMusicTranscription\\Scripts\\Preprocessing\\ChunksOutput\\4", SPECTRO_OUTPUT_DIR)
-    builder.build_spectrograms()
+    #builder = SpectrogramBuilder("d:\\git\\licenta\\AutomatedMusicTranscription\\Scripts\\Preprocessing", SPECTRO_OUTPUT_DIR)
+    #builder.build_spectrograms()

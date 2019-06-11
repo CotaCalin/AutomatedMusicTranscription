@@ -13,162 +13,260 @@ import math
 import matplotlib.pyplot as plt
 import numpy as np
 import madmom
-
+from PIL import Image
 from Utils.cfg_reader import CfgReader
+import re
 from Utils.logger import LoggerFactory
 
-cfg = CfgReader()
-logger = LoggerFactory.getLogger(__file__)
-data_dir = '../input_dir/'
+class Preprocessor:
+    def __init__(self, cfg):
+        self.__cfg = cfg
+        self.__logger = LoggerFactory.getLogger(__file__)
 
-window_size = cfg.getValue("WindowSize")
-sr = cfg.getValue("SamplingRate")
-min_midi = cfg.getValue("MinMidiValue")
-max_midi = cfg.getValue("MaxMidiValue")
-hop_length = cfg.getValue("HopLength")
+        self.data_dir = cfg.getValue("DataDir")
 
-def joinAndCreate(basePath,new):
-    newPath = os.path.join(basePath,new)
-    if not os.path.exists(newPath):
-        os.mkdir(newPath)
-    return newPath
+        self.window_size = cfg.getValue("WindowSize")
+        self.sr = cfg.getValue("SamplingRate")
+        self.min_midi = cfg.getValue("MinMidiValue")
+        self.max_midi = cfg.getValue("MaxMidiValue")
+        self.hop_length = cfg.getValue("HopLength")
+        self.bin_multiple = cfg.getValue("BinMultiple")
+        self.trainPercentage = 0.7
+        self.valPercentage = 0.1
+        self.testPercentage = 0.2
+        self.midiUtils = None
+        self.converter = None
 
-def Wav2NpInput(fileName, bin_multiple, spec_type='cqt'):
-    logger.logInfo("Converting wav file {0} into np array".format(fileName))
+    def setMidiUtil(self, newMidi):
+        self.midiUtils = newMidi
 
-    bins_per_octave = 12 * bin_multiple #should be a multiple of 12
-    n_bins = (max_midi - min_midi + 1) * bin_multiple
+    def setConverter(self, newConverter):
+        self.converter = newConverter
 
-    y, _ = librosa.load(fileName,sr)
-    S = librosa.cqt(y,fmin=librosa.midi_to_hz(min_midi), sr=sr, hop_length=hop_length,
-                      bins_per_octave=bins_per_octave, n_bins=n_bins)
+    def setCfg(self, newCfg):
+        self.__cfg = newCfg
 
-    #y = madmom.audio.signal.Signal(fileName, sample_rate=sr, num_channels=1)
-    #S = madmom.audio.spectrogram.LogarithmicFilteredSpectrogram(y,fmin=librosa.midi_to_hz(min_midi),
-    #                            hop_size=hop_length, num_bands=bins_per_octave, fft_size=4096)
+    @staticmethod
+    def joinAndCreate(basePath,new):
+        newPath = os.path.join(basePath,new)
+        if not os.path.exists(newPath):
+            os.makedirs(newPath, exist_ok=True)
+        return newPath
 
-    S = S.T
+    def Wav2NpInputOld(self, fileName, bin_multiple, spec_type='cqt'):
+        self.__logger.logInfo("Converting wav file {0} into np array".format(fileName))
 
-    S = np.abs(S)
-    minDB = np.min(S)
-    S = np.pad(S, ((window_size//2,window_size//2),(0,0)), 'constant', constant_values=minDB)
+        bins_per_octave = 12 * bin_multiple #should be a multiple of 12
+        n_bins = (self.max_midi - self.min_midi + 1) * bin_multiple
 
-    librosa.display.specshow(librosa.amplitude_to_db(S, ref=np.max),
-                                sr=sr)
-    plt.savefig(fileName + ".png", bbox_inches="tight")
-    plt.close('all')
+        y, _ = librosa.load(fileName,self.sr)
+        S = librosa.cqt(y,fmin=librosa.midi_to_hz(self.min_midi), sr=self.sr, hop_length=self.hop_length,
+                          bins_per_octave=bins_per_octave, n_bins=n_bins)
 
-    windows = []
-    # IMPORTANT NOTE:
-    # Since we pad the the spectrogram frame,
-    # the onset frames are actually `offset` frames.
-    # To obtain a window of the center frame at each true index, we take a slice from i to i+window_size
-    # starting at frame 0 of the padded spectrogram
-    for i in range(S.shape[0]-window_size+1):
-        w = S[i:i+window_size,:]
-        windows.append(w)
+        S = S.T
+        S = np.abs(S)
 
-    x = np.array(windows)
-    return x
+        minDB = np.min(S)
+        S = np.pad(S, ((self.window_size//2,self.window_size//2),(0,0)), 'constant', constant_values=minDB)
 
-def Midi2NpOutput(pm_mid,times):
-    piano_roll = pm_mid.get_piano_roll(fs=sr,times=times)[min_midi:max_midi+1].T
-    piano_roll[piano_roll > 0] = 1
-    return piano_roll
+        librosa.display.specshow(librosa.amplitude_to_db(S, ref=np.max),
+                                    sr=self.sr)
+        plt.savefig(fileName + ".png", bbox_inches="tight")
+        plt.close('all')
 
-def organize(args):
-    valCnt = 1
-    testPrefix = 'ENS'
+        windows = []
+        # IMPORTANT NOTE:
+        # Since we pad the the spectrogram frame,
+        # the onset frames are actually `offset` frames.
+        # To obtain a window of the center frame at each true index, we take a slice from i to i+window_size
+        # starting at frame 0 of the padded spectrogram
+        #print(S.shape)
+        for i in range(S.shape[0]-self.window_size+1):
+            w = S[i:i+self.window_size,:]
+            #print(len(w[0]))
+            #librosa.display.specshow(librosa.amplitude_to_db(w, ref=np.max),
+                                        #sr=self.sr)
+            #plt.savefig(fileName + "{0}.png".format(i), bbox_inches="tight")
+            #plt.close('all')
+            #input()
+            windows.append(w)
 
-    path = os.path.join('models',args['model_name'])
-    dpath = os.path.join(path,'data')
+        x = np.array(windows)
+        return x
 
-    train_path = joinAndCreate(dpath,'train')
-    test_path = joinAndCreate(dpath,'test')
-    val_path = joinAndCreate(dpath,'val')
+    def Midi2NpOutputOld(self, pm_mid,times):
+        piano_roll = pm_mid.get_piano_roll(fs=self.sr,times=times)[self.min_midi:self.max_midi+1].T
+        piano_roll[piano_roll > 0] = 1
+        print(len(piano_roll))
+        return piano_roll
 
-    for ddir in os.listdir(dpath):
-        if os.path.isdir(os.path.join(dpath,ddir)) and not isSplitFolder(ddir):
-            #print h5file
-            if ddir.startswith(testPrefix):
-                os.rename(os.path.join(dpath,ddir), os.path.join(test_path,ddir))
-            elif valCnt > 0:
-                os.rename(os.path.join(dpath,ddir), os.path.join(val_path,ddir))
-                valCnt -= 1
-            else:
-                os.rename(os.path.join(dpath,ddir), os.path.join(train_path,ddir))
+    def preprocessOneOld(self, path):
+        self.__logger.logInfo("Begin preprocessing")
+        pretty_midi.pretty_midi.MAX_TICK = 1e10
 
-def preprocess(args):
-    bin_multiple = cfg.getValue("BinMultiple")
-
-    framecnt, addCount, errCount = 0, 0, 0
-    inputs, outputs = [], []
-
-    # There's an incompatibility between pretty-midi and MAPS dataset so this is needed
-    # https://github.com/craffel/pretty-midi/issues/112
-    pretty_midi.pretty_midi.MAX_TICK = 1e10
-
-    data_dir = args["data_dir"]
-
-    for file in os.listdir(data_dir):
-        if file.endswith(".wav"):
-            prefix = os.path.join(data_dir, file.split(".wav")[0])
-            audioFileName = prefix + ".wav"
-            midiFileName = prefix + ".mid"
-            txtFileName = prefix + ".txt"
-
-            inputnp = Wav2NpInput(audioFileName,bin_multiple=bin_multiple)
-
-            prettyMidi = pretty_midi.PrettyMIDI(midiFileName)
-            times = librosa.frames_to_time(np.arange(inputnp.shape[0]),sr=sr,hop_length=hop_length)
-            outputnp = Midi2NpOutput(prettyMidi,times)
-
-            if inputnp.shape[0] == outputnp.shape[0]:
-                logger.logInfo("adding to dataset fprefix {}".format(prefix))
-
-                addCount += 1
-                framecnt += inputnp.shape[0]
-                logger.logInfo("framecnt is {}".format(framecnt))
-
-                inputs.append(inputnp)
-                outputs.append(outputnp)
-            else:
-                logger.logError("error for fprefix {}".format(prefix))
-                logger.logError(str(inputnp.shape))
-                logger.logError(str(outputnp.shape))
-
-                errCount += 1
-
-    subdir = data_dir
-    if addCount:
-        inputs = np.concatenate(inputs)
-        outputs = np.concatenate(outputs)
-
-        fn = subdir.split('/')[-1]
-        if not fn:
-            fn = subdir.split('/')[-2]
-        # save inputs,outputs to hdf5 file
-        #print(fn)
-        fnpath = joinAndCreate('d:\\git\\licenta\\AutomatedMusicTranscription\\Scripts\\Model\\models\\new\\data\\train','')
-
-        mmi = np.memmap(filename=os.path.join(fnpath,'input.dat'), mode='w+',shape=inputs.shape)
-        mmi[:] = inputs[:]
-        mmo = np.memmap(filename=os.path.join(fnpath,'output.dat'), mode='w+',shape=outputs.shape)
-        mmo[:] = outputs[:]
-        del mmi
-        del mmo
+        return self.Wav2NpInput(path,bin_multiple=self.bin_multiple)
 
 
+    def preprocessOld(self):
+        framecnt, addCount, errCount = 0, 0, 0
+        inputs, outputs = [], []
+        self.__logger.logInfo("Begin preprocessing")
 
-if __name__ == '__main__':
-    # Set up command-line argument parsing
-    parser = argparse.ArgumentParser(
-        description='Preprocess MIDI/Audio file pairs into ingestible data')
+        # There's an incompatibility between pretty-midi and MAPS dataset so this is needed
+        # https://github.com/craffel/pretty-midi/issues/112
+        pretty_midi.pretty_midi.MAX_TICK = 1e10
 
-    parser.add_argument('data_dir',
-                        help='Path to data dir, searched recursively, used for naming HDF5 file')
+        for s in os.listdir(self.data_dir):
+            subdir = os.path.join(self.data_dir, s)
+            if not os.path.isdir(subdir):
+                continue
 
-    args = vars(parser.parse_args())
-    print(args)
+            for file in os.listdir(subdir):
+                if file.endswith(".wav"):
+                    prefix = os.path.join(subdir, file.split(".wav")[0])
+                    audioFileName = prefix + ".wav"
+                    midiFileName = prefix + ".mid"
+                    txtFileName = prefix + ".txt"
 
-    preprocess(args)
+                    inputnp = self.Wav2NpInput(audioFileName,bin_multiple=self.bin_multiple)
+
+                    prettyMidi = pretty_midi.PrettyMIDI(midiFileName)
+                    times = librosa.frames_to_time(np.arange(inputnp.shape[0]),sr=self.sr,hop_length=self.hop_length)
+                    outputnp = self.Midi2NpOutput(prettyMidi,times)
+                    print(inputnp.shape)
+                    print(outputnp.shape)
+
+                    if inputnp.shape[0] == outputnp.shape[0]:
+                        self.__logger.logInfo("adding to dataset fprefix {}".format(prefix))
+
+                        addCount += 1
+                        framecnt += inputnp.shape[0]
+                        self.__logger.logInfo("framecnt is {}".format(framecnt))
+
+                        inputs.append(inputnp)
+                        outputs.append(outputnp)
+                    else:
+                        self.__logger.logError("error for fprefix {}".format(prefix))
+                        self.__logger.logError(str(inputnp.shape))
+                        self.__logger.logError(str(outputnp.shape))
+
+                        errCount += 1
+
+            if addCount:
+                path = os.path.join(self.__cfg.getValue("OutputDir"), self.__cfg.getValue("ModelName"))
+                data_path = os.path.join(path,'data')
+                train_path = self.joinAndCreate(data_path,'train')
+                test_path = self.joinAndCreate(data_path,'test')
+                val_path = self.joinAndCreate(data_path,'val')
+                train_path = self.joinAndCreate(train_path, s)
+                test_path = self.joinAndCreate(test_path, s)
+                val_path = self.joinAndCreate(val_path, s)
+
+                train_inputs = np.concatenate(inputs[:int(len(inputs)*self.trainPercentage)])
+                train_outputs = np.concatenate(outputs[:int(len(outputs)*self.trainPercentage)])
+
+                mmi = np.memmap(filename=os.path.join(train_path,'input.dat'), mode='w+',shape=train_inputs.shape)
+                mmi[:] = train_inputs[:]
+                mmo = np.memmap(filename=os.path.join(train_path,'output.dat'), mode='w+',shape=train_outputs.shape)
+                mmo[:] = train_outputs[:]
+                del mmi
+                del mmo
+
+                val_inputs = np.concatenate(inputs[int(len(inputs)*self.trainPercentage):int(len(inputs)*(self.valPercentage + self.trainPercentage))])
+                val_outputs = np.concatenate(outputs[int(len(inputs)*self.trainPercentage):int(len(outputs)*(self.valPercentage + self.trainPercentage))])
+
+                mmi = np.memmap(filename=os.path.join(val_path,'input.dat'), mode='w+',shape=val_inputs.shape)
+                mmi[:] = val_inputs[:]
+                mmo = np.memmap(filename=os.path.join(val_path,'output.dat'), mode='w+',shape=val_outputs.shape)
+                mmo[:] = val_outputs[:]
+                del mmi
+                del mmo
+
+                test_inputs = np.concatenate(inputs[int(len(inputs)*(1-self.testPercentage)):])
+                test_outputs = np.concatenate(outputs[int(len(outputs)*(1-self.testPercentage)):])
+
+                mmi = np.memmap(filename=os.path.join(test_path,'input.dat'), mode='w+',shape=test_inputs.shape)
+                mmi[:] = test_inputs[:]
+                mmo = np.memmap(filename=os.path.join(test_path,'output.dat'), mode='w+',shape=test_outputs.shape)
+                mmo[:] = test_outputs[:]
+                del mmi
+                del mmo
+
+    def preprocessOne(self, inPath, outPath):
+        self.midiUtils.clearChunks()
+        tempo = self.midiUtils.split_midi(inPath, outPath)
+        chunks = self.midiUtils.getChunks()
+        self.converter.MidiToWav("test.mid", "test.wav")
+
+        for source in chunks.keys():
+            for midi in chunks[source]:
+                print(midi)
+                self.converter.MidiToWav(midi, midi[:-4] + ".wav")
+                self.converter.WavToSpec(midi[:-4] + ".wav", midi[:-4] + ".jpg")
+
+        x = []
+        filenums = []
+
+        for filename in os.listdir(outPath):
+            if not filename.endswith(".jpg"):
+                continue
+
+            im = Image.open(os.path.join(outPath, filename))
+            im = im.crop((14, 13, 594, 301))
+            resize = im.resize((49, 145), Image.NEAREST)
+            resize.load()
+            arr = np.asarray(resize, dtype="float32")
+
+            x.append(arr)
+
+            filenums.append(int(filename.split("_")[-1].split(".")[0]))
+
+        x = np.array(x)
+        x /= 255.0
+        return x, filenums, tempo
+
+    def preprocessOneWav(self, inPath, outPath):
+        chunks = self.midiUtils.split_wav(inPath, outPath)
+        print(len(chunks))
+        for source in chunks:
+            self.converter.WavToSpec(source, source[:-4] + ".jpg")
+
+        x = []
+        filenums = []
+
+        for filename in os.listdir(outPath):
+            if not filename.endswith(".jpg"):
+                continue
+
+            im = Image.open(os.path.join(outPath, filename))
+            im = im.crop((14, 13, 594, 301))
+            resize = im.resize((49, 145), Image.NEAREST)
+            resize.load()
+            arr = np.asarray(resize, dtype="float32")
+
+            x.append(arr)
+
+            filenums.append(int(filename.split("_")[-1].split(".")[0]))
+
+        x = np.array(x)
+        x /= 255.0
+        return x, filenums
+
+
+    def preprocess(self):
+        self.__logger.logInfo("Begin preprocessing")
+        self.midiUtils.split_all()
+
+        for midi in os.listdir(self.__cfg.getValue("OutputDir")):
+            print(midi)
+            midi = os.path.join(self.__cfg.getValue("OutputDir"), midi)
+            self.converter.MidiToWav(midi, midi[:-4] + ".wav")
+            self.converter.WavToSpec(midi[:-4] + ".wav", midi[:-4] + ".jpg")
+
+        return
+        chunks = self.midiUtils.getChunks()
+        for source in chunks.keys():
+            for midi in chunks[source]:
+                print(midi)
+                self.converter.MidiToWav(midi, midi[:-4] + ".wav")
+                self.converter.WavToSpec(midi[:-4] + ".wav", midi[:-4] + ".jpg")
