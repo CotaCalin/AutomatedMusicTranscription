@@ -32,3 +32,6 @@ class Converter:
 
     def WavToSpec(self, wavFile, outputFile):
         cqt(wavFile, outputFile)
+
+    def MidiToSheet(self, midiFile, outputName):
+        call(["sheet.exe", midiFile, outputName])

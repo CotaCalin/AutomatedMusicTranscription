@@ -9,7 +9,7 @@ import sys
 import mido
 import argparse
 
-def pretty_midi_to_one_hot(pm, fs=100):
+def pretty_midi_to_one_hot(pm, fs=18):
     """Compute a one hot matrix of a pretty midi object
     Parameters
     ----------
@@ -35,12 +35,8 @@ def pretty_midi_to_one_hot(pm, fs=100):
     for instrument in pm.instruments:
         one_hot = np.zeros((128, int(fs*instrument.get_end_time())+1))
         for note in instrument.notes:
-            # note on
             one_hot[note.pitch, int(note.start*fs)] = 1
-            # print('note on',note.pitch, int(note.start*fs))
-            # note off
             one_hot[note.pitch, int(note.end*fs)] = 0
-            # print('note off',note.pitch, int(note.end*fs))
         one_hots.append(one_hot)
 
     one_hot = np.zeros((128, np.max([o.shape[1] for o in one_hots])))
@@ -80,11 +76,6 @@ def one_hots_to_pretty_midi(one_hots, tempo, fs=18, program=1,bpm=120):
 
     one_hot = np.zeros((128, len(one_hots)))
     for i in range(len(one_hots)):
-        #print(one_hot[:, i].shape)
-        #print(one_hots[i].shape)
-        #one_hot[:, i] = one_hots[i]
-        #print(one_hot[:])
-        #input()
         for j in range(len(one_hots[i])):
             if one_hots[i][j] == 1:
                 one_hot[j][i] = one_hots[i][j]
@@ -109,16 +100,15 @@ def one_hots_to_pretty_midi(one_hots, tempo, fs=18, program=1,bpm=120):
                 for k in range(frame+1, frames):
                     if frame_t[k][j] == 1:
                         current_notes_end[j] += 1
-                        frame_t[k][j] == 0
+                        frame_t[k][j] = 0
                     else:
                         break
 
         for note in current_notes:
-            #print(current_notes_begin[note])
-            #print(current_notes_end[note])
-            #input()
+            print(current_notes_begin[note])
+            print(current_notes_end[note])
             pm_note = pretty_midi.Note(
-                    velocity=100, #don't care fer now
+                    velocity=100,
                     pitch=note,
                     start=current_notes_begin[note] * 1/16,
                     end=current_notes_end[note] * 1/16)

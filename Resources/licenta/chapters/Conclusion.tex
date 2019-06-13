@@ -1,0 +1,25 @@
+\newpage
+\section{Conclusion}
+\subsection{Overview}
+The recognition of musical notes played in a song is a complex problem to deal with because of the polyphonic aspect of music and it's still an unsolved problem. The neural network has to be able to distinguish the notes from different instruments. Because of this a Constant-Q transform was applied. This removes instruments from the equation, normalizing the data and obtains valuable information from the song. The MAPS dataset \cite{maps} provides raw labels for each song but they don't fit the expected output of the network. Because of this each midi provided needs to be analyzed and one-shot encodings of size 128 are extracted for each $\frac{1}{6}$ of a second window of the song to determine what notes are played during this time frame. The windows are then converted into wav format and then into spectrograms using the Librosa \cite{librosa} library. The spectrograms are then fed to the network's learning process. The learning set is split $80\%$ for training, $20\%$ for testing and $10\%$ of the training set is used for validation.
+
+\par
+The output is a one-shot encoding of each window. These are then glued together and a midi file is created. From this midi file a wav file is exported for comparison and the music sheet is generated using the Sheet freeware. \cite{sheet}
+
+\subsection{Results}
+The proposed model achieved a $38.73\%$ general accuracy for the used data-set, which was a mix of polyphonic and monophonic songs. It struggled with overlapping notes sometimes predicting only the harmonics or bass notes. For the monophonic part of the problem it predicts songs with an accuracy of 99.5\%. 
+\par
+Taking into account that the state-of-the art methods from Google Magenta are around 70\% this result is pretty good, given no digital signal processing prior knowledge.
+
+\subsection{Future work}
+
+There are ways to improve the accuracy further:
+
+\begin{itemize}
+	\item A long short-term memory network could be added to aid with the classification and detect the length of the notes
+	\item Genre detection could also aid with the classification as it will tell if a note makes sense in a progression
+	\item Further improvements in the preprocessing. By changing the spectrogram from a STFT to a Constant-Q the accuracy improved significantly. There are more ways the make the input clearer by reducing the noise and improve the window splitting. For this task more knowledge of digital signal processing is needed.
+	\item Train on more data. Converting one window takes ~0.3 seconds. A song is split into $16*n$ windows, where n is the song length in seconds. More than two billion midi windows were created but only 160 thousands were actually converted into spectrograms due to time constraints.
+\end{itemize}
+
+The final goal of Theia7 is to be integrated in a mobile music teaching and music sheet database application, where people could share their ideas and music sheets with everyone. Theia would aid people with no musical theory knowledge by creating the sheets for them. This would disrupt the market as many people ask for money in exchange for their music sheets, a common practice for youtube cover channels.

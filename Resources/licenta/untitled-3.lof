@@ -1,8 +1,16 @@
-\contentsline {figure}{\numberline {1}{\ignorespaces Common activation functions}}{7}
-\contentsline {figure}{\numberline {2}{\ignorespaces Example of overfitting and underfitting}}{8}
-\contentsline {figure}{\numberline {3}{\ignorespaces Typical convolutional neural network architecture}}{9}
-\contentsline {figure}{\numberline {4}{\ignorespaces Traveling Wave}}{10}
-\contentsline {figure}{\numberline {5}{\ignorespaces Spectrogram using Short-Term Fourier Transform}}{12}
-\contentsline {figure}{\numberline {6}{\ignorespaces Constant Q vs STFT spectrogram of C major scale}}{13}
-\contentsline {figure}{\numberline {7}{\ignorespaces Waveform differences between instruments}}{15}
-\contentsline {figure}{\numberline {8}{\ignorespaces Exampple of audio representation in the time domain}}{19}
+\contentsline {figure}{\numberline {1}{\ignorespaces Common activation functions}}{8}
+\contentsline {figure}{\numberline {2}{\ignorespaces Example of over-fitting and under-fitting}}{9}
+\contentsline {figure}{\numberline {3}{\ignorespaces Typical convolutional neural network architecture}}{10}
+\contentsline {figure}{\numberline {4}{\ignorespaces Traveling Wave}}{12}
+\contentsline {figure}{\numberline {5}{\ignorespaces Spectrogram using Short-Term Fourier Transform}}{14}
+\contentsline {figure}{\numberline {6}{\ignorespaces Constant Q vs STFT spectrogram of C major scale}}{15}
+\contentsline {figure}{\numberline {7}{\ignorespaces Waveform differences between instruments}}{17}
+\contentsline {figure}{\numberline {8}{\ignorespaces Non-negative matrix factorization}}{20}
+\contentsline {figure}{\numberline {9}{\ignorespaces Example of audio representation in the time domain}}{22}
+\contentsline {figure}{\numberline {10}{\ignorespaces Example of a constant-q spectrogram}}{23}
+\contentsline {figure}{\numberline {11}{\ignorespaces Accuracy progression over the epochs}}{25}
+\contentsline {figure}{\numberline {12}{\ignorespaces Loss progression over the epochs}}{26}
+\contentsline {figure}{\numberline {13}{\ignorespaces AlexNet Architecture}}{27}
+\contentsline {figure}{\numberline {14}{\ignorespaces Class diagram}}{28}
+\contentsline {figure}{\numberline {15}{\ignorespaces Utils diagram}}{29}
+\contentsline {figure}{\numberline {16}{\ignorespaces Sheet output example}}{30}

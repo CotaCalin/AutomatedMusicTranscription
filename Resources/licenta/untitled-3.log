@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2019.1.5)  5 JUN 2019 17:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2019.1.5)  13 JUN 2019 23:40
 entering extended mode
 **./untitled-3.tex
 (untitled-3.tex
@@ -337,21 +337,40 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 ("C:\Users\Speedy\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\indentfirst
 .sty"
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
+)
+("C:\Users\Speedy\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\longtable.s
+ty"
+Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip105
+\LTright=\skip106
+\LTpre=\skip107
+\LTpost=\skip108
+\LTchunksize=\count117
+\LTcapwidth=\dimen150
+\LT@head=\box33
+\LT@firsthead=\box34
+\LT@foot=\box35
+\LT@lastfoot=\box36
+\LT@cols=\count118
+\LT@rows=\count119
+\c@LT@tables=\count120
+\c@LT@chunks=\count121
+\LT@p@ftn=\toks30
 ) (untitled-3.aux)
 \openout1 = `untitled-3.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -391,17 +410,17 @@ LaTeX Font Info:    ... okay on input line 89.
 ("C:\Users\Speedy\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.m
 kii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count117
-\scratchdimen=\dimen150
-\scratchbox=\box33
-\nofMPsegments=\count118
-\nofMParguments=\count119
-\everyMPshowfont=\toks30
-\MPscratchCnt=\count120
-\MPscratchDim=\dimen151
-\MPnumerator=\count121
-\makeMPintoPDFobject=\count122
-\everyMPtoPDFconversion=\toks31
+\scratchcounter=\count122
+\scratchdimen=\dimen151
+\scratchbox=\box37
+\nofMPsegments=\count123
+\nofMParguments=\count124
+\everyMPshowfont=\toks31
+\MPscratchCnt=\count125
+\MPscratchDim=\dimen152
+\MPnumerator=\count126
+\makeMPintoPDFobject=\count127
+\everyMPtoPDFconversion=\toks32
 )
 ("C:\Users\Speedy\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopdf
 -base.sty"
@@ -464,6 +483,12 @@ G,.JBIG2,.JB2,.eps]
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: float package is loaded.
+Package caption Info: longtable package is loaded.
+
+("C:\Users\Speedy\AppData\Local\Programs\MiKTeX 2.9\tex\latex\caption\ltcaption
+.sty"
+Package: ltcaption 2018/08/26 v1.4-95 longtable captions (AR)
+)
 Package caption Info: End \AtBeginDocument code.
  (title_page.tex
 <Resources/"ubb_logo".png, id=1, 225.84375pt x 225.84375pt>
@@ -475,32 +500,32 @@ Package pdftex.def Info: Resources/"ubb_logo".png  used on input line 23.
 
 {C:/Users/Speedy/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./Resource
 s/ubb_logo.png>])
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 91.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 92.
 
 ("C:\Users\Speedy\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\ot1phv.fd"
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <16> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 91.
- (untitled-3.toc)
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 92.
+ (untitled-3.toc [1])
 \tf@toc=\write3
 \openout3 = `untitled-3.toc'.
 
- [1] (untitled-3.lof)
+ [2] (untitled-3.lof)
 \tf@lof=\write4
 \openout4 = `untitled-3.lof'.
 
- [2] (untitled-3.lot)
+ [3] (untitled-3.lot)
 \tf@lot=\write5
 \openout5 = `untitled-3.lot'.
 
- [3]
-(chapters/introduction.tex) (chapters/Theoretical.tex [4]
+ [4]
+(chapters/introduction.tex) (chapters/Theoretical.tex [5]
 (chapters/introduction_deep_learning.tex
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 2.
 ) (chapters/neural_networks.tex
-[5]
+[6]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 31.
  ("C:\Users\Speedy\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
@@ -512,144 +537,249 @@ Underfull \hbox (badness 10000) in paragraph at lines 33--35
 
  []
 
-[6]
-<Resources/activation.png, id=34, 756.57657pt x 589.4522pt>
+[7]
+<Resources/activation.png, id=37, 756.57657pt x 589.4522pt>
 File: Resources/activation.png Graphic file (type png)
 <use Resources/activation.png>
-Package pdftex.def Info: Resources/activation.png  used on input line 56.
+Package pdftex.def Info: Resources/activation.png  used on input line 55.
 (pdftex.def)             Requested size: 418.25412pt x 325.86366pt.
- [7 <./Resources/activation.png>]
-<"resources/overfitting".png, id=40, 620.3175pt x 349.305pt>
+ [8 <./Resources/activation.png>]
+<"resources/overfitting".png, id=43, 620.3175pt x 349.305pt>
 File: "resources/overfitting".png Graphic file (type png)
 <use "resources/overfitting".png>
-Package pdftex.def Info: "resources/overfitting".png  used on input line 75.
+Package pdftex.def Info: "resources/overfitting".png  used on input line 73.
 (pdftex.def)             Requested size: 418.25139pt x 235.52019pt.
-<"resources/typical_cnn".png, id=41, 803.0pt x 246.9225pt>
+<"resources/typical_cnn".png, id=44, 803.0pt x 246.9225pt>
 File: "resources/typical_cnn".png Graphic file (type png)
 <use "resources/typical_cnn".png>
-Package pdftex.def Info: "resources/typical_cnn".png  used on input line 90.
+Package pdftex.def Info: "resources/typical_cnn".png  used on input line 87.
 (pdftex.def)             Requested size: 460.0918pt x 141.47821pt.
 
-Overfull \hbox (41.83812pt too wide) in paragraph at lines 90--91
+Overfull \hbox (41.83812pt too wide) in paragraph at lines 87--88
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[8
+[9
 
- <./resources/overfitting.png>]) [9 <./resources/typical_cnn.png>]
-(chapters/music.tex) (chapters/digital_processing.tex
-<Resources/Wavelength.png, id=50, 499.8675pt x 221.82875pt>
+ <./resources/overfitting.png>]) [10 <./resources/typical_cnn.png>]
+(chapters/midi_file.tex) [11] (chapters/digital_processing.tex
+<Resources/Wavelength.png, id=56, 499.8675pt x 221.82875pt>
 File: Resources/Wavelength.png Graphic file (type png)
 <use Resources/Wavelength.png>
 Package pdftex.def Info: Resources/Wavelength.png  used on input line 24.
 (pdftex.def)             Requested size: 418.26883pt x 185.61728pt.
- [10 <./Resources/Wavelength.png>]
-<"resources/STFT_spectrogram".png, id=55, 421.575pt x 316.18124pt>
+ [12 <./Resources/Wavelength.png>]
+<"resources/STFT_spectrogram".png, id=62, 421.575pt x 316.18124pt>
 File: "resources/STFT_spectrogram".png Graphic file (type png)
 <use "resources/STFT_spectrogram".png>
 Package pdftex.def Info: "resources/STFT_spectrogram".png  used on input line 5
-6.
+8.
 (pdftex.def)             Requested size: 418.26111pt x 313.69583pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[11]
-<"resources/Q_vs_STFT".png, id=60, 425.33907pt x 267.24844pt>
+[13]
+<"resources/Q_vs_STFT".png, id=67, 425.33907pt x 267.24844pt>
 File: "resources/Q_vs_STFT".png Graphic file (type png)
 <use "resources/Q_vs_STFT".png>
-Package pdftex.def Info: "resources/Q_vs_STFT".png  used on input line 71.
+Package pdftex.def Info: "resources/Q_vs_STFT".png  used on input line 73.
 (pdftex.def)             Requested size: 418.27673pt x 262.81105pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [12 <./resources/STFT_spectrogram.png (PNG copy)>]
-(chapters/music_transcription.tex [13 <./resources/Q_vs_STFT.png>] [14]
-<"resources/instruments".jpg, id=71, 233.37187pt x 301.125pt>
+) [14 <./resources/STFT_spectrogram.png (PNG copy)>]
+(chapters/music_transcription.tex [15 <./resources/Q_vs_STFT.png>] [16]
+<"resources/instruments".jpg, id=77, 233.37187pt x 301.125pt>
 File: "resources/instruments".jpg Graphic file (type jpg)
 <use "resources/instruments".jpg>
-Package pdftex.def Info: "resources/instruments".jpg  used on input line 55.
+Package pdftex.def Info: "resources/instruments".jpg  used on input line 54.
 (pdftex.def)             Requested size: 183.37892pt x 236.61797pt.
 
-Overfull \hbox (1.40863pt too wide) in paragraph at lines 59--60
+Overfull \hbox (1.40863pt too wide) in paragraph at lines 58--59
 []\OT1/cmr/m/n/12 In be-tween tra-di-tional and au-to-matic mu-sic tran-scrip-t
 ion comes semi-automatic
  []
 
-[15 <./resources/instruments.jpg>])) (chapters/RelatedWork.tex [16] [17])
-(chapters/Application.tex [18] (chapters/data_set.tex
-Underfull \hbox (badness 1024) in paragraph at lines 10--10
-\OT1/cmr/m/n/12 source: https://towardsdatascience.com/music-genre-classificati
-on-with-python-
- []
+[17 <./resources/instruments.jpg>])) (chapters/RelatedWork.tex [18] [19]
+<"resources/NMF".png, id=88, 853.1875pt x 424.58624pt>
+File: "resources/NMF".png Graphic file (type png)
+<use "resources/NMF".png>
+Package pdftex.def Info: "resources/NMF".png  used on input line 34.
+(pdftex.def)             Requested size: 418.26082pt x 208.14626pt.
 
-<"resources/waveform".png, id=85, 709.65125pt x 252.945pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[20 <./resources/NMF.png>]) (chapters/Application.tex [21]
+(chapters/data_set.tex
+<"resources/waveform".png, id=96, 709.65125pt x 252.945pt>
 File: "resources/waveform".png Graphic file (type png)
 <use "resources/waveform".png>
-Package pdftex.def Info: "resources/waveform".png  used on input line 13.
+Package pdftex.def Info: "resources/waveform".png  used on input line 12.
 (pdftex.def)             Requested size: 418.25746pt x 149.08186pt.
-[19 <./resources/waveform.png (PNG copy)>])) [20] (untitled-3.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 28--30
+ [22 <./resources/waveform.png (PNG copy)>]
+<"resources/q_spec".png, id=100, 434.3427pt x 222.5916pt>
+File: "resources/q_spec".png Graphic file (type png)
+<use "resources/q_spec".png>
+Package pdftex.def Info: "resources/q_spec".png  used on input line 39.
+(pdftex.def)             Requested size: 418.2765pt x 214.358pt.
+ [23 <./resources/q_spec.png>]
+
+LaTeX Warning: Citation `keras_mnist' on page 24 undefined on input line 72.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[24]
+<"resources/acc".png, id=109, 481.8pt x 361.35pt>
+File: "resources/acc".png Graphic file (type png)
+<use "resources/acc".png>
+Package pdftex.def Info: "resources/acc".png  used on input line 103.
+(pdftex.def)             Requested size: 418.2657pt x 313.69928pt.
+<"resources/loss".png, id=110, 462.528pt x 346.896pt>
+File: "resources/loss".png Graphic file (type png)
+<use "resources/loss".png>
+Package pdftex.def Info: "resources/loss".png  used on input line 110.
+(pdftex.def)             Requested size: 418.2757pt x 313.70677pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[25 <./resources/acc.png>]
+<"resources/alexnet".png, id=115, 411.33675pt x 131.89275pt>
+File: "resources/alexnet".png Graphic file (type png)
+<use "resources/alexnet".png>
+Package pdftex.def Info: "resources/alexnet".png  used on input line 128.
+(pdftex.def)             Requested size: 418.27124pt x 134.11624pt.
+ [26 <./resources/loss.png>] [27 <./resources/alexnet.png>]
+<"resources/class_diagram".png, id=123, 723.70375pt x 970.62625pt>
+File: "resources/class_diagram".png Graphic file (type png)
+<use "resources/class_diagram".png>
+Package pdftex.def Info: "resources/class_diagram".png  used on input line 159.
+
+(pdftex.def)             Requested size: 396.9561pt x 532.39465pt.
+
+Overfull \vbox (1.2145pt too high) has occurred while \output is active []
+
+
+[28 <./resources/class_diagram.png>]
+<"resources/utils_diagram".png, id=128, 459.96844pt x 182.93344pt>
+File: "resources/utils_diagram".png Graphic file (type png)
+<use "resources/utils_diagram".png>
+Package pdftex.def Info: "resources/utils_diagram".png  used on input line 171.
+
+(pdftex.def)             Requested size: 418.27716pt x 166.35245pt.
+<"resources/sheet_example".png, id=129, 632.3625pt x 820.56563pt>
+File: "resources/sheet_example".png Graphic file (type png)
+<use "resources/sheet_example".png>
+Package pdftex.def Info: "resources/sheet_example".png  used on input line 182.
+
+(pdftex.def)             Requested size: 418.2579pt x 542.73943pt.
+ [29 <./resources/utils_diagram.png>]
+[30 <./resources/sheet_example.png>])) (chapters/Testing.tex [31])
+(chapters/Conclusion.tex [32] [33]) [34] (untitled-3.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 33--35
+[]\OT1/cmr/m/n/12 ``Activation func-tions.'' $\OT1/cmtt/m/n/12 http : / / prog3
+ . com / sbdm / blog / cyh24 / article /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--42
 []\OT1/cmr/m/n/12 ``Convolutional neu-ral net-works.'' $\OT1/cmtt/m/n/12 https 
 : / / en . wikipedia . org / wiki /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 32--34
+Underfull \hbox (badness 5175) in paragraph at lines 44--46
+[]\OT1/cmr/m/n/12 ``cnn rep-re-sen-ta-tion.'' $\OT1/cmtt/m/n/12 https : / / en 
+. wikipedia . org / wiki / File : Typical \
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--50
 []\OT1/cmr/m/n/12 ``Convolutional neu-ral net-works.'' $\OT1/cmtt/m/n/12 https 
 : / / cs231n . github . io /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 60--63
+Underfull \hbox (badness 3861) in paragraph at lines 60--62
+[]\OT1/cmr/m/n/12 ``Traveling wave.'' $\OT1/cmtt/m/n/12 https : / / method-[]be
+hind-[]the-[]music . com / mechanics /
+ []
+
+[35]
+Underfull \hbox (badness 10000) in paragraph at lines 84--87
 []\OT1/cmr/m/n/12 ``Music in-for-ma-tion re-trieval eval-u-a-tion ex-change..''
  $\OT1/cmtt/m/n/12 http : / /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 60--63
+Underfull \hbox (badness 10000) in paragraph at lines 84--87
 \OT1/cmtt/m/n/12 www . music-[]ir . org / mirex / wiki / 2017 : Multiple _ Fund
 amental _
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 65--66
+Underfull \hbox (badness 10000) in paragraph at lines 89--90
 []\OT1/cmr/m/n/12 ``Transcription.'' $\OT1/cmtt/m/n/12 https : / / en . wikiped
 ia . org / wiki / Transcription _
  []
 
-[21] [22]) [23] (untitled-3.aux) ) 
+[36]
+Underfull \hbox (badness 1997) in paragraph at lines 139--141
+[]\OT1/cmr/m/n/12 ``Non-negative ma-trix fac-tor-iza-tion.'' $\OT1/cmtt/m/n/12 
+https : / / en . wikipedia . org / wiki /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 169--171
+[]\OT1/cmr/m/n/12 ``Music genre clas-si-fi-ca-tion.'' $\OT1/cmtt/m/n/12 https :
+ / / towardsdatascience . com /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--194
+[]\OT1/cmr/m/n/12 ``Midi to sheet con-verter.'' $\OT1/cmtt/m/n/12 https : / / g
+ithub . com / BYVoid /
+ []
+
+[37]) [38] (untitled-3.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 5232 strings out of 492970
- 81269 string characters out of 3126151
- 158058 words of memory out of 3000000
- 8954 multiletter control sequences out of 15000+200000
+ 5427 strings out of 492970
+ 84577 string characters out of 3126151
+ 160923 words of memory out of 3000000
+ 9130 multiletter control sequences out of 15000+200000
  14089 words of font info for 41 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,11n,43p,1447b,337s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Speedy/AppData/Local/Programs/MiKTe
-X 2.9/fonts/enc/dvips/base/8r.enc}<C:/Users/Speedy/AppData/Local/Programs/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Speedy/AppData/Local/
-Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Speedy/
-AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:
-/Users/Speedy/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmmi8.pfb><C:/Users/Speedy/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmr12.pfb><C:/Users/Speedy/AppData/Local/Programs/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Speedy/AppData/Local/Programs/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Speedy/AppData/Local/
-Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Speedy/
-AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/
-Users/Speedy/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-mti12.pfb><C:/Users/Speedy/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmtt12.pfb><C:/Users/Speedy/AppData/Local/Programs/MiKTeX 2.9/font
-s/type1/urw/helvetic/uhvb8a.pfb>
-Output written on untitled-3.pdf (24 pages, 991214 bytes).
+ 44i,11n,43p,1447b,344s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/Speedy/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.en
+c}<C:/Users/Speedy/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmbx12.pfb><C:/Users/Speedy/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmex10.pfb><C:/Users/Speedy/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Speedy/AppData/Local/Prog
+rams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Speedy/AppDa
+ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users
+/Speedy/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.
+pfb><C:/Users/Speedy/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmr8.pfb><C:/Users/Speedy/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmsy10.pfb><C:/Users/Speedy/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Speedy/AppData/Local/Progr
+ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/Speedy/AppDa
+ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/User
+s/Speedy/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb>
+
+Output written on untitled-3.pdf (39 pages, 1281327 bytes).
 PDF statistics:
- 142 PDF objects out of 1000 (max. 8388607)
+ 206 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 86 words of extra memory for PDF output out of 10000 (max. 10000000)
 

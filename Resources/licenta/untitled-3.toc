@@ -1,25 +1,38 @@
-\contentsline {section}{\numberline {1}Introduction}{4}
-\contentsline {section}{\numberline {2}Theoretical Background}{5}
-\contentsline {subsection}{\numberline {2.1}Introduction to Deep Learning}{5}
-\contentsline {subsection}{\numberline {2.2}Neural Networks}{5}
-\contentsline {subsubsection}{\numberline {2.2.1}Brief History}{5}
-\contentsline {subsubsection}{\numberline {2.2.2}Components of an artificial neural network}{6}
-\contentsline {subsubsection}{\numberline {2.2.3}Underfitting and Overfitting}{8}
-\contentsline {subsubsection}{\numberline {2.2.4}Convolutional Neural Networks}{8}
-\contentsline {subsection}{\numberline {2.3}Digital Signal Processing}{10}
-\contentsline {subsubsection}{\numberline {2.3.1}Sound}{10}
-\contentsline {subsubsection}{\numberline {2.3.2}Pitch}{11}
-\contentsline {subsubsection}{\numberline {2.3.3}Discrete Fourier Transformation}{11}
-\contentsline {subsubsection}{\numberline {2.3.4}Short-Term Fourier Transform}{11}
-\contentsline {subsubsection}{\numberline {2.3.5}Constant-Q Transform}{11}
-\contentsline {subsection}{\numberline {2.4}Music Transcription}{13}
-\contentsline {subsubsection}{\numberline {2.4.1}Traditional Music Transcription}{13}
-\contentsline {subsubsection}{\numberline {2.4.2}Automatic Music Transcription}{14}
-\contentsline {subsubsection}{\numberline {2.4.3}Semi-Automatic Music Transcription}{16}
-\contentsline {section}{\numberline {3}Related Work}{17}
-\contentsline {subsection}{\numberline {3.1}State of the art in AMT}{17}
-\contentsline {subsection}{\numberline {3.2}CNN approach to AMT}{18}
-\contentsline {section}{\numberline {4}Application}{19}
-\contentsline {subsection}{\numberline {4.1}Input Representation}{19}
-\contentsline {subsection}{\numberline {4.2}Labeling}{20}
-\contentsline {section}{References}{21}
+\contentsline {section}{\numberline {1}Introduction}{5}
+\contentsline {section}{\numberline {2}Theoretical Background}{6}
+\contentsline {subsection}{\numberline {2.1}Introduction to Deep Learning}{6}
+\contentsline {subsection}{\numberline {2.2}Neural Networks}{6}
+\contentsline {subsubsection}{\numberline {2.2.1}Brief History}{6}
+\contentsline {subsubsection}{\numberline {2.2.2}Components of an artificial neural network}{7}
+\contentsline {subsubsection}{\numberline {2.2.3}Under-fitting and Over-fitting}{9}
+\contentsline {subsubsection}{\numberline {2.2.4}Convolutional Neural Networks}{9}
+\contentsline {subsection}{\numberline {2.3}MIDI format}{11}
+\contentsline {subsection}{\numberline {2.4}Digital Signal Processing}{12}
+\contentsline {subsubsection}{\numberline {2.4.1}Sound}{12}
+\contentsline {subsubsection}{\numberline {2.4.2}Pitch}{13}
+\contentsline {subsubsection}{\numberline {2.4.3}Discrete Fourier Transformation}{13}
+\contentsline {subsubsection}{\numberline {2.4.4}Fast Fourier Transform}{13}
+\contentsline {subsubsection}{\numberline {2.4.5}Short-Term Fourier Transform}{13}
+\contentsline {subsubsection}{\numberline {2.4.6}Constant-Q Transform}{13}
+\contentsline {subsection}{\numberline {2.5}Music Transcription}{15}
+\contentsline {subsubsection}{\numberline {2.5.1}Traditional Music Transcription}{15}
+\contentsline {subsubsection}{\numberline {2.5.2}Automatic Music Transcription}{16}
+\contentsline {subsubsection}{\numberline {2.5.3}Semi-Automatic Music Transcription}{18}
+\contentsline {section}{\numberline {3}Related Work}{19}
+\contentsline {subsection}{\numberline {3.1}State of the art in AMT}{19}
+\contentsline {subsection}{\numberline {3.2}NMF approach to AMT}{19}
+\contentsline {subsection}{\numberline {3.3}CNN approach to AMT}{20}
+\contentsline {section}{\numberline {4}Theia7}{22}
+\contentsline {subsection}{\numberline {4.1}Input Representation}{22}
+\contentsline {subsection}{\numberline {4.2}Labeling}{23}
+\contentsline {subsection}{\numberline {4.3}First Cnn Architecture}{24}
+\contentsline {subsection}{\numberline {4.4}Proposed Cnn Architecture}{24}
+\contentsline {subsection}{\numberline {4.5}Application architecture}{28}
+\contentsline {subsection}{\numberline {4.6}Output}{29}
+\contentsline {subsection}{\numberline {4.7}Technologies used}{31}
+\contentsline {section}{\numberline {5}Testing}{32}
+\contentsline {section}{\numberline {6}Conclusion}{33}
+\contentsline {subsection}{\numberline {6.1}Overview}{33}
+\contentsline {subsection}{\numberline {6.2}Results}{33}
+\contentsline {subsection}{\numberline {6.3}Future work}{33}
+\contentsline {section}{References}{35}

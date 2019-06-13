@@ -1,5 +1,10 @@
 \begin{thebibliography}{10}
 
+\bibitem{REF:7}
+E.~B. S.~Sigtia and S.~Dixon, {\em An end-to-end neural network for polyphonic
+  piano music transcription}.
+\newblock IEEE/ACM Trans. Audio Speech Lang. Process., 24, 927–939, 2016.
+
 \bibitem{Goodfellow-et-al-2016}
 I.~Goodfellow, Y.~Bengio, and A.~Courville, {\em Deep Learning}.
 \newblock MIT Press, 2016.
@@ -24,9 +29,20 @@ B.~C. Bangal, {\em Automatic generation control of interconnected power systems
 {\em {Everything you need to know about Neural Networks }}.
 \newblock 2018.
 
+\bibitem{activation_fig}
+``Activation functions.''
+  \url{http://prog3.com/sbdm/blog/cyh24/article/details/50593400}.
+
+\bibitem{vitaflux}
+``Vitaflux.'' \url{vitalflux.com}.
+
 \bibitem{cnn}
 ``{Convolutional neural networks}.''
   \url{https://en.wikipedia.org/wiki/Convolutional_neural_network}.
+
+\bibitem{cnn_fig}
+``cnn representation.''
+  \url{https://en.wikipedia.org/wiki/File:Typical\_cnn.png}.
 
 \bibitem{cnn_git}
 ``Convolutional neural networks.''
@@ -40,6 +56,10 @@ B.~C. Bangal, {\em Automatic generation control of interconnected power systems
 ``{Physics of sound}.''
   \url{https://method-behind-the-music.com/mechanics/physics/}.
 
+\bibitem{traveling_wave}
+``Traveling wave.''
+  \url{https://method-behind-the-music.com/mechanics/physics/}.
+
 \bibitem{speed_of_sound}
 ``{Speed of sound}.'' \url{https://en.wikipedia.org/wiki/Speed_of_sound}.
 
@@ -47,6 +67,10 @@ B.~C. Bangal, {\em Automatic generation control of interconnected power systems
 G.~Sahidullah, Md.;~Saha, {\em A Novel Windowing Technique for Efficient
   Computation of MFCC for Speaker Recognition}.
 \newblock IEEE Signal Processing Letters. 20 (2): 149–152, 2013.
+
+\bibitem{stft_fig}
+``Short time fourier transform example.''
+  \url{https://en.wikipedia.org/wiki\/short-time\_fourier\_transform}.
 
 \bibitem{constant_q}
 ``{Constant-Q transform}.''
@@ -74,6 +98,10 @@ A.~Livshin and X.~Rodet., {\em Musical instrument identification in continuous
   recordings}.
 \newblock 2004.
 
+\bibitem{waves_instruments}
+``Sound waves of different musical instruments.''
+  \url{http://eyuzdaosivadare.changeip.com/Sound-waves-and-musical-instruments.html}.
+
 \bibitem{semi-automatic}
 H.~K.~S. Dixon and A.~Klapuri, {\em Multi-template shift-variant non-negative
   matrix deconvolution for semi-automatic music transcription}.
@@ -95,27 +123,6 @@ J.~N. J.~Nam, H.~Lee, and M.~Slaney, {\em A classification-based polyphonic
 \newblock ” Proceedings of the 12th International Society for Music
   Information Retrieval Conference, pp. 16-180, 2011.
 
-\bibitem{REF:4}
-K.~Ullrich and E.~van~der Wel, {\em Music transcription with convolutional
-  sequence-to-sequence models}.
-\newblock ” International Society for Music Information Retrieval, 2017.
-
-\bibitem{REF:5}
-J.~F.~S. B.~L.~Sturm, O.~Ben-Tal, and I.~Korsunova, {\em Music transcription
-  modelling and composition using deep learning}.
-\newblock arXiv preprint arXiv:1604.08723, 2016.
-
-\bibitem{REF:6}
-S.~Sigtia, E.~Benetos, N.~B.-L.~T. Weyde, A.~S. d’Avila Garcez, and S.~Dixon,
-  {\em A hybrid recurrent neural network for music transcription}.
-\newblock IEEE International Conference on Acoustics, Speech, and Signal
-  Processing, pp. 2061-2065, 2015.
-
-\bibitem{REF:7}
-E.~B. S.~Sigtia and S.~Dixon, {\em An end-to-end neural network for polyphonic
-  piano music transcription}.
-\newblock IEEE/ACM Trans. Audio Speech Lang. Process., 24, 927–939, 2016.
-
 \bibitem{REF:8}
 P.~Smaragdis and J.~C. Brown., {\em Non-negative matrix factorization for
   polyphonic music transcription}.
@@ -127,6 +134,20 @@ R.~B. V.~Emiya and B.~David., {\em Multipitch estimation of piano sounds using
   a new probabilistic spectral smoothness principle}.
 \newblock IEEE Transactions on Audio, Speech, and Language Processing,
   18(6):1643–1654, 2010.
+
+\bibitem{NMF}
+``Non-negative matrix factorization.''
+  \url{https://en.wikipedia.org/wiki/Non-negative_matrix_factorization}.
+
+\bibitem{NMF_figure}
+S.~Ewert and M.~Muller, {\em Score-informed source sepa-ration for music
+  signals}.
+\newblock 2012.
+
+\bibitem{REF:5}
+J.~F.~S. B.~L.~Sturm, O.~Ben-Tal, and I.~Korsunova, {\em Music transcription
+  modelling and composition using deep learning}.
+\newblock arXiv preprint arXiv:1604.08723, 2016.
 
 \bibitem{REF:10}
 J.~Sleep, {\em AUTOMATIC MUSIC TRANSCRIPTION WITH CONVOLUTIONAL NEURAL NETWORKS
@@ -144,7 +165,46 @@ V.~E.~R. Badeau and B.~David, {\em Multipitch estimation of piano sounds using
   a new probabilistic spectral smoothness principle}.
 \newblock 2008.
 
+\bibitem{genre_class}
+``Music genre classification.''
+  \url{https://towardsdatascience.com/music-genre-classification-with-python-c714d032f0d8}.
+
+\bibitem{fluidsynth}
+``Fluidsynth.'' \url{http://www.fluidsynth.org/}.
+
+\bibitem{librosa}
+``Librosa library.'' \url{https://librosa.github.io/librosa/}.
+
 \bibitem{one-hot}
 ``One-hot encoding.'' \url{https://en.wikipedia.org/wiki/One-hot}.
+
+\bibitem{keras}
+``Keras.'' \url{https://keras.io/}.
+
+\bibitem{alexnet}
+A.~K.~I. Sutskever and G.~E. Hinton, {\em ImageNet Classification with Deep
+  Convolutional Neural Networks}.
+\newblock 2012.
+
+\bibitem{pretty_midi}
+``Pretty midi.'' \url{https://github.com/craffel/pretty-midi}.
+
+\bibitem{sheet}
+``Midi to sheet converter.'' \url{https://github.com/BYVoid/MidiToSheetMusic}.
+
+\bibitem{tensorflow}
+``Tensorflow.'' \url{https://www.tensorflow.org/}.
+
+\bibitem{numpy}
+``Numpy.'' \url{https://www.numpy.org/}.
+
+\bibitem{pydub}
+``Pydub.'' \url{http://pydub.com/}.
+
+\bibitem{mido}
+``Mido.'' \url{https://mido.readthedocs.io/en/latest/}.
+
+\bibitem{cuda}
+``Cuda.'' \url{https://developer.nvidia.com/about-cuda}.
 
 \end{thebibliography}

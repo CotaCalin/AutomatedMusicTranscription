@@ -51,7 +51,7 @@ class UIMain:
         exit(0)
 
     def __predict(self):
-        i = input("Song Path (wav format):")
+        i = input("Song Path(wav or midi format):")
         try:
             PathValidator(i)
             self.__logger.logInfo("Begin prediction for {0}".format(i))

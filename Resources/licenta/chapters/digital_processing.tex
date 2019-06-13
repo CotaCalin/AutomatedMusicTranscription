@@ -8,18 +8,18 @@ Signals need to be processed so that the information they contain can be display
 Sound is produced when something vibrates. The vibration causes the medium around it to vibrate as well. Vibrations in the air are called traveling longitudinal waves \cite{physics_of_sound}, which we can hear.
 A sound wave is made out of two areas of high and low pressure called compressions and rarefactions (figure 3). \par
 
-The pattern of the wave repeats after one wavelength. The height of the wave is called Amplitude. It is what determines how load the sound will be, the greater the louder.
+The pattern of the wave repeats after one wavelength. The height of the wave is called Amplitude. It is what determines how loud the sound will be, the greater the louder.
 
 The wavelength and the speed of the wave determine the pitch (frequency of the sound). \par 
 
 
 \begin{equation}
-Speed = Frequency \cdot Wavelength
+c = f \cdot \lambda \textnormal{, where $c=speed$, $f=frequency$, $\lambda=wavelength$}
 \end{equation}
 
 \begin{figure}[h]
 	\caption[Traveling Wave]{
-		Source: https://method-behind-the-music.com/mechanics/physics/ }
+		Traveling wave components \cite{traveling_wave} }
 	\centering
 	\includegraphics[width=1\textwidth, height=\textheight, keepaspectratio]{Wavelength}
 \end{figure}
@@ -31,7 +31,7 @@ The speed is influenced by the medium in which it travels. Under standard temper
 
 The equation (5) can be rewritten as:
 \begin{equation}
-Frequency = \dfrac{Speed}{Wavelength}
+f = \dfrac{c}{\lambda} \textnormal{, where $c=speed$, $f=frequency$, $\lambda=wavelength$}
 \end{equation}
 
 
@@ -46,12 +46,14 @@ The DFT tells you what frequencies are present in your signal and in what propor
 \par
 It has a complexity of $O(n^2)$ so in practice the Fast Fourier Transform (FFT) algorithm is used instead. FFT runs in $O(n\cdot log(n))$
 
+\subsubsection{Fast Fourier Transform}
+Add more info about fast fourier transform
+
 \subsubsection{Short-Term Fourier Transform}
 While DFT is really good by itself, if used on an entire song it would only tell what frequencies exist, but not when they occur. This is where Short-Term Fourier Transform (STFT) comes in handy. It computes DFT over a full signal, but in small segments. Because of this we can see how frequencies change over time, which makes it a good way to compute spectrograms. (Figure 4) 
 
 \begin{figure}[h]
-	\caption[Spectrogram using Short-Term Fourier Transform]{ Spectrogram using STFT \\
-	source: https://en.wikipedia.org/wiki\/short-time\_fourier\_transform }
+	\caption[Spectrogram using Short-Term Fourier Transform]{ Spectrogram using STFT \cite{stft_fig}}
 	\centering
 	\includegraphics[width=1\textwidth, height=\textheight, keepaspectratio]{"resources/STFT_spectrogram"}
 \end{figure}

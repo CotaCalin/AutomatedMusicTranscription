@@ -22,7 +22,7 @@ A simple artificial neural network (ANN) consists of input layer, hidden layer a
 
 
 
-The Neuron, also called node, is the basic unit of a neural network. It's main components include inputs,
+The Neuron, also called node, is the basic unit of a neural network. Its main components include inputs,
 weights, activation function and output(s). From a high level point of view the inputs are multiplied by 
 weights, then an activation function is applied to the result and finally, another function computes the output\cite{REF:12}\cite{REF:13}. \par
 
@@ -50,8 +50,7 @@ weights, then an activation function is applied to the result and finally, anoth
 
 	
 	\begin{figure}[h]
-		\caption[Common activation functions]{Common activation functions.\\
-			Source: http://prog3.com/sbdm/blog/cyh24/article/details/50593400 }
+		\caption[Common activation functions]{Common activation functions \cite{activation_fig} }
 		\centering
 		\includegraphics[width=1\textwidth, height=\textheight, keepaspectratio]{activation}
 	\end{figure}
@@ -60,17 +59,16 @@ weights, then an activation function is applied to the result and finally, anoth
 \end{itemize}
 
 \clearpage
-\subsubsection{Underfitting and Overfitting}
+\subsubsection{Under-fitting and Over-fitting}
 %reformulat + surse noi
 
-Neural networks are able to learn complicated non-linear functions to fit any training set. On the downside, this may lead to overfitting where the neural network learns the training data so well that it is unable to generalize on new, unseen data. This problem can especially occur on datasets with a small amount of data to learn from. \par
+Neural networks are able to learn complicated non-linear functions to fit any training set. On the downside, this may lead to over-fitting where the neural network learns the training data so well that it is unable to generalize on new, unseen data. This problem can especially occur on datasets with a small amount of data to learn from. \par
 
-Underfitting, the counterpart of overfitting, happens when a machine learning model isn’t complex enough to accurately capture relationships between a dataset’s features and a target variable. An underfitted model results in problematic outcomes on new data, or data that it wasn’t trained on, and many times performs poorly even on training data. \par
+Under-fitting, the counterpart of over-fitting, happens when a machine learning model isn’t complex enough to accurately capture relationships between a dataset’s features and a target variable. An under-fitted model results in problematic outcomes on new data, or data that it wasn’t trained on, and many times performs poorly even on training data. \par
 
 
 \begin{figure}[h]
-	\caption[Example of overfitting and underfitting]{Example of overfitting and underfitting
-		\\ image source vitalflux.com}
+	\caption[Example of over-fitting and under-fitting]{Example of over-fitting and under-fitting \cite{vitaflux}}
 	\centering
 	\includegraphics[width=1\textwidth, height=\textheight, keepaspectratio]{"resources/overfitting"}
 \end{figure}
@@ -84,8 +82,7 @@ The connectivity pattern between neurons resembles the animal visual cortex.
 
 \begin{figure}[h]
 	\centering
-	\caption[Typical convolutional neural network architecture]{Typical CNN architecture
-		\\ image source https://en.wikipedia.org/wiki/File:Typical\_cnn.png}
+	\caption[Typical convolutional neural network architecture]{Typical CNN architecture \cite{cnn_fig}}
 	\label{fig:cnn}
 	\includegraphics[width=1.1\textwidth, height=1.5\textheight, keepaspectratio]{"resources/typical_cnn"}
 \end{figure}
@@ -94,8 +91,11 @@ The connectivity pattern between neurons resembles the animal visual cortex.
 A convolutional neural network consists of an input and an output layer, as well as multiple hidden layers. The hidden layers are typically convolutional layers, RELU layers, pooling layers, fully connected layers and normalization layers. \cite{cnn_git}
 
 \begin{itemize}
-	\item \textbf{Pooling} layers reduce the dimension of the data by combining the outputs of neuron clusters at one layer into a single neuron in the next layer. 
+	\item \textbf{Convolutional} layers are the core building block of a Convolutional network. It does most of the computation
+	\item \textbf{Pooling} layers reduce the dimension of the data by combining the outputs of neuron clusters at one layer into a single neuron in the next layer
+	\item \textbf{Normalization} layers apply a transformation that maintains the mean activation close to 0 and the activation standard deviation close to 1
+	\item \textbf{Fully connected} layers link every neuron in one layer to every neuron in another layer
+	\item \textbf{Dropout} layers have a \% chance to deactivate the neurons of a particular layer. This is a technique used to improve over-fitting by improving generalization. Forcing neurons to deactivate forces the network to learn the same "concept" with different neurons. Mostly used after fully connected or pooling layers
 \end{itemize}
 
 
-%vitalflux.com/ image source. overfitting.png

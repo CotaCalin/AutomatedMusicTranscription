@@ -23,7 +23,7 @@ class ModelFactory:
         model.add(Conv2D(32, kernel_size=(5,5), strides=(1,1),
             activation='relu',
             input_shape=input_shape))
-        #model.add(Dropout(0.5))
+            
         model.add(MaxPooling2D(pool_size=(2,2), strides=(2,2)))
         model.add(Conv2D(128, (3,3), activation='relu'))
         model.add(Dropout(0.5))
@@ -32,11 +32,7 @@ class ModelFactory:
         model.add(Dropout(0.5))
         model.add(MaxPooling2D(pool_size=(2,2)))
 
-        # Final output layer
-        #model.add(Conv2D(128, (5,5), activation='sigmoid'))
-        #model.add(Flatten())
         model.add(Flatten())
-        #model.add(Dense(64, activation='sigmoid'))
         model.add(Dense(num_classes, activation='softmax'))
         return model
 
@@ -50,38 +46,21 @@ class ModelFactory:
         model.add(Conv2D(32, kernel_size=(3,3), strides=(2,2),
             activation='relu',
             input_shape=input_shape))
-        #model.add(Dropout(0.5))
+
         model.add(MaxPooling2D(pool_size=(2,2), strides=(2,2)))
 
-        # 2nd Convolutional Layer
         model.add(Conv2D(filters=64, kernel_size=(3,3), strides=(2,2), padding="valid", activation='relu'))
-        # Max Pooling
-        #model.add(MaxPooling2D(pool_size=(2,2), strides=(2,2), padding="valid"))
 
-        # 3rd Convolutional Layer
         model.add(Conv2D(filters=128, kernel_size=(2,2), strides=(1,1), padding="valid", activation='relu'))
 
-        # 4th Convolutional Layer
-        #model.add(Conv2D(filters=128, kernel_size=(2,2), strides=(1,1), padding="valid", activation='relu'))
-
-        # 5th Convolutional Layer
-        #model.add(Conv2D(filters=64, kernel_size=(2,2), strides=(1,1), padding="valid", activation='relu'))
-        # Max Pooling
         model.add(MaxPooling2D(pool_size=(2,2), strides=(2,2), padding="valid"))
 
-        # Passing it to a Fully Connected layer
         model.add(Flatten())
-        # 1st Fully Connected Layer
-        model.add(Dense(4096, activation="relu"))
-        # Add Dropout to prevent overfitting
-        model.add(Dropout(0.4))
 
-        # 2nd Fully Connected Layer
         model.add(Dense(4096, activation="relu"))
-        # Add Dropout
         model.add(Dropout(0.4))
-
-        # Output Layer
+        model.add(Dense(4096, activation="relu"))
+        model.add(Dropout(0.4))
         model.add(Dense(num_classes, activation="softmax"))
 
         return model
@@ -109,36 +88,4 @@ class ModelFactory:
         outputs = Dense(note_range, activation='relu')(do4)
 
         model = Model(inputs=inputs, outputs=outputs)
-        return model
-
-    @staticmethod
-    def resnet_model(bin_multiple, input_shape, input_shape_channels, note_range):
-        #input and reshape
-        inputs = Input(shape=input_shape)
-        reshape = Reshape(input_shape_channels)(inputs)
-
-        #normal convnet layer (have to do one initially to get 64 channels)
-        conv = Conv2D(64,(1,bin_multiple*note_range),padding="same",activation='relu')(reshape)
-        pool = MaxPooling2D(pool_size=(1,2))(conv)
-
-        for i in range(int(np.log2(bin_multiple))-1):
-            #residual block
-            bn = BatchNormalization()(pool)
-            re = Activation('relu')(bn)
-            freq_range = (bin_multiple/(2**(i+1)))*note_range
-            conv = Conv2D(64,(1,freq_range),padding="same",activation='relu')(re)
-
-            #add and downsample
-            ad = add([pool,conv])
-            pool = MaxPooling2D(pool_size=(1,2))(ad)
-
-        flattened = Flatten()(pool)
-        fc = Dense(1024, activation='relu')(flattened)
-        do = Dropout(0.5)(fc)
-        fc = Dense(512, activation='relu')(do)
-        do = Dropout(0.5)(fc)
-        outputs = Dense(note_range, activation='sigmoid')(do)
-
-        model = Model(inputs=inputs, outputs=outputs)
-
         return model
