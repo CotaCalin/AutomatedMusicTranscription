@@ -1,4 +1,20 @@
-\subsection{Input Representation}
+\subsection{Problem statement}
+Automatic music transcription has been attempted since 1977\cite{transcription}. It consists of analyzing digital recordings of songs and identify things like rhythm, melodies, pitch, bass lines. The main sub tasks of AMT are:
+
+\begin{itemize}
+	\item \textbf{Pitch estimation}
+	\item \textbf{Beat detection}
+	\item \textbf{Instrument detection}
+\end{itemize}
+
+Because of the polyphonic approach of music, AMT is still unresolved today. The state of the art approaches struggle to get an accuracy greater than 70\%. It's a problem that requires a lot of digital signal processing knowledge in order to optimize the data and split the sub task even further in onset and offset detection, genre detection and velocity detection. In order to have a full prediction you need to cover all of these tasks.
+	
+The proposed solution attempts the \textbf{Pitch estimation} part of AMT, using an heuristic approach to find the beat and creating spectrograms of the audio in order to get the instrument out of the equation.
+	
+
+Fundamentally, AMT is about identifying the pitch and duration of played notes, so they can be converted in traditional music notation on a sheet
+
+\subsection{Input representation}
 The data set used was the MAPS database \cite{maps}. It is a piano database for multi pitch estimation and automatic transcription of music. It contains MIDI-annotated piano recordings, composed of isolated notes, random-pitch chords, usual musical chords and pieces of music. It provides a diverse range of sounds from various recording conditions.
 \par
 The recordings are CD quality (16-bit, $44-kHz$ sampled stereo audio) and the related aligned MIDI files contain the ground truth. The overall size of the database is 40GB. 
@@ -66,7 +82,7 @@ One-hot encoding is a widely used technique in neural networks. It consists of c
 	\label{table:one_hot}
 \end{table}
 
-\subsection{First Cnn Architecture}
+\subsection{First CNN architecture}
 For the first neural network has been created with the aim of obtaining some initial results and it has served to learn how a model developed in Keras \cite{keras} behaves.
 \par
 An architecture similar to the Keras MNIST is evaluated\cite{keras_mnist}. It has been created to predict handwriting digits, the input and output data are completely different, but this is a standard architecture for image recognition with small patches. No optimization was done on this one as its aim was to perform a first approach that deals with the input data. 
@@ -77,7 +93,7 @@ The architecture is shown in Table \ref{table:initial}. It performed poorly but 
 
 \begin{table} [h!]
 	\centering
-	\caption{Initial cnn architecture}
+	\caption{Initial CNN architecture}
 	\begin{tabular}{ |c|c|} 
 		\hline
 		Layer (type) & Output Shape  \\ \hline
@@ -92,16 +108,9 @@ The architecture is shown in Table \ref{table:initial}. It performed poorly but 
 	\label{table:initial}
 \end{table}
 
-\subsection{Proposed Cnn Architecture}
+\subsection{Proposed CNN architecture}
 The proposed architecture is similar to the AlexNet \cite{alexnet} (Figure \ref{fig:alexnet}). This architecture won Image Classification Challenge in 2012. It was used on high-resolution images into 1000 different classes. This was too big for our input data of $145x49x3$ size images. The kernel and stride sizes were adjusted to fit our data. Some layers were dropped and some dropout layers were added in order to reduce overfitting. The dropout layers have a $0.5$ chance to deactivate a neuron. This forces the layer to learn the same concept with different neurons, improving generalization.
 \par
-
-\begin{figure}[h!]
-	\caption[Accuracy progression over the epochs]{ Accuracy for the final architecture}
-	\centering
-	\label{fig:acc}
-	\includegraphics[width=1\textwidth, height=\textheight, keepaspectratio]{"resources/acc"}
-\end{figure}
 
 \begin{figure}[h!]
 	\caption[Loss progression over the epochs]{ Loss for the final architecture}
@@ -111,15 +120,35 @@ The proposed architecture is similar to the AlexNet \cite{alexnet} (Figure \ref{
 \end{figure}
 
 
-Three activation functions were tested in the hidden layers:
+Three activation functions were tested in the hidden layers for the monophonic scenario as this was the first milestone. Without a good accuracy here there's no point going further:
 \begin{itemize}
-	\item \textbf{Sigmoid}: 28.83\% accuracy
-	\item \textbf{Tanh}: 33.16\% accuracy
-	\item \textbf{ReLu}: 38.73\% accuracy
+	\item \textbf{Sigmoid}: 30\% accuracy
+	\item \textbf{ReLu}: 83\% accuracy
+	\item \textbf{Tanh}: 99.9\% accuracy
 \end{itemize}
 
-The model performed better using ReLu as the activation function inside the hidden layers. As for the output layer Softmax was used as this is a multi class classification problem.
+The model performed better using Tanh as the activation function inside the hidden layers. As for the output layer Softmax was used as this is a multi class classification problem.
 
+\par
+The accuracy of the model was tested using custom made song with predetermined note overlap percentage. 
+The results can be seen in Table \ref{table:results}. As the amount of overlapping notes increases the accuracy of the model decreases. This happens because the system can't predict with a big enough accuracy all the notes from a window when their number increases. It works almost perfectly for monophonic songs, reaching an accuracy of 99.9\%. The sweet spot of the system is a combination of one, two and three overlapping notes with no more than 50\% and 10\% overlapping time for two and three notes respectively. This combination provides an overall accuracy of about 70\%.
+
+\begin{table} [H]
+	\centering
+	\caption{Initial cnn architecture}
+	\begin{tabular}{ |c|c|c|} 
+		\hline
+		Max number of overlapping notes & Overlapping Time & Accuracy\\ \hline
+		1 & 100\% & 99.9\%  \\ \hline
+		2 & 10\% & 95.3\% \\ \hline
+		2 & 50\% & 78.1\% \\ \hline
+		2 & 100\% & 65.0\% \\ \hline
+		3 & 10\% & 90.3\% \\ \hline
+		3 & 50\% & 67.2\% \\ \hline
+		3 & 100\% & 43\% \\ \hline				
+	\end{tabular}
+	\label{table:results}
+\end{table}
 
 \begin{figure}[H]
 	\caption[AlexNet Architecture]{ Original AlexNet architecture \cite{alexnet}}
@@ -130,7 +159,7 @@ The model performed better using ReLu as the activation function inside the hidd
 
 \begin{table} [H]
 	\centering
-	\caption{Proposed Cnn Architecture}
+	\caption{Proposed CNN architecture}
 	\begin{tabular}{ |c|c|c|} 
 		\hline
 		Layer (type) & Output Shape & Param \# \\ \hline
@@ -185,6 +214,8 @@ The output of the prediction will be a one-hot encoding of the song as described
 \subsection{Technologies used}
 List of used technologies:
 \begin{itemize}
+	\item Python \cite{python}
+	\item Anaconda \cite{anaconda}
 	\item Librosa \cite{librosa}
 	\item Keras \cite{keras}
 	\item Tensorflow \cite{tensorflow}

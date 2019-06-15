@@ -92,8 +92,8 @@ class Trainer:
 
         x_train = np.array(x_train)
         y_train = np.array(y_train)
-        x_test = np.copy(x_train)
-        y_test = np.copy(y_train)
+        x_test = np.copy(x_train[:int(len(x_train)*0.8)])
+        y_test = np.copy(y_train[:int(len(x_train)*0.8)])
         x_train /= 255.0
         x_test /= 255.0
         self.trainEx(x_train, y_train, x_test, y_test)
@@ -112,11 +112,11 @@ class Trainer:
                     optimizer=SGD(lr=self.__init_lr,momentum=0.9), metrics=[metrics.categorical_accuracy])
         self.__model.summary()
 
-        history = self.__model.fit(x_train, y_train,
+        history = self.__model.fit(x_train[:int(len(x_train)*0.8)], y_train[:int(len(x_train)*0.8)],
                 batch_size=self.__batch_size,
                 epochs=self.__epochs,
                 verbose=1,
-                validation_data=(x_test, y_test),
+                validation_data=(x_train[int(len(x_train)*0.8):], y_train[int(len(x_train)*0.8):]),
                 callbacks=self.__callbacks)
 
         score = self.__model.evaluate(x_test, y_test, verbose=0)

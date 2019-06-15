@@ -1,24 +1,11 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: untitled-3.aux
 The style file: ieeetr.bst
 Database file #1: references.bib
-Warning--entry type for "music_retrieval" isn't style-file defined
---line 135 of file references.bib
-I was expecting a `,' or a `}'---line 218 of file references.bib
- : 
- : ),
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "keras_mnist"
-Warning--empty publisher in REF:12
+Warning--empty journal in REF:12
 Warning--empty author and editor in REF:13
 Warning--empty publisher in REF:13
-Warning--empty publisher in human_transcription
-Warning--empty publisher in glass_ceiling
-Warning--empty publisher in instrument_identification
-Warning--empty publisher in semi-automatic
-Warning--empty publisher in REF:1
-Warning--empty publisher in NMF_figure
-Warning--empty publisher in benetos
-Warning--empty publisher in maps
-Warning--empty publisher in alexnet
-(There was 1 error message)
+Warning--empty journal in glass_ceiling
+Warning--empty journal in REF:1
+Warning--empty journal in REF:10
+Warning--empty publisher in numpy
+(There were 7 warnings)

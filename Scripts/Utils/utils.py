@@ -105,13 +105,14 @@ def one_hots_to_pretty_midi(one_hots, tempo, fs=18, program=1,bpm=120):
                         break
 
         for note in current_notes:
-            print(current_notes_begin[note])
-            print(current_notes_end[note])
+            print(current_notes_begin[note]*1/16)
+            print(current_notes_end[note]*1/16)
+            print()
             pm_note = pretty_midi.Note(
                     velocity=100,
                     pitch=note,
-                    start=current_notes_begin[note] * 1/16,
-                    end=current_notes_end[note] * 1/16)
+                    start=current_notes_begin[note]*1/16,
+                    end=current_notes_end[note]*1/16)
             instrument.notes.append(pm_note)
 
     pm.instruments.append(instrument)

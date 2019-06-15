@@ -1,210 +1,254 @@
 \begin{thebibliography}{10}
 
 \bibitem{REF:7}
-E.~B. S.~Sigtia and S.~Dixon, {\em An end-to-end neural network for polyphonic
-  piano music transcription}.
-\newblock IEEE/ACM Trans. Audio Speech Lang. Process., 24, 927–939, 2016.
+S.~Sigtia, E.~Benetos, and S.~Dixon, ``An end-to-end neural network for
+  polyphonic piano music transcription,'' {\em IEEE/ACM Transactions on Audio,
+  Speech, and Language Processing}, vol.~24, no.~5, pp.~927--939, 2016.
+
+\bibitem{maps}
+V.~Emiya, R.~Badeau, and B.~David, ``Multipitch estimation of piano sounds
+  using a new probabilistic spectral smoothness principle,'' {\em IEEE
+  Transactions on Audio, Speech, and Language Processing}, vol.~18, no.~6,
+  pp.~1643--1654, 2009.
 
 \bibitem{Goodfellow-et-al-2016}
-I.~Goodfellow, Y.~Bengio, and A.~Courville, {\em Deep Learning}.
-\newblock MIT Press, 2016.
-\newblock \url{http://www.deeplearningbook.org}.
+Y.~LeCun, Y.~Bengio, and G.~Hinton, ``Deep learning,'' {\em nature}, vol.~521,
+  no.~7553, p.~436, 2015.
 
 \bibitem{neuron}
-``{Neuron}.'' \url{https://en.wikipedia.org/wiki/Neuron}.
+``Neuron.''
+\newblock https://en.wikipedia.org/wiki/Neuron.
 
 \bibitem{REF:11}
-W.~.~P. McCulloch, {\em A logical calculus of the ideas immanent in nervous
-  activity}.
-\newblock W. Bulletin of Mathematical Biophysics (1943) 5: 115, 1943.
-\newblock \url{https://doi.org/10.1007/BF02478259}.
+W.~S. McCulloch and W.~Pitts, ``A logical calculus of the ideas immanent in
+  nervous activity,'' {\em The bulletin of mathematical biophysics}, vol.~5,
+  no.~4, pp.~115--133, 1943.
 
 \bibitem{REF:12}
-B.~C. Bangal, {\em Automatic generation control of interconnected power systems
-  using artificial neural network techniques}.
-\newblock 2009.
-\newblock \url{https://doi.org/10.1007/BF02478259}.
+B.~C. Bangal, ``Automatic generation control of interconnected power systems
+  using artificial neural network techniques,'' 2009.
 
 \bibitem{REF:13}
-{\em {Everything you need to know about Neural Networks }}.
+{\em Everything you need to know about Neural Networks}.
 \newblock 2018.
+\newblock
+  https://hackernoon.com/everything-you-need-to-know-about-neural-networks-8988c3ee4491.
 
 \bibitem{activation_fig}
 ``Activation functions.''
-  \url{http://prog3.com/sbdm/blog/cyh24/article/details/50593400}.
+\newblock http://prog3.com/sbdm/blog/cyh24/article/details/50593400.
 
 \bibitem{vitaflux}
-``Vitaflux.'' \url{vitalflux.com}.
+``Vitaflux.''
+\newblock vitalflux.com.
 
 \bibitem{cnn}
-``{Convolutional neural networks}.''
-  \url{https://en.wikipedia.org/wiki/Convolutional_neural_network}.
+``Convolutional neural networks.''
+\newblock https://en.wikipedia.org/wiki/Convolutional-neural-network.
 
 \bibitem{cnn_fig}
-``cnn representation.''
-  \url{https://en.wikipedia.org/wiki/File:Typical\_cnn.png}.
+``Cnn representation.''
+\newblock https://en.wikipedia.org/wiki/File:Typical\_cnn.png.
 
 \bibitem{cnn_git}
 ``Convolutional neural networks.''
-  \url{https://cs231n.github.io/convolutional-networks/}.
+\newblock https://cs231n.github.io/convolutional-networks/.
+
+\bibitem{midi_history}
+J.~Heckroth, ``A tutorial on midi and wavetable music synthesis,'' {\em
+  Application Note, CRYSTAL a division of CIRRUS LOGIC}, 1998.
+
+\bibitem{midi_power}
+R.~Gu{\'e}rin, {\em MIDI power!: The comprehensive guide}.
+\newblock Course Technology PTR, 2009.
+
+\bibitem{midi_dynamics}
+``Dynamics in music.''
+\newblock https://en.wikipedia.org/wiki/Dynamics(music).
 
 \bibitem{dsp}
-``{Digital Signal Processing}.''
-  \url{https://www.analog.com/en/design-center/landing-pages/001/beginners-guide-to-dsp.html}.
+``Digital signal processing.''
+\newblock
+  https://www.analog.com/en/design-center/landing-pages/001/beginners-guide-to-dsp.html.
 
 \bibitem{physics_of_sound}
-``{Physics of sound}.''
-  \url{https://method-behind-the-music.com/mechanics/physics/}.
+``Physics of sound.''
+\newblock https://method-behind-the-music.com/mechanics/physics/.
 
 \bibitem{traveling_wave}
 ``Traveling wave.''
-  \url{https://method-behind-the-music.com/mechanics/physics/}.
+\newblock https://method-behind-the-music.com/mechanics/physics/.
 
 \bibitem{speed_of_sound}
-``{Speed of sound}.'' \url{https://en.wikipedia.org/wiki/Speed_of_sound}.
+``Speed of sound.''
+\newblock https://en.wikipedia.org/wiki/Speed-of-sound.
 
 \bibitem{discrete}
-G.~Sahidullah, Md.;~Saha, {\em A Novel Windowing Technique for Efficient
-  Computation of MFCC for Speaker Recognition}.
-\newblock IEEE Signal Processing Letters. 20 (2): 149–152, 2013.
+M.~Sahidullah and G.~Saha, ``A novel windowing technique for efficient
+  computation of mfcc for speaker recognition,'' {\em IEEE signal processing
+  letters}, vol.~20, no.~2, pp.~149--152, 2012.
+
+\bibitem{FFT}
+``Fast fourier transform.''
+\newblock https://en.wikipedia.org/wiki/Fast-Fourier-transform.
 
 \bibitem{stft_fig}
 ``Short time fourier transform example.''
-  \url{https://en.wikipedia.org/wiki\/short-time\_fourier\_transform}.
+\newblock https://en.wikipedia.org/wiki\/short-time\_fourier\_transform.
 
 \bibitem{constant_q}
-``{Constant-Q transform}.''
-  \url{https://en.wikipedia.org/wiki/Constant-Q_transform}.
+``Constant-q transform.''
+\newblock https://en.wikipedia.org/wiki/Constant-Q-transform.
 
 \bibitem{human_transcription}
-Z.~Duan and E.~Benetos, {\em Automatic Music Transcription}.
-\newblock 2015.
+Z.~Duan and E.~Benetos, ``Automatic music transcription,'' in {\em ISMIR
+  conference}, 2015.
 
 \bibitem{music_retrieval}
-``Music information retrieval evaluation exchange..'' \url{http://www.music-ir.
-  org/mirex/wiki/2017:Multiple_Fundamental_Frequency_
-  Estimation_\%26_Tracking_Results_-_MIREX_Dataset}.
+J.~S. Downie, ``Music information retrieval evaluation exchange (mirex),'' {\em
+  http://www. music-ir. org/mirex/2009}, 2009.
 
 \bibitem{transcription}
-``{Transcription}.'' \url{https://en.wikipedia.org/wiki/Transcription_(music)}.
+``Transcription.''
+\newblock https://en.wikipedia.org/wiki/Transcription(music).
 
 \bibitem{glass_ceiling}
-E.~S. D. H.~A. Klapuri, {\em Automatic music transcription: Breaking the glass
-  ceiling}.
-\newblock 2012.
+E.~Benetos, S.~Dixon, D.~Giannoulis, H.~Kirchhoff, and A.~Klapuri, ``Automatic
+  music transcription: Breaking the glass ceiling,'' 2012.
 
 \bibitem{instrument_identification}
-A.~Livshin and X.~Rodet., {\em Musical instrument identification in continuous
-  recordings}.
-\newblock 2004.
+A.~Livshin and X.~Rodet, ``Musical instrument identification in continuous
+  recordings,'' in {\em Digital Audio Effects 2004}, 2004.
 
 \bibitem{waves_instruments}
 ``Sound waves of different musical instruments.''
-  \url{http://eyuzdaosivadare.changeip.com/Sound-waves-and-musical-instruments.html}.
+\newblock
+  http://eyuzdaosivadare.changeip.com/Sound-waves-and-musical-instruments.html.
 
 \bibitem{semi-automatic}
-H.~K.~S. Dixon and A.~Klapuri, {\em Multi-template shift-variant non-negative
-  matrix deconvolution for semi-automatic music transcription}.
-\newblock 2012.
+H.~Kirchhoff, S.~Dixon, and A.~Klapuri, ``Multi-template shift-variant
+  non-negative matrix deconvolution for semi-automatic music transcription.,''
+  in {\em ISMIR}, 2012.
 
 \bibitem{REF:1}
-D.~G. Morin, {\em Deep neural networks for piano music transcription}.
-\newblock 2017.
+D.~G. Morin, ``Deep neural networks for piano music transcription,'' 2017.
 
 \bibitem{REF:2}
-G.~E. Poliner and D.~P. Ellis, {\em A discriminative model for polyphonic piano
-  transcription}.
-\newblock EURASIP Journal on Applied Signal Processing, vol. 2007, no. 1, pp.
-  154, 2007.
+G.~E. Poliner and D.~P. Ellis, ``A discriminative model for polyphonic piano
+  transcription,'' {\em EURASIP Journal on Advances in Signal Processing},
+  vol.~2007, no.~1, p.~048317, 2006.
 
 \bibitem{REF:3}
-J.~N. J.~Nam, H.~Lee, and M.~Slaney, {\em A classification-based polyphonic
-  piano transcription approach using learned feature representations}.
-\newblock ” Proceedings of the 12th International Society for Music
-  Information Retrieval Conference, pp. 16-180, 2011.
+J.~Nam, J.~Ngiam, H.~Lee, and M.~Slaney, ``A classification-based polyphonic
+  piano transcription approach using learned feature representations.,'' in
+  {\em Ismir}, pp.~175--180, 2011.
 
 \bibitem{REF:8}
-P.~Smaragdis and J.~C. Brown., {\em Non-negative matrix factorization for
-  polyphonic music transcription}.
-\newblock In Applications of Signal Processing to Audio and Acoustics, 2003
-  IEEE Workshop on., pages 177–180. IEEE,, 2003.
+P.~Smaragdis and J.~C. Brown, ``Non-negative matrix factorization for
+  polyphonic music transcription,'' in {\em 2003 IEEE Workshop on Applications
+  of Signal Processing to Audio and Acoustics (IEEE Cat. No. 03TH8684)},
+  pp.~177--180, IEEE, 2003.
 
 \bibitem{REF:9}
-R.~B. V.~Emiya and B.~David., {\em Multipitch estimation of piano sounds using
-  a new probabilistic spectral smoothness principle}.
-\newblock IEEE Transactions on Audio, Speech, and Language Processing,
-  18(6):1643–1654, 2010.
+V.~Emiya, R.~Badeau, and B.~David, ``Multipitch estimation of piano sounds
+  using a new probabilistic spectral smoothness principle,'' {\em IEEE
+  Transactions on Audio, Speech, and Language Processing}, vol.~18, no.~6,
+  pp.~1643--1654, 2009.
 
 \bibitem{NMF}
 ``Non-negative matrix factorization.''
-  \url{https://en.wikipedia.org/wiki/Non-negative_matrix_factorization}.
+\newblock https://en.wikipedia.org/wiki/Non-negative-matrix-factorization.
 
 \bibitem{NMF_figure}
-S.~Ewert and M.~Muller, {\em Score-informed source sepa-ration for music
-  signals}.
-\newblock 2012.
+S.~Ewert and M.~M{\"u}ller, ``Score-informed source separation for music
+  signals,'' in {\em Dagstuhl Follow-Ups}, vol.~3, Schloss
+  Dagstuhl-Leibniz-Zentrum fuer Informatik, 2012.
 
 \bibitem{REF:5}
-J.~F.~S. B.~L.~Sturm, O.~Ben-Tal, and I.~Korsunova, {\em Music transcription
-  modelling and composition using deep learning}.
-\newblock arXiv preprint arXiv:1604.08723, 2016.
+B.~L. Sturm, J.~F. Santos, O.~Ben-Tal, and I.~Korshunova, ``Music transcription
+  modelling and composition using deep learning,'' {\em arXiv preprint
+  arXiv:1604.08723}, 2016.
 
 \bibitem{REF:10}
-J.~Sleep, {\em AUTOMATIC MUSIC TRANSCRIPTION WITH CONVOLUTIONAL NEURAL NETWORKS
-  USING INTUITIVE FILTER SHAPES}.
-\newblock A Thesis presented to the Faculty of California Polytechnic State
-  University, San Luis Obispo, 2017.
+J.~Sleep, ``Automatic music transcription with convolutional neural networks
+  using intuitive filter shapes,'' 2017.
 
 \bibitem{benetos}
-S.~D.~E. Benetos, {\em A shift-invariant latent variable model for automatic
-  music transcription}.
-\newblock 2013.
-
-\bibitem{maps}
-V.~E.~R. Badeau and B.~David, {\em Multipitch estimation of piano sounds using
-  a new probabilistic spectral smoothness principle}.
-\newblock 2008.
+E.~Benetos and S.~Dixon, ``A shift-invariant latent variable model for
+  automatic music transcription,'' {\em Computer Music Journal}, vol.~36,
+  no.~4, pp.~81--94, 2012.
 
 \bibitem{genre_class}
 ``Music genre classification.''
-  \url{https://towardsdatascience.com/music-genre-classification-with-python-c714d032f0d8}.
+\newblock
+  https://towardsdatascience.com/music-genre-classification-with-python-c714d032f0d8.
 
 \bibitem{fluidsynth}
-``Fluidsynth.'' \url{http://www.fluidsynth.org/}.
+``Fluidsynth.''
+\newblock Software available from http://www.fluidsynth.org/.
 
 \bibitem{librosa}
-``Librosa library.'' \url{https://librosa.github.io/librosa/}.
+``Librosa library.''
+\newblock Software available from https://librosa.github.io/librosa/.
 
 \bibitem{one-hot}
-``One-hot encoding.'' \url{https://en.wikipedia.org/wiki/One-hot}.
+``One-hot encoding.''
+\newblock https://en.wikipedia.org/wiki/One-hot.
 
 \bibitem{keras}
-``Keras.'' \url{https://keras.io/}.
+``Keras.''
+\newblock Software available from https://keras.io/.
+
+\bibitem{keras_mnist}
+``Keras mnist dataset.''
+\newblock https://keras.io/examples/mnist-cnn/.
 
 \bibitem{alexnet}
-A.~K.~I. Sutskever and G.~E. Hinton, {\em ImageNet Classification with Deep
-  Convolutional Neural Networks}.
-\newblock 2012.
+A.~Krizhevsky, I.~Sutskever, and G.~E. Hinton, ``Imagenet classification with
+  deep convolutional neural networks,'' in {\em Advances in neural information
+  processing systems}, pp.~1097--1105, 2012.
 
 \bibitem{pretty_midi}
-``Pretty midi.'' \url{https://github.com/craffel/pretty-midi}.
+``Pretty midi.''
+\newblock Software available from https://github.com/craffel/pretty-midi.
 
 \bibitem{sheet}
-``Midi to sheet converter.'' \url{https://github.com/BYVoid/MidiToSheetMusic}.
+``Midi to sheet converter.''
+\newblock Software available from https://github.com/BYVoid/MidiToSheetMusic.
+
+\bibitem{python}
+``Python software foundation. python language reference, version 3.6.''
+\newblock Available at http://www.python.org.
+
+\bibitem{anaconda}
+``Anaconda.''
+\newblock Available at https://www.anaconda.com/.
 
 \bibitem{tensorflow}
-``Tensorflow.'' \url{https://www.tensorflow.org/}.
+M.~Abadi, A.~Agarwal, P.~Barham, E.~Brevdo, Z.~Chen, C.~Citro, G.~S. Corrado,
+  A.~Davis, J.~Dean, M.~Devin, S.~Ghemawat, I.~Goodfellow, A.~Harp, G.~Irving,
+  M.~Isard, Y.~Jia, R.~Jozefowicz, L.~Kaiser, M.~Kudlur, J.~Levenberg,
+  D.~Man\'{e}, R.~Monga, S.~Moore, D.~Murray, C.~Olah, M.~Schuster, J.~Shlens,
+  B.~Steiner, I.~Sutskever, K.~Talwar, P.~Tucker, V.~Vanhoucke, V.~Vasudevan,
+  F.~Vi\'{e}gas, O.~Vinyals, P.~Warden, M.~Wattenberg, M.~Wicke, Y.~Yu, and
+  X.~Zheng, ``{TensorFlow}: Large-scale machine learning on heterogeneous
+  systems,'' 2015.
+\newblock Software available from tensorflow.org.
 
 \bibitem{numpy}
-``Numpy.'' \url{https://www.numpy.org/}.
+T.~Oliphant, {\em Guide to NumPy}.
+\newblock 01 2006.
 
 \bibitem{pydub}
-``Pydub.'' \url{http://pydub.com/}.
+``Pydub.''
+\newblock Software available from http://pydub.com/.
 
 \bibitem{mido}
-``Mido.'' \url{https://mido.readthedocs.io/en/latest/}.
+``Mido.''
+\newblock Software available from https://mido.readthedocs.io/en/latest/.
 
 \bibitem{cuda}
-``Cuda.'' \url{https://developer.nvidia.com/about-cuda}.
+``Cuda.''
+\newblock Software available from https://developer.nvidia.com/about-cuda.
 
 \end{thebibliography}

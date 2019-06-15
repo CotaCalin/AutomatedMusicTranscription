@@ -12,7 +12,7 @@ McCulloch and Pits designed an initial version of the neuron as a linear model i
 
 
 \begin{equation}
-f(x,w)=x1*w1 +x2*w2 +...+xn*wn
+f(x,w)=x_1*w_1 +x_2*w_2 +...+x_n*w_n
 \end{equation}
 where $x_1, ..., x_n$ are the input values and $w_1, ..., w_2$ is a set of hand-chosen weights.
 
@@ -28,7 +28,7 @@ weights, then an activation function is applied to the result and finally, anoth
 
 
 \begin{itemize}
-	\item Weights are defined as adaptive coefficients, whose values are changed during the learning process. They represent the strength of the connection between units. A weight decides how much impact the input will have on the output.
+	\item Weights are defined as adaptive coefficients, whose values are changed during the learning process. They represent the strength of the connection between units. A weight decides how much impact the input will have on the output
 	
 	\item The summation function helps combine the input and weights, before passing the result to the activation function. Denote the input as $X = [x_1, x_2, ...x_n]$ and the weight vector as $W = [w_1, w_2, ...w_n]$.\\
 	The summation function could be defined as the dot product between these two vectors:\\
@@ -43,7 +43,7 @@ weights, then an activation function is applied to the result and finally, anoth
 	\end{equation}
 
 	
-	\item The activation function transforms the result of the summation function (usually) in a non-linear way. Typically, it has a squashing effect. It serves as a threshold. It divides the original space into two partitions. It's main purpose is to make the neural network non-linear. We denote the activation function as g.
+	\item The activation function transforms the result of the summation function (usually) in a non-linear way. Typically, it has a squashing effect. It serves as a threshold. It divides the original space into two partitions. It's main purpose is to make the neural network non-linear. We denote the activation function as g
 	\begin{equation}
 		y = g(\sum_{i=1}^{i=n}(x_i \cdot w_i) + b) \textnormal{, where b is the bias, $x_i \in X, w_i \in W$}
 	\end{equation}
@@ -54,7 +54,7 @@ weights, then an activation function is applied to the result and finally, anoth
 		\centering
 		\includegraphics[width=1\textwidth, height=\textheight, keepaspectratio]{activation}
 	\end{figure}
-	\item The output is usually the result of an activation function.
+	\item The output is usually the result of an activation function
 	
 \end{itemize}
 

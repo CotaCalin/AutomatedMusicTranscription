@@ -35,7 +35,7 @@ f = \dfrac{c}{\lambda} \textnormal{, where $c=speed$, $f=frequency$, $\lambda=wa
 \end{equation}
 
 
-\subsubsection{Discrete Fourier Transformation}
+\subsubsection{Discrete Fourier transformation}
 The Discrete Fourier Transformation (DFT) is one of the most important operation of DSP. It is any quantity or signal that varies over time, such as the pressure of a sound wave, sampled over a finite time interval (often defined by a window function). \cite{discrete} \par
 
 \begin{equation}
@@ -44,12 +44,12 @@ X[k] = \dfrac{1}{N} \sum_{j=0}^{N-1}(x[j] \cdot e^ {-j \cdot( \dfrac{2\pi}{N}) )
 
 The DFT tells you what frequencies are present in your signal and in what proportions.
 \par
-It has a complexity of $O(n^2)$ so in practice the Fast Fourier Transform (FFT) algorithm is used instead. FFT runs in $O(n\cdot log(n))$
+It has a complexity of $O(n^2)$ so in practice the Fast Fourier Transform (FFT) algorithm is used instead. FFT runs in $O(n\cdot log(n))$.
 
-\subsubsection{Fast Fourier Transform}
-Add more info about fast fourier transform
+\subsubsection{Fast Fourier transform}
+The fast Fourier transform(FFT) computes the DFT of a sequence, or its inverse (IDFT) \cite{FFT}. It rapidly computes such transformations by factorizing the DFT matrix into a product of sparse factors. As a result, it manages to reduce the complexity of computing the DFT from $O(n^2)$ to $O(n\cdot log(n))$, where n is the data size. The difference in speed can be huge, especially for large data sets where n can reach thousands of millions. Because of this FFTs are widely used for applications in engineering, science and mathematics.
 
-\subsubsection{Short-Term Fourier Transform}
+\subsubsection{Short-Term Fourier transform}
 While DFT is really good by itself, if used on an entire song it would only tell what frequencies exist, but not when they occur. This is where Short-Term Fourier Transform (STFT) comes in handy. It computes DFT over a full signal, but in small segments. Because of this we can see how frequencies change over time, which makes it a good way to compute spectrograms. (Figure 4) 
 
 \begin{figure}[h]
@@ -59,7 +59,7 @@ While DFT is really good by itself, if used on an entire song it would only tell
 \end{figure}
 
 
-\subsubsection{Constant-Q Transform}
+\subsubsection{Constant-Q transform}
 In general, the transform is well suited to musical data, and this can be seen in some of its advantages compared to the fast Fourier transform. As the output of the transform is effectively amplitude/phase against log frequency, fewer frequency bins are required to cover a given range effectively, and this proves useful where frequencies span several octaves. As the range of human hearing covers approximately ten octaves from 20 Hz to around 20 kHz, this reduction in output data is significant. \cite{constant_q} \par
  See Figure 5 for a comparison between Constant-Q transform and STFT.
 %work on this more

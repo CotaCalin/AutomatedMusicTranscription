@@ -23,7 +23,7 @@ class ModelFactory:
         model.add(Conv2D(32, kernel_size=(5,5), strides=(1,1),
             activation='relu',
             input_shape=input_shape))
-            
+
         model.add(MaxPooling2D(pool_size=(2,2), strides=(2,2)))
         model.add(Conv2D(128, (3,3), activation='relu'))
         model.add(Dropout(0.5))
@@ -44,22 +44,22 @@ class ModelFactory:
 
         model = Sequential()
         model.add(Conv2D(32, kernel_size=(3,3), strides=(2,2),
-            activation='relu',
+            activation='tanh',
             input_shape=input_shape))
 
         model.add(MaxPooling2D(pool_size=(2,2), strides=(2,2)))
 
-        model.add(Conv2D(filters=64, kernel_size=(3,3), strides=(2,2), padding="valid", activation='relu'))
+        model.add(Conv2D(filters=64, kernel_size=(3,3), strides=(2,2), padding="valid", activation='tanh'))
 
-        model.add(Conv2D(filters=128, kernel_size=(2,2), strides=(1,1), padding="valid", activation='relu'))
+        model.add(Conv2D(filters=128, kernel_size=(2,2), strides=(1,1), padding="valid", activation='tanh'))
 
         model.add(MaxPooling2D(pool_size=(2,2), strides=(2,2), padding="valid"))
 
         model.add(Flatten())
 
-        model.add(Dense(4096, activation="relu"))
+        model.add(Dense(4096, activation="tanh"))
         model.add(Dropout(0.4))
-        model.add(Dense(4096, activation="relu"))
+        model.add(Dense(4096, activation="tanh"))
         model.add(Dropout(0.4))
         model.add(Dense(num_classes, activation="softmax"))
 

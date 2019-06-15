@@ -1,17 +1,18 @@
 \newpage
 \section{Conclusion}
-\subsection{Overview}
+
 The recognition of musical notes played in a song is a complex problem to deal with because of the polyphonic aspect of music and it's still an unsolved problem. The neural network has to be able to distinguish the notes from different instruments. Because of this a Constant-Q transform was applied. This removes instruments from the equation, normalizing the data and obtains valuable information from the song. The MAPS dataset \cite{maps} provides raw labels for each song but they don't fit the expected output of the network. Because of this each midi provided needs to be analyzed and one-shot encodings of size 128 are extracted for each $\frac{1}{6}$ of a second window of the song to determine what notes are played during this time frame. The windows are then converted into wav format and then into spectrograms using the Librosa \cite{librosa} library. The spectrograms are then fed to the network's learning process. The learning set is split $80\%$ for training, $20\%$ for testing and $10\%$ of the training set is used for validation.
 
 \par
 The output is a one-shot encoding of each window. These are then glued together and a midi file is created. From this midi file a wav file is exported for comparison and the music sheet is generated using the Sheet freeware. \cite{sheet}
 
-\subsection{Results}
-The proposed model achieved a $38.73\%$ general accuracy for the used data-set, which was a mix of polyphonic and monophonic songs. It struggled with overlapping notes sometimes predicting only the harmonics or bass notes. For the monophonic part of the problem it predicts songs with an accuracy of 99.5\%. 
 \par
-Taking into account that the state-of-the art methods from Google Magenta are around 70\% this result is pretty good, given no digital signal processing prior knowledge.
+The biggest difficulty encountered was the digital signal processing parts of the project in the preprocessing as well as postprocessing. Because of this barrier the approach chosen was the CNN one as it provides way for beginners in this field to tackle some problems and get a grip of what's happening. 
 
-\subsection{Future work}
+\par
+The proposed model reached a 99.9\% accuracy for the monophonic part of the problem. With a combination of one, two and three overlapping notes with no more than 50\% and 10\% overlapping time for two and three notes respectively the system achieved an accuracy of 70\% which is the state of the art method from Google Magenta. That accuracy is achieved for songs way more complicated, but their system is far more complex than the one proposed in this thesis. Going into more complicated songs with the proposed model drops the accuracy significantly as it can't give a strong enough prediction about any playing notes at a certain time if there's too much noise and overlapping sounds.
+
+\par
 
 There are ways to improve the accuracy further:
 

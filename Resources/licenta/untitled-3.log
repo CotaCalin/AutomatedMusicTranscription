@@ -1,21 +1,22 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2019.1.5)  13 JUN 2019 23:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2019.1.5)  15 JUN 2019 12:02
 entering extended mode
 **./untitled-3.tex
 (untitled-3.tex
 LaTeX2e <2018-04-01> patch level 5
-("C:\Users\Speedy\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\article.cls"
-Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+("C:\Users\Speedy\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\report.cls"
+Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
 ("C:\Users\Speedy\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\size12.clo"
 File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count80
-\c@section=\count81
-\c@subsection=\count82
-\c@subsubsection=\count83
-\c@paragraph=\count84
-\c@subparagraph=\count85
-\c@figure=\count86
-\c@table=\count87
+\c@chapter=\count81
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@subparagraph=\count86
+\c@figure=\count87
+\c@table=\count88
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
@@ -48,9 +49,9 @@ Package ifvtex Info: VTeX not detected.
 .sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-\Gm@cnth=\count88
-\Gm@cntv=\count89
-\c@Gm@tempcnt=\count90
+\Gm@cnth=\count89
+\Gm@cntv=\count90
+\c@Gm@tempcnt=\count91
 \Gm@bindingoffset=\dimen103
 \Gm@wd@mp=\dimen104
 \Gm@odd@mp=\dimen105
@@ -101,12 +102,12 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \cmidrulesep=\dimen120
 \cmidrulekern=\dimen121
 \defaultaddspace=\dimen122
-\@cmidla=\count91
-\@cmidlb=\count92
+\@cmidla=\count92
+\@cmidlb=\count93
 \@aboverulesep=\dimen123
 \@belowrulesep=\dimen124
-\@thisruleclass=\count93
-\@lastruleclass=\count94
+\@thisruleclass=\count94
+\@lastruleclass=\count95
 \@thisrulewidth=\dimen125
 )
 ("C:\Users\Speedy\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\array.sty"
@@ -155,20 +156,20 @@ Package caption3 Info: TeX engine: e-TeX on input line 64.
 \caption@parindent=\dimen133
 \caption@hangindent=\dimen134
 )
-\c@caption@flags=\count95
-\c@ContinuedFloat=\count96
+\c@caption@flags=\count96
+\c@ContinuedFloat=\count97
 )
-\c@KVtest=\count97
+\c@KVtest=\count98
 \sf@farskip=\skip49
 \sf@captopadj=\dimen135
 \sf@capskip=\skip50
 \sf@nearskip=\skip51
-\c@subfigure=\count98
-\c@subfigure@save=\count99
-\c@lofdepth=\count100
-\c@subtable=\count101
-\c@subtable@save=\count102
-\c@lotdepth=\count103
+\c@subfigure=\count99
+\c@subfigure@save=\count100
+\c@lofdepth=\count101
+\c@subtable=\count102
+\c@subtable@save=\count103
+\c@lotdepth=\count104
 \sf@top=\skip52
 \sf@bottom=\skip53
 )
@@ -234,13 +235,13 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 y"
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count104
+\inf@bad=\count105
 LaTeX Info: Redefining \frac on input line 213.
-\uproot@=\count105
-\leftroot@=\count106
+\uproot@=\count106
+\leftroot@=\count107
 LaTeX Info: Redefining \overline on input line 375.
-\classnum@=\count107
-\DOTSCASE@=\count108
+\classnum@=\count108
+\DOTSCASE@=\count109
 LaTeX Info: Redefining \ldots on input line 472.
 LaTeX Info: Redefining \dots on input line 475.
 LaTeX Info: Redefining \cdots on input line 596.
@@ -249,15 +250,15 @@ LaTeX Info: Redefining \cdots on input line 596.
 \big@size=\dimen143
 LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
-\macc@depth=\count109
-\c@MaxMatrixCols=\count110
+\macc@depth=\count110
+\c@MaxMatrixCols=\count111
 \dotsspace@=\muskip10
-\c@parentequation=\count111
-\dspbrk@lvl=\count112
+\c@parentequation=\count112
+\dspbrk@lvl=\count113
 \tag@help=\toks24
-\row@=\count113
-\column@=\count114
-\maxfields@=\count115
+\row@=\count114
+\column@=\count115
+\maxfields@=\count116
 \andhelp@=\toks25
 \eqnshift@=\dimen144
 \alignsep@=\dimen145
@@ -275,60 +276,63 @@ LaTeX Info: Redefining \] on input line 2818.
 ("C:\Users\Speedy\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tocbibind\tocbibi
 nd.sty"
 Package: tocbibind 2010/10/13 v1.5k extra ToC listings
-Package tocbibind Info: The document has section divisions on input line 50.
+Package tocbibind Info: The document has chapter divisions on input line 50.
 
 
-Package tocbibind Note: Using section or other style headings.
+Package tocbibind Note: Using chapter style headings, unless overridden.
 
 )
 ("C:\Users\Speedy\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tocloft\tocloft.s
 ty"
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
-Package tocloft Info: The document has section divisions on input line 51.
+Package tocloft Info: The document has chapter divisions on input line 51.
 \cftparskip=\skip68
 \cftbeforetoctitleskip=\skip69
 \cftaftertoctitleskip=\skip70
 \cftbeforepartskip=\skip71
 \cftpartnumwidth=\skip72
 \cftpartindent=\skip73
-\cftbeforesecskip=\skip74
-\cftsecindent=\skip75
-\cftsecnumwidth=\skip76
-\cftbeforesubsecskip=\skip77
-\cftsubsecindent=\skip78
-\cftsubsecnumwidth=\skip79
-\cftbeforesubsubsecskip=\skip80
-\cftsubsubsecindent=\skip81
-\cftsubsubsecnumwidth=\skip82
-\cftbeforeparaskip=\skip83
-\cftparaindent=\skip84
-\cftparanumwidth=\skip85
-\cftbeforesubparaskip=\skip86
-\cftsubparaindent=\skip87
-\cftsubparanumwidth=\skip88
-\cftbeforeloftitleskip=\skip89
-\cftafterloftitleskip=\skip90
-\cftbeforefigskip=\skip91
-\cftfigindent=\skip92
-\cftfignumwidth=\skip93
-\cftbeforelottitleskip=\skip94
-\cftafterlottitleskip=\skip95
-\cftbeforetabskip=\skip96
-\cfttabindent=\skip97
-\cfttabnumwidth=\skip98
-\cftbeforesubfigskip=\skip99
-\cftsubfigindent=\skip100
-\cftsubfignumwidth=\skip101
-\cftbeforesubtabskip=\skip102
-\cftsubtabindent=\skip103
-\cftsubtabnumwidth=\skip104
+\cftbeforechapskip=\skip74
+\cftchapindent=\skip75
+\cftchapnumwidth=\skip76
+\cftbeforesecskip=\skip77
+\cftsecindent=\skip78
+\cftsecnumwidth=\skip79
+\cftbeforesubsecskip=\skip80
+\cftsubsecindent=\skip81
+\cftsubsecnumwidth=\skip82
+\cftbeforesubsubsecskip=\skip83
+\cftsubsubsecindent=\skip84
+\cftsubsubsecnumwidth=\skip85
+\cftbeforeparaskip=\skip86
+\cftparaindent=\skip87
+\cftparanumwidth=\skip88
+\cftbeforesubparaskip=\skip89
+\cftsubparaindent=\skip90
+\cftsubparanumwidth=\skip91
+\cftbeforeloftitleskip=\skip92
+\cftafterloftitleskip=\skip93
+\cftbeforefigskip=\skip94
+\cftfigindent=\skip95
+\cftfignumwidth=\skip96
+\cftbeforelottitleskip=\skip97
+\cftafterlottitleskip=\skip98
+\cftbeforetabskip=\skip99
+\cfttabindent=\skip100
+\cfttabnumwidth=\skip101
+\cftbeforesubfigskip=\skip102
+\cftsubfigindent=\skip103
+\cftsubfignumwidth=\skip104
+\cftbeforesubtabskip=\skip105
+\cftsubtabindent=\skip106
+\cftsubtabnumwidth=\skip107
 ) ("C:\Users\Speedy\AppData\Local\Programs\MiKTeX 2.9\tex\latex\url\url.sty"
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 ) ("C:\Users\Speedy\AppData\Local\Programs\MiKTeX 2.9\tex\latex\float\float.sty
 "
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count116
+\c@float@type=\count117
 \float@exts=\toks28
 \float@box=\box31
 \@float@everytoks=\toks29
@@ -341,20 +345,20 @@ Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
 ("C:\Users\Speedy\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\longtable.s
 ty"
 Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
-\LTleft=\skip105
-\LTright=\skip106
-\LTpre=\skip107
-\LTpost=\skip108
-\LTchunksize=\count117
+\LTleft=\skip108
+\LTright=\skip109
+\LTpre=\skip110
+\LTpost=\skip111
+\LTchunksize=\count118
 \LTcapwidth=\dimen150
 \LT@head=\box33
 \LT@firsthead=\box34
 \LT@foot=\box35
 \LT@lastfoot=\box36
-\LT@cols=\count118
-\LT@rows=\count119
-\c@LT@tables=\count120
-\c@LT@chunks=\count121
+\LT@cols=\count119
+\LT@rows=\count120
+\c@LT@tables=\count121
+\c@LT@chunks=\count122
 \LT@p@ftn=\toks30
 ) (untitled-3.aux)
 \openout1 = `untitled-3.aux'.
@@ -393,7 +397,7 @@ LaTeX Font Info:    ... okay on input line 90.
 * \headsep=25.0pt
 * \topskip=12.0pt
 * \footskip=30.0pt
-* \marginparwidth=44.0pt
+* \marginparwidth=35.0pt
 * \marginparsep=10.0pt
 * \columnsep=10.0pt
 * \skip\footins=10.8pt plus 4.0pt minus 2.0pt
@@ -410,16 +414,16 @@ LaTeX Font Info:    ... okay on input line 90.
 ("C:\Users\Speedy\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.m
 kii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count122
+\scratchcounter=\count123
 \scratchdimen=\dimen151
 \scratchbox=\box37
-\nofMPsegments=\count123
-\nofMParguments=\count124
+\nofMPsegments=\count124
+\nofMParguments=\count125
 \everyMPshowfont=\toks31
-\MPscratchCnt=\count125
+\MPscratchCnt=\count126
 \MPscratchDim=\dimen152
-\MPnumerator=\count126
-\makeMPintoPDFobject=\count127
+\MPnumerator=\count127
+\makeMPintoPDFobject=\count128
 \everyMPtoPDFconversion=\toks32
 )
 ("C:\Users\Speedy\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopdf
@@ -505,9 +509,11 @@ LaTeX Font Info:    Try loading font information for OT1+phv on input line 92.
 ("C:\Users\Speedy\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\ot1phv.fd"
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
-LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <16> not available
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <24.88> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 92.
- (untitled-3.toc [1])
+ (untitled-3.toc [1
+
+])
 \tf@toc=\write3
 \openout3 = `untitled-3.toc'.
 
@@ -515,12 +521,19 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <16> not available
 \tf@lof=\write4
 \openout4 = `untitled-3.lof'.
 
- [3] (untitled-3.lot)
+ [3
+
+] (untitled-3.lot)
 \tf@lot=\write5
 \openout5 = `untitled-3.lot'.
 
- [4]
-(chapters/introduction.tex) (chapters/Theoretical.tex [5]
+ [4
+
+]
+(chapters/introduction.tex
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <16> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 2.
+) (chapters/Theoretical.tex [5]
 (chapters/introduction_deep_learning.tex
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 2.
@@ -538,18 +551,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 33--35
  []
 
 [7]
-<Resources/activation.png, id=37, 756.57657pt x 589.4522pt>
+<Resources/activation.png, id=38, 756.57657pt x 589.4522pt>
 File: Resources/activation.png Graphic file (type png)
 <use Resources/activation.png>
 Package pdftex.def Info: Resources/activation.png  used on input line 55.
 (pdftex.def)             Requested size: 418.25412pt x 325.86366pt.
  [8 <./Resources/activation.png>]
-<"resources/overfitting".png, id=43, 620.3175pt x 349.305pt>
+<"resources/overfitting".png, id=44, 620.3175pt x 349.305pt>
 File: "resources/overfitting".png Graphic file (type png)
 <use "resources/overfitting".png>
 Package pdftex.def Info: "resources/overfitting".png  used on input line 73.
 (pdftex.def)             Requested size: 418.25139pt x 235.52019pt.
-<"resources/typical_cnn".png, id=44, 803.0pt x 246.9225pt>
+<"resources/typical_cnn".png, id=45, 803.0pt x 246.9225pt>
 File: "resources/typical_cnn".png Graphic file (type png)
 <use "resources/typical_cnn".png>
 Package pdftex.def Info: "resources/typical_cnn".png  used on input line 87.
@@ -565,25 +578,39 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [9
 
  <./resources/overfitting.png>]) [10 <./resources/typical_cnn.png>]
-(chapters/midi_file.tex) [11] (chapters/digital_processing.tex
-<Resources/Wavelength.png, id=56, 499.8675pt x 221.82875pt>
+(chapters/midi_file.tex
+Overfull \hbox (10.91281pt too wide) in paragraph at lines 2--3
+[]\OT1/cmr/m/n/12 The Mu-si-cal In-stru-ment Dig-i-tal In-ter-face (MIDI) pro-t
+o-col is an industry-standard
+ []
+
+<"resources/midi_messages".png, id=54, 435.12563pt x 123.46124pt>
+File: "resources/midi_messages".png Graphic file (type png)
+<use "resources/midi_messages".png>
+Package pdftex.def Info: "resources/midi_messages".png  used on input line 26.
+(pdftex.def)             Requested size: 418.2802pt x 118.68155pt.
+[11 <./resources/midi_messages.png>]
+<"resources/note_velocity".png, id=59, 268.75406pt x 139.27031pt>
+File: "resources/note_velocity".png Graphic file (type png)
+<use "resources/note_velocity".png>
+Package pdftex.def Info: "resources/note_velocity".png  used on input line 40.
+(pdftex.def)             Requested size: 418.25813pt x 216.74438pt.
+) [12 <./resources/note_velocity.png>]
+(chapters/digital_processing.tex
+<Resources/Wavelength.png, id=65, 499.8675pt x 221.82875pt>
 File: Resources/Wavelength.png Graphic file (type png)
 <use Resources/Wavelength.png>
 Package pdftex.def Info: Resources/Wavelength.png  used on input line 24.
 (pdftex.def)             Requested size: 418.26883pt x 185.61728pt.
- [12 <./Resources/Wavelength.png>]
-<"resources/STFT_spectrogram".png, id=62, 421.575pt x 316.18124pt>
+ [13 <./Resources/Wavelength.png>]
+<"resources/STFT_spectrogram".png, id=70, 421.575pt x 316.18124pt>
 File: "resources/STFT_spectrogram".png Graphic file (type png)
 <use "resources/STFT_spectrogram".png>
 Package pdftex.def Info: "resources/STFT_spectrogram".png  used on input line 5
 8.
 (pdftex.def)             Requested size: 418.26111pt x 313.69583pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[13]
-<"resources/Q_vs_STFT".png, id=67, 425.33907pt x 267.24844pt>
+ [14]
+<"resources/Q_vs_STFT".png, id=75, 425.33907pt x 267.24844pt>
 File: "resources/Q_vs_STFT".png Graphic file (type png)
 <use "resources/Q_vs_STFT".png>
 Package pdftex.def Info: "resources/Q_vs_STFT".png  used on input line 73.
@@ -592,9 +619,9 @@ Package pdftex.def Info: "resources/Q_vs_STFT".png  used on input line 73.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [14 <./resources/STFT_spectrogram.png (PNG copy)>]
-(chapters/music_transcription.tex [15 <./resources/Q_vs_STFT.png>] [16]
-<"resources/instruments".jpg, id=77, 233.37187pt x 301.125pt>
+) [15 <./resources/STFT_spectrogram.png (PNG copy)>]
+(chapters/music_transcription.tex [16 <./resources/Q_vs_STFT.png>] [17]
+<"resources/instruments".jpg, id=85, 233.37187pt x 301.125pt>
 File: "resources/instruments".jpg Graphic file (type jpg)
 <use "resources/instruments".jpg>
 Package pdftex.def Info: "resources/instruments".jpg  used on input line 54.
@@ -605,8 +632,8 @@ Overfull \hbox (1.40863pt too wide) in paragraph at lines 58--59
 ion comes semi-automatic
  []
 
-[17 <./resources/instruments.jpg>])) (chapters/RelatedWork.tex [18] [19]
-<"resources/NMF".png, id=88, 853.1875pt x 424.58624pt>
+[18 <./resources/instruments.jpg>])) (chapters/RelatedWork.tex [19] [20]
+<"resources/NMF".png, id=96, 853.1875pt x 424.58624pt>
 File: "resources/NMF".png Graphic file (type png)
 <use "resources/NMF".png>
 Package pdftex.def Info: "resources/NMF".png  used on input line 34.
@@ -615,171 +642,100 @@ Package pdftex.def Info: "resources/NMF".png  used on input line 34.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[20 <./resources/NMF.png>]) (chapters/Application.tex [21]
+[21 <./resources/NMF.png>]) (chapters/Application.tex [22]
 (chapters/data_set.tex
-<"resources/waveform".png, id=96, 709.65125pt x 252.945pt>
+<"resources/waveform".png, id=104, 709.65125pt x 252.945pt>
 File: "resources/waveform".png Graphic file (type png)
 <use "resources/waveform".png>
-Package pdftex.def Info: "resources/waveform".png  used on input line 12.
+Package pdftex.def Info: "resources/waveform".png  used on input line 28.
 (pdftex.def)             Requested size: 418.25746pt x 149.08186pt.
- [22 <./resources/waveform.png (PNG copy)>]
-<"resources/q_spec".png, id=100, 434.3427pt x 222.5916pt>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[23]
+<"resources/q_spec".png, id=108, 434.3427pt x 222.5916pt>
 File: "resources/q_spec".png Graphic file (type png)
 <use "resources/q_spec".png>
-Package pdftex.def Info: "resources/q_spec".png  used on input line 39.
+Package pdftex.def Info: "resources/q_spec".png  used on input line 55.
 (pdftex.def)             Requested size: 418.2765pt x 214.358pt.
- [23 <./resources/q_spec.png>]
-
-LaTeX Warning: Citation `keras_mnist' on page 24 undefined on input line 72.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[24]
-<"resources/acc".png, id=109, 481.8pt x 361.35pt>
-File: "resources/acc".png Graphic file (type png)
-<use "resources/acc".png>
-Package pdftex.def Info: "resources/acc".png  used on input line 103.
-(pdftex.def)             Requested size: 418.2657pt x 313.69928pt.
-<"resources/loss".png, id=110, 462.528pt x 346.896pt>
+[24 <./resources/waveform.png (PNG copy)>] [25 <./resources/q_spec.png>]
+<"resources/loss".png, id=117, 481.8pt x 361.35pt>
 File: "resources/loss".png Graphic file (type png)
 <use "resources/loss".png>
-Package pdftex.def Info: "resources/loss".png  used on input line 110.
-(pdftex.def)             Requested size: 418.2757pt x 313.70677pt.
+Package pdftex.def Info: "resources/loss".png  used on input line 119.
+(pdftex.def)             Requested size: 418.2657pt x 313.69928pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[25 <./resources/acc.png>]
-<"resources/alexnet".png, id=115, 411.33675pt x 131.89275pt>
+[26] [27 <./resources/loss.png>]
+<"resources/alexnet".png, id=125, 411.33675pt x 131.89275pt>
 File: "resources/alexnet".png Graphic file (type png)
 <use "resources/alexnet".png>
-Package pdftex.def Info: "resources/alexnet".png  used on input line 128.
+Package pdftex.def Info: "resources/alexnet".png  used on input line 157.
 (pdftex.def)             Requested size: 418.27124pt x 134.11624pt.
- [26 <./resources/loss.png>] [27 <./resources/alexnet.png>]
-<"resources/class_diagram".png, id=123, 723.70375pt x 970.62625pt>
+ [28 <./resources/alexnet.png>]
+<"resources/class_diagram".png, id=129, 723.70375pt x 970.62625pt>
 File: "resources/class_diagram".png Graphic file (type png)
 <use "resources/class_diagram".png>
-Package pdftex.def Info: "resources/class_diagram".png  used on input line 159.
+Package pdftex.def Info: "resources/class_diagram".png  used on input line 188.
 
 (pdftex.def)             Requested size: 396.9561pt x 532.39465pt.
 
 Overfull \vbox (1.2145pt too high) has occurred while \output is active []
 
 
-[28 <./resources/class_diagram.png>]
-<"resources/utils_diagram".png, id=128, 459.96844pt x 182.93344pt>
+[29 <./resources/class_diagram.png>]
+<"resources/utils_diagram".png, id=134, 459.96844pt x 182.93344pt>
 File: "resources/utils_diagram".png Graphic file (type png)
 <use "resources/utils_diagram".png>
-Package pdftex.def Info: "resources/utils_diagram".png  used on input line 171.
+Package pdftex.def Info: "resources/utils_diagram".png  used on input line 200.
 
 (pdftex.def)             Requested size: 418.27716pt x 166.35245pt.
-<"resources/sheet_example".png, id=129, 632.3625pt x 820.56563pt>
+<"resources/sheet_example".png, id=135, 632.3625pt x 820.56563pt>
 File: "resources/sheet_example".png Graphic file (type png)
 <use "resources/sheet_example".png>
-Package pdftex.def Info: "resources/sheet_example".png  used on input line 182.
+Package pdftex.def Info: "resources/sheet_example".png  used on input line 211.
 
 (pdftex.def)             Requested size: 418.2579pt x 542.73943pt.
- [29 <./resources/utils_diagram.png>]
-[30 <./resources/sheet_example.png>])) (chapters/Testing.tex [31])
-(chapters/Conclusion.tex [32] [33]) [34] (untitled-3.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 33--35
-[]\OT1/cmr/m/n/12 ``Activation func-tions.'' $\OT1/cmtt/m/n/12 http : / / prog3
- . com / sbdm / blog / cyh24 / article /
- []
+ [30 <./resources/utils_diagram.png>]
+[31 <./resources/sheet_example.png>])) (chapters/Testing.tex [32])
+(chapters/Conclusion.tex [33] [34]) [35] (untitled-3.bbl [36
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 40--42
-[]\OT1/cmr/m/n/12 ``Convolutional neu-ral net-works.'' $\OT1/cmtt/m/n/12 https 
-: / / en . wikipedia . org / wiki /
- []
-
-
-Underfull \hbox (badness 5175) in paragraph at lines 44--46
-[]\OT1/cmr/m/n/12 ``cnn rep-re-sen-ta-tion.'' $\OT1/cmtt/m/n/12 https : / / en 
-. wikipedia . org / wiki / File : Typical \
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 48--50
-[]\OT1/cmr/m/n/12 ``Convolutional neu-ral net-works.'' $\OT1/cmtt/m/n/12 https 
-: / / cs231n . github . io /
- []
-
-
-Underfull \hbox (badness 3861) in paragraph at lines 60--62
-[]\OT1/cmr/m/n/12 ``Traveling wave.'' $\OT1/cmtt/m/n/12 https : / / method-[]be
-hind-[]the-[]music . com / mechanics /
- []
-
-[35]
-Underfull \hbox (badness 10000) in paragraph at lines 84--87
-[]\OT1/cmr/m/n/12 ``Music in-for-ma-tion re-trieval eval-u-a-tion ex-change..''
- $\OT1/cmtt/m/n/12 http : / /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 84--87
-\OT1/cmtt/m/n/12 www . music-[]ir . org / mirex / wiki / 2017 : Multiple _ Fund
-amental _
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 89--90
-[]\OT1/cmr/m/n/12 ``Transcription.'' $\OT1/cmtt/m/n/12 https : / / en . wikiped
-ia . org / wiki / Transcription _
- []
-
-[36]
-Underfull \hbox (badness 1997) in paragraph at lines 139--141
-[]\OT1/cmr/m/n/12 ``Non-negative ma-trix fac-tor-iza-tion.'' $\OT1/cmtt/m/n/12 
-https : / / en . wikipedia . org / wiki /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 169--171
-[]\OT1/cmr/m/n/12 ``Music genre clas-si-fi-ca-tion.'' $\OT1/cmtt/m/n/12 https :
- / / towardsdatascience . com /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 193--194
-[]\OT1/cmr/m/n/12 ``Midi to sheet con-verter.'' $\OT1/cmtt/m/n/12 https : / / g
-ithub . com / BYVoid /
- []
-
-[37]) [38] (untitled-3.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+] [37] [38]
+[39]) [40] (untitled-3.aux) ) 
 Here is how much of TeX's memory you used:
- 5427 strings out of 492970
- 84577 string characters out of 3126151
- 160923 words of memory out of 3000000
- 9130 multiletter control sequences out of 15000+200000
- 14089 words of font info for 41 fonts, out of 3000000 for 9000
+ 5467 strings out of 492970
+ 85242 string characters out of 3126151
+ 160574 words of memory out of 3000000
+ 9169 multiletter control sequences out of 15000+200000
+ 16216 words of font info for 43 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  44i,11n,43p,1447b,344s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Speedy/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.en
-c}<C:/Users/Speedy/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmbx12.pfb><C:/Users/Speedy/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmex10.pfb><C:/Users/Speedy/AppData/Local/Programs/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Speedy/AppData/Local/Prog
-rams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Speedy/AppDa
-ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users
-/Speedy/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.
-pfb><C:/Users/Speedy/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmr8.pfb><C:/Users/Speedy/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmsy10.pfb><C:/Users/Speedy/AppData/Local/Programs/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Speedy/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/Speedy/AppDa
-ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/User
-s/Speedy/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb>
-
-Output written on untitled-3.pdf (39 pages, 1281327 bytes).
+{C:/Users/Speedy/AppData/Local/Programs/MiKTeX 2.9
+/fonts/enc/dvips/base/8r.enc}<C:/Users/Speedy/AppData/Local/Programs/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Speedy/AppData/Local/Progr
+ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Speedy/AppDa
+ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/User
+s/Speedy/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8
+.pfb><C:/Users/Speedy/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmr12.pfb><C:/Users/Speedy/AppData/Local/Programs/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmr17.pfb><C:/Users/Speedy/AppData/Local/Programs/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Speedy/AppData/Local/Progr
+ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Speedy/AppDa
+ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users
+/Speedy/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12
+.pfb><C:/Users/Speedy/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helveti
+c/uhvb8a.pfb><C:/Users/Speedy/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw
+/helvetic/uhvr8a.pfb>
+Output written on untitled-3.pdf (41 pages, 1283973 bytes).
 PDF statistics:
- 206 PDF objects out of 1000 (max. 8388607)
+ 214 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 86 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 91 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,4 +1,6 @@
-\contentsline {table}{\numberline {1}{\ignorespaces Optimal parameters and architecture for ConvNet in Sigtia et al \cite {REF:7}\relax }}{21}
-\contentsline {table}{\numberline {2}{\ignorespaces Example of a one hot representation of a midi file\relax }}{24}
-\contentsline {table}{\numberline {3}{\ignorespaces Initial cnn architecture\relax }}{25}
-\contentsline {table}{\numberline {4}{\ignorespaces Proposed Cnn Architecture\relax }}{27}
+\contentsline {table}{\numberline {1}{\ignorespaces Understanding event time based on delta time\relax }}{11}
+\contentsline {table}{\numberline {2}{\ignorespaces Optimal parameters and architecture for ConvNet in Sigtia et al \cite {REF:7}\relax }}{22}
+\contentsline {table}{\numberline {3}{\ignorespaces Example of a one hot representation of a midi file\relax }}{26}
+\contentsline {table}{\numberline {4}{\ignorespaces Initial CNN architecture\relax }}{26}
+\contentsline {table}{\numberline {5}{\ignorespaces Initial cnn architecture\relax }}{28}
+\contentsline {table}{\numberline {6}{\ignorespaces Proposed CNN architecture\relax }}{28}

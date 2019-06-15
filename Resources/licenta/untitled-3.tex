@@ -4,7 +4,7 @@
 % This is a simple template for a LaTeX document using the "article" class.
 % See "book", "report", "letter" for other types of document.
 
-\documentclass[12pt]{article} % use larger type; default would be 10pt
+\documentclass[12pt,a4paper,titlepage]{report} % use larger type; default would be 10pt
 
 \usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
 
@@ -109,6 +109,7 @@
 \input{"chapters/Conclusion.tex"}
 
 \newpage
+	\raggedright
 	\bibliography{references}
 	\bibliographystyle{ieeetr}
 
