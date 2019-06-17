@@ -11,6 +11,20 @@ V.~Emiya, R.~Badeau, and B.~David, ``Multipitch estimation of piano sounds
   Transactions on Audio, Speech, and Language Processing}, vol.~18, no.~6,
   pp.~1643--1654, 2009.
 
+\bibitem{email_filter}
+A.~W.A and E.~S.M, ``Machine learning methods for spam e-mail classification,''
+  {\em International Journal of Computer Science and Information Technology},
+  vol.~3, 02 2011.
+
+\bibitem{computer_vision}
+R.~Szeliski, {\em Computer Vision: Algorithms and Applications}.
+\newblock Berlin, Heidelberg: Springer-Verlag, 1st~ed., 2010.
+
+\bibitem{microsoft_computer_vision}
+``Microsoft azure computer vision.''
+\newblock
+  https://azure.microsoft.com/en-in/services/cognitive-services/computer-vision/.
+
 \bibitem{Goodfellow-et-al-2016}
 Y.~LeCun, Y.~Bengio, and G.~Hinton, ``Deep learning,'' {\em nature}, vol.~521,
   no.~7553, p.~436, 2015.
@@ -207,6 +221,10 @@ E.~Benetos and S.~Dixon, ``A shift-invariant latent variable model for
 A.~Krizhevsky, I.~Sutskever, and G.~E. Hinton, ``Imagenet classification with
   deep convolutional neural networks,'' in {\em Advances in neural information
   processing systems}, pp.~1097--1105, 2012.
+
+\bibitem{challenge_2012}
+``Imagenet 2012 challenge.''
+\newblock http://www.image-net.org/challenges/LSVRC/2012/.
 
 \bibitem{pretty_midi}
 ``Pretty midi.''

@@ -47,6 +47,7 @@ class MidiUtils:
         if destinationDir is "":
             destinationDir = self.__destinationDir
 
+        print(destinationDir)
         song_name = split(mid_file)[-1][:-4]
         print(song_name)
         mid = MidiFile(mid_file)
@@ -85,6 +86,7 @@ class MidiUtils:
         # identify the meta messages
         metas = []
         tempo = self.__default_tempo
+        tpb = mid.ticks_per_beat
         for msg in mid:
             if msg.type == 'set_tempo':
                 tempo = msg.tempo
@@ -93,7 +95,7 @@ class MidiUtils:
                 metas.append(msg)
 
         for i in range(len(metas)):
-            metas[i].time = 0 #int(mido.second2tick(metas[i].time, mid.ticks_per_beat, tempo))
+            metas[i].time = 0#int(mido.second2tick(metas[i].time, mid.ticks_per_beat, tempo))
 
         target = MidiFile()
         track = MidiTrack()
@@ -107,7 +109,6 @@ class MidiUtils:
         # Skip non-note related messages
             if msg.is_meta:
                 continue
-
             time_elapsed += msg.time
 
             t = msg.time
@@ -143,7 +144,7 @@ class MidiUtils:
                 time_elapsed = 0
                 ct = 0
 
-        return tempo
+        return tempo, tpb
 
     def split_midi_train(self, mid_file, destinationDir=""):
         if destinationDir is "":
@@ -175,11 +176,11 @@ class MidiUtils:
 
             track.append(msg)
 
-        target.save("test.mid")
+        target.save("original.mid")
         #input()
 
-        mid = MidiFile("test.mid")
-        self.__chunks["test.mid"] = []
+        mid = MidiFile("original.mid")
+        self.__chunks["original.mid"] = []
 
         metas = []
         tempo = self.__default_tempo

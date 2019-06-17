@@ -1,61 +1,63 @@
-\subsection{Music Transcription}
-In music, transcription is the process of creating a music sheet from a piece or sound. The sheet contains music notation, which consists of different symbols that can be interpreted by musicians, hence it is important for various reasons. Without it composers such as Mozart and Beethoven couldn't have passed their masterpieces across generations. In modern days it helps musicians play songs they never heard before. It's also universal so even if two musicians don't speak the same language, they can read the same notation.
+\section{Music Transcription}
+In music, transcription is the process of creating a music sheet from a musical piece or sound. The sheet contains music notation, which consists of different symbols that can be interpreted by musicians, hence it is important for various reasons. Without it, composers such as Mozart and Beethoven could not have passed their masterpieces across generations. In modern days it helps musicians play songs they had never heard before. It is also universal so even if two musicians do not speak the same language, they can read the same notation.
 
-\subsubsection{Traditional music transcription}
-In the beginning transcription was done by humans. It's also called musical dictation in ear training pedagogy. \cite{human_transcription} It is a skill by which musicians learn to identify pitches, intervals, melody, chords and other elements of music solely by hearing. It is a really hard skill, requires serious training and study and even the best don't have 100\% accuracy. \par
+\subsection{Traditional music transcription}
+In the beginning, transcription was done by humans. This is called musical dictation in ear training pedagogy~\cite{human_transcription}. It is a skill by which musicians learn to identify pitches, intervals, melody, chords and other elements of music solely by hearing. It is a really hard skill, requiring serious training and study. Even the best musicians struggle to get 100\% accuracy. \par
 
 There are some tools to help with the process:
 \begin{itemize}
-	\item Musical instruments, help musicians test for certain sounds, trying to mimic what they hear
+	\item Musical instruments. They help musicians test for certain sounds, trying to mimic what they hear
 	\item Tape recorders
 	\item Current software
 \end{itemize}
 \par
 
-Music transcription can be especially difficult and time consuming when the recordings have many overlapping pitches.
-\cite{music_retrieval}. The difficulty of this task can be understood in comparison to the ease with which humans can read passages of text and the difficulty of writing down what someone is saying. Another thing that adds to the complexity is that humans often process pitch relatively, rather than absolutely. There are some humans with perfect pitch, which is the ability to recognize pitch in isolation. For those without it, the best approach is guess-and-check method, which is extremely time consuming.
+Music transcription can be especially difficult and time-consuming when the recordings have many overlapping pitches~\cite{music_retrieval}. The difficulty of this task can be understood in comparison to the ease with which humans can read passages of text and the difficulty of writing down what someone is saying. Another thing that adds to the complexity is that humans often process pitch relatively, rather than absolutely. There are some humans with perfect pitch, which is the ability to recognize pitch in isolation. For those without it, the best approach is the guess-and-check method, which is extremely time-consuming.
 
-\subsubsection{Automatic music transcription}
-The term "Automatic Music Transcription"(AMT) was used for the first time in 1977, by audio researchers James A. Moorer, Martin Piszczalski, and Bernard Galler \cite{transcription}. With their knowledge about digital engineering they believed that computers could be programmed to analyze digital recordings of songs such that they could identify things like rhythm, melodies, pitch, bass lines. It's not an easy task. For more than three decades researchers have been trying to crack it open. \par
+\subsection{Automatic music transcription}
+The term "Automatic Music Transcription"(AMT) was used for the first time in 1977, by audio researchers James A. Moorer, Martin Piszczalski, and Bernard Galler~\cite{transcription}. With their knowledge about digital engineering, they believed that computers could be programmed to analyze digital recordings of songs such that they could identify things like rhythm, melodies, pitch, bass lines. It is not an easy task. For more than three decades, researchers have been trying to crack it open. \par
 
-Fundamentally, AMT is about identifying the pitch and duration of played notes, so they can be converted in traditional music notation on a sheet. \par
+Fundamentally, AMT is about identifying the pitch and duration of played notes, so they can be converted into traditional music notation on a sheet. \par
 
-It has many advantages over traditional transcription:
+It has many advantages over traditional transcription, as it:
 \begin{itemize}
 	\item Aids experienced musicians in the process of transcribing pieces, increasing their accuracy
 	\item Makes music transcription available to more people, especially beginners, giving them a chance to share their ideas with others
 	\item Helps people learn new songs. There are a lot of music sheets online that are not free 
-	\item It speeds up the process. Manual transcription takes a lot of time
+	\item Speeds up the process. Manual transcription takes a lot of time
 \end{itemize}
 
 \par
-The sub tasks of AMT:
+The subtasks of AMT:
 \begin{itemize}
 	\item \textbf{Pitch Estimation}
 	\par
-	There are two versions of this problem. Single pitch and multi-pitch estimation. The real challenge lies in the latter. It's still un unsolved problem \cite{glass_ceiling}.
-	The best algorithms were able to achieve around 70\% accuracy, as of 2017. \cite{music_retrieval}
+	There are two versions of this problem: single pitch and multi-pitch estimation. The real challenge lies in the latter. It is still an unsolved problem~\cite{glass_ceiling}.
+	The best algorithms were able to achieve around 70\% accuracy, as of 2017~\cite{music_retrieval}
 	\item \textbf{Beat detection}
 	\par
-	Beat tracking is the determination of a repeating time interval between perceived pulses in music. \cite{transcription}
-	Songs are frequently measured for their Beats Per Minute (BPM) in determining the tempo of the music, whether it's fast or slow.
-	Beat can be described as "foot tapping" or "hand clapping" in time with the music. Despite the intuitive nature of the former, which most humans are capable of, developing an algorithm to detect those beats it's difficult.
+	Beat tracking is the determination of a repeating time interval between perceived pulses in music~\cite{transcription}.
+	Songs are frequently measured for their Beats Per Minute (BPM) in determining the tempo of the music, whether it is fast or slow.
+	Beat can be described as \textit{foot tapping} or \textit{hand clapping} in time with the music. Despite the intuitive nature of the former, which most humans are capable of, developing an algorithm to detect those beats is difficult
 	\item \textbf{Instrument detection}
 	\par
-	Given an audio recording, the goal is to identify the musical instrument(s) playing each note. Like pitch estimation this problem faces the same monophonic and polyphonic problems, with the latter still unsolved. \cite{instrument_identification}. This is often simplified to classifying a recording in terms of instrument family, not between specific instruments.
+	Given an audio recording, the goal is to identify the musical instrument(s) playing each note. Like pitch estimation, this problem faces the same monophonic and polyphonic problems, with the latter being still unsolved~\cite{instrument_identification}. This is often simplified to classifying a recording in terms of instrument family, not between specific instruments.
 	\par
-	The most common strategy is in evaluation of various features present in a note as its harmonic shape develops over time. These features are different for instrument families. (Figure \ref{fig:instruments})
+	The most common strategy is an evaluation of various features present in a note as its harmonic shape develops over time. These features are different for instrument families (Figure \ref{fig:instruments})
 \end{itemize}
 
 \begin{figure}[h]
-	\caption[Waveform differences between instruments]{Waveform differences between instruments \cite{waves_instruments}}
+	\caption[Waveform differences between instruments]{Waveform differences between instruments~\cite{waves_instruments}}
 	\centering
 	\label{fig:instruments}
 	\includegraphics[width=0.6\textwidth, height=0.4\textheight, keepaspectratio]{"resources/instruments"}
 \end{figure}
 
-\subsubsection{Semi-automatic music transcription}
-In between traditional and automatic music transcription comes semi-automatic music transcription, also called user-assisted transcription. It is a system in which the user provides a certain amount of information about the recording which can be used to guide the transcription process. \cite{semi-automatic}
+\subsection{Semi-automatic music transcription}
+In between traditional and automatic music transcription comes semi-automatic music transcription, also called user-assisted transcription. It is a system in which the user provides a certain amount of information about the recording which can be used to guide the transcription process~\cite{semi-automatic}.
 \par
 
-For certain use-cases semi-automatic transcription is better than the others as it's faster and more accurate than manual transcription and more practical than the fully automatic. Where semi-automatic transcriptions falls short is databases too large to be done by hand, so they would require way too much user input. With such projects fully automatic transcription is the only way to go.
+For certain use-cases, semi-automatic transcription is better than the others as it is faster and more accurate than manual transcription and more practical than the fully automatic one. For lightweight usage, where you have a song and you know its genre or other types of information about the recording, the semi-automatic approach will provide a better transcription.
+
+\par
+Where semi-automatic transcriptions fall short is when it comes to databases too large to be done by hand, as they would require way too much user input or projects where no data about the recordings are available. With such projects, fully automatic transcription is the only way to go.

@@ -44,19 +44,28 @@ class Trainer:
         self.__epochs = None
         self.__callbacks = None
         self.__init_lr = None
+        self.__loaded = False
+
+    def loadModel(self):
+        if not self.__loaded:
+            if os.path.isfile(self.__model_ckpt):
+                self.__logger.logInfo('loading model')
+                self.__model = load_model(self.__model_ckpt)
+            else:
+                self.__logger.logInfo("Model not trained yet")
+                return
+
+            self.__model.compile(loss='binary_crossentropy',
+                optimizer=SGD(lr=self.__init_lr,momentum=0.9), metrics=[metrics.categorical_accuracy])
+            self.__model.summary()
+            self.__loaded = True
 
     def predict(self, input):
-        if os.path.isfile(self.__model_ckpt):
-            self.__logger.logInfo('loading model')
-            self.__model = load_model(self.__model_ckpt)
-        else:
-            self.__logger.logInfo("Model not trained yet")
-            return
-
-        self.__model.compile(loss='binary_crossentropy',
-            optimizer=SGD(lr=self.__init_lr,momentum=0.9), metrics=[metrics.categorical_accuracy])
-        self.__model.summary()
+        self.loadModel()
         return self.__model.predict(input)
+
+    def isLoaded(self):
+        return self.__loaded
 
     def setCfg(self, newCfg):
         self.__cfg = newCfg

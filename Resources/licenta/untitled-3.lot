@@ -1,6 +1,11 @@
-\contentsline {table}{\numberline {1}{\ignorespaces Understanding event time based on delta time\relax }}{11}
-\contentsline {table}{\numberline {2}{\ignorespaces Optimal parameters and architecture for ConvNet in Sigtia et al \cite {REF:7}\relax }}{22}
-\contentsline {table}{\numberline {3}{\ignorespaces Example of a one hot representation of a midi file\relax }}{26}
-\contentsline {table}{\numberline {4}{\ignorespaces Initial CNN architecture\relax }}{26}
-\contentsline {table}{\numberline {5}{\ignorespaces Initial cnn architecture\relax }}{28}
-\contentsline {table}{\numberline {6}{\ignorespaces Proposed CNN architecture\relax }}{28}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces Understanding event time based on delta time\relax }}{12}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Optimal parameters and architecture for ConvNet in Sigtia et al.\nobreakspace {}\cite {REF:7}\relax }}{23}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Example of one hot representation of a MIDI file\relax }}{27}
+\contentsline {table}{\numberline {4.2}{\ignorespaces Initial CNN architecture\relax }}{28}
+\contentsline {table}{\numberline {4.3}{\ignorespaces Initial CNN architecture\relax }}{29}
+\contentsline {table}{\numberline {4.4}{\ignorespaces Proposed CNN architecture\relax }}{30}
+\addvspace {10\p@ }

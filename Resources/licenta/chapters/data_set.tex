@@ -1,5 +1,5 @@
-\subsection{Problem statement}
-Automatic music transcription has been attempted since 1977\cite{transcription}. It consists of analyzing digital recordings of songs and identify things like rhythm, melodies, pitch, bass lines. The main sub tasks of AMT are:
+\section{Problem statement}
+Automatic music transcription consists of analyzing digital recordings of songs and identify things like rhythm, melodies, pitch, bass lines. The main subtasks of AMT are:
 
 \begin{itemize}
 	\item \textbf{Pitch estimation}
@@ -7,34 +7,35 @@ Automatic music transcription has been attempted since 1977\cite{transcription}.
 	\item \textbf{Instrument detection}
 \end{itemize}
 
-Because of the polyphonic approach of music, AMT is still unresolved today. The state of the art approaches struggle to get an accuracy greater than 70\%. It's a problem that requires a lot of digital signal processing knowledge in order to optimize the data and split the sub task even further in onset and offset detection, genre detection and velocity detection. In order to have a full prediction you need to cover all of these tasks.
+Because of the polyphonic approach of music, AMT is still unresolved today. The state of the art approaches struggle to get an accuracy greater than 70\%. It's a problem that requires a lot of digital signal processing knowledge in order to optimize the data and split the subtask even further in onset and offset detection, genre detection and velocity detection. In order to have a full prediction, you need to cover all of these tasks.
 	
-The proposed solution attempts the \textbf{Pitch estimation} part of AMT, using an heuristic approach to find the beat and creating spectrograms of the audio in order to get the instrument out of the equation.
+The proposed solution attempts the \textbf{Pitch estimation} part of AMT, using a heuristic approach to find the beat and creating spectrograms of the audio in order to get the instrument out of the equation.
 	
 
 Fundamentally, AMT is about identifying the pitch and duration of played notes, so they can be converted in traditional music notation on a sheet
 
-\subsection{Input representation}
-The data set used was the MAPS database \cite{maps}. It is a piano database for multi pitch estimation and automatic transcription of music. It contains MIDI-annotated piano recordings, composed of isolated notes, random-pitch chords, usual musical chords and pieces of music. It provides a diverse range of sounds from various recording conditions.
+\section{Data set and input representation}
+The data set used was the MAPS database~\cite{maps}. It is a piano database for multi-pitch estimation and automatic transcription of music. It contains MIDI-annotated piano recordings, composed of isolated notes, random-pitch chords, usual musical chords and pieces of music. It provides a diverse range of sounds from various recording conditions.
 \par
 The recordings are CD quality (16-bit, $44-kHz$ sampled stereo audio) and the related aligned MIDI files contain the ground truth. The overall size of the database is 40GB. 
 \par
 Working with sound in neural networks is different from dealing with images. The input contains audio files so before feeding it to the network we need to turn it into a visual representation. The most common way to represent a sound is the audio representation in the time domain. (Figure \ref{fig:waveform})
 
 \begin{figure}[h!]
-	\caption[Example of audio representation in the time domain]{ Example of audio representation in the time domain \cite{genre_class} }
+	\caption[Example of audio representation in the time domain]{ Example of audio representation in the time domain~\cite{genre_class} }
 	\centering
 	\label{fig:waveform}
 	\includegraphics[width=1\textwidth, height=\textheight, keepaspectratio]{"resources/waveform"}
 \end{figure}
 
-The figure \ref{fig:waveform} shows the evolution in time of the song and you can see the oscillation of the signal. the Y axis represents the amplitude while the X is the time. In this representation it's not possible to distinguish the notes that are playing. Because of this we need a better representation. This is where the Fourier Transformations come in handy. Using the transformation on the data we get a representation over frequency instead of time. It is also known as a spectrum. The spectrum reveals relevant information that's crucial to analyse the audio. (Figure \ref{fig:cq_vs_stft})
+Figure \ref{fig:waveform} shows the evolution in time of the song and you can see the oscillation of the signal. The $Y$ axis represents the amplitude while the $X$ axis is the time. In this representation, it's not possible to distinguish the notes that are playing. Because of this, we need a better representation. This is where the Fourier Transformations come in handy. Using the transformation on the data we get a representation over frequency instead of time. This is also known as a spectrum. The spectrum reveals relevant information that's crucial to analyze the audio. (Figure \ref{fig:cq_vs_stft})
 \par
 
-The input MIDI file will be split into $\frac{1}{16}\cdot second$ window frames. For example a note lasting 1 second will have 16 consecutive windows created. Each window is then turned into a wav file , using fluidsynth\cite{fluidsynth}, which in turn will transformed using the Constant-Q transform.
+The input MIDI file will be split into $\frac{1}{16}\cdot second$ window frames. For example, a note lasting 1 second will have 16 consecutive windows created. Each window is then turned into a .wav file, using fluidsynth~\cite{fluidsynth}, which in turn will be transformed using the Constant-Q transform.
+One window transformation takes ~0.3 seconds making the process slow and punishing if a bug is found in the preprocessing.
 
 \par
-To compute the Constant-Q transform, the library \textit{Librosa} \cite{librosa} will be used, in particular the method called \textit{librosa.cqt}.
+To compute the Constant-Q transform, the library \textit{Librosa}~\cite{librosa} will be used, in particular, the method called \textit{librosa.cqt}.
 The parameters that we will use are:
 \begin{itemize}
 	\item \textbf{y}: Audio signal
@@ -46,24 +47,37 @@ The parameters that we will use are:
 \end{itemize}
 \par
 
-The result of the Librosa function will be plotted, resulting into a logarithmic scale spectrogram of size $145x49$ (Figure \ref{fig:q_spec}). This way from a song of length $x$, $x \cdot 16$ spectrograms will be extracted. These are the input of the network.  
+The result of the Librosa function will be plotted, resulting in a logarithmic scale spectrogram of size $145\times49$ (Figure \ref{fig:q_spec}). This way from a song of length $x$, $x \cdot 16$ spectrograms will be extracted. These are the input of the network.  
 	
-\begin{figure}[h!]
+\begin{figure}[H]
 	\caption[Example of a constant-q spectrogram]{ Example of a constant-q spectrogram }
 	\centering
 	\label{fig:q_spec}
 	\includegraphics[width=1\textwidth, height=\textheight, keepaspectratio]{"resources/q_spec"}
 \end{figure}
 
-\subsection{Labeling}
-A supervised machine learning model needs the data to be labeled. As it was explained in the subsection above, the input song is going to be represented in the frequency domain. The labeling will be provided using the MIDI files associated with the input \textit{.wav} files. They contain information about the notes playing at a certain time. The labels will be arrays showing the played notes represented with a \textit{one-hot encoding}.
 \par
 
-One-hot encoding is a widely used technique in neural networks. It consists of creating an array of boolean values. \cite{one-hot} In this case, every column symbolizes a possible note that can be played in a certain moment. Because of this there are as many columns as possible notes (128). This will be done per window, so the goal is to see which notes are played in a certain window (Table \ref{table:one_hot}). A value of 1 in a cell means that the specific musical note has been played during that window, while a value of 0 is the opposite.
+For the cross validation, a train-validation-test split approach was used. The learning set was split $80\%$ for training, $20\%$ for testing and $10\%$ of the training set is used for validation. A visual representation can be seen in Figure \ref{fig:split}
+
+
+\begin{figure}[H]
+	\caption[Visual representation of the split]{ Visual representation of the split}
+	\centering
+	\label{fig:split}
+	\includegraphics[width=1\textwidth, height=\textheight, keepaspectratio]{"resources/train_split"}
+\end{figure}
+
+
+\section{Labeling}
+A supervised machine learning model needs the data to be labeled. As it was explained in the subsection above, the input song is going to be represented in the frequency domain. The labeling will be provided using the MIDI files associated with the input \textit{.wav} files. They contain information about the notes playing at a certain time. The labels will be arrays showing the played notes represented with \textit{one-hot encoding}.
+\par
+
+One-hot encoding is a widely used technique in neural networks. It consists of creating an array of boolean values~\cite{one-hot}. In this case, every column symbolizes a possible note that can be played at a certain moment. Because of this, there are as many columns as possible notes (128). This will be done per window, so the goal is to see which notes are played in a certain window (Table \ref{table:one_hot}). A value of 1 in a cell means that the specific musical note has been played during that window, while a value of 0 is the opposite.
 
 \begin{table}
 	\centering
-	\caption{Example of a one hot representation of a midi file}
+	\caption{Example of one hot representation of a MIDI file}
 	\begin{tabular}{||c c c c c||} 
 		\hline
 		Note & Window 1 & Window 2 & ... & Window n \\ [0.5ex] 
@@ -82,10 +96,10 @@ One-hot encoding is a widely used technique in neural networks. It consists of c
 	\label{table:one_hot}
 \end{table}
 
-\subsection{First CNN architecture}
-For the first neural network has been created with the aim of obtaining some initial results and it has served to learn how a model developed in Keras \cite{keras} behaves.
+\section{First CNN architecture}
+The first neural network has been created with the aim of obtaining some initial results and it has served to learn how a model developed in Keras~\cite{keras} behaves.
 \par
-An architecture similar to the Keras MNIST is evaluated\cite{keras_mnist}. It has been created to predict handwriting digits, the input and output data are completely different, but this is a standard architecture for image recognition with small patches. No optimization was done on this one as its aim was to perform a first approach that deals with the input data. 
+An architecture similar to the Keras MNIST is evaluated~\cite{keras_mnist}. It has been created to predict handwriting digits, the input and output data are completely different, but this is a standard architecture for image recognition with small patches. No optimization was done on this one as its aim was to perform a first approach that deals with the input data. 
 \par
 
 The architecture is shown in Table \ref{table:initial}. It performed poorly but it helped in the preprocessing progress as it learned really fast on a GPU. Making changes to the input sizes and different types of transformations and retesting was really quick.
@@ -108,8 +122,8 @@ The architecture is shown in Table \ref{table:initial}. It performed poorly but 
 	\label{table:initial}
 \end{table}
 
-\subsection{Proposed CNN architecture}
-The proposed architecture is similar to the AlexNet \cite{alexnet} (Figure \ref{fig:alexnet}). This architecture won Image Classification Challenge in 2012. It was used on high-resolution images into 1000 different classes. This was too big for our input data of $145x49x3$ size images. The kernel and stride sizes were adjusted to fit our data. Some layers were dropped and some dropout layers were added in order to reduce overfitting. The dropout layers have a $0.5$ chance to deactivate a neuron. This forces the layer to learn the same concept with different neurons, improving generalization.
+\section{Proposed CNN architecture}
+The proposed architecture is similar to AlexNet~\cite{alexnet} (Figure \ref{fig:alexnet}). This architecture won the Image Classification Challenge in 2012\cite{challenge_2012}. It was used on high-resolution images into 1000 different classes. This was too big for our input data of $145\times49\times3$ size images. The kernel and stride sizes were adjusted to fit our data. Some layers were dropped and some dropout layers were added in order to reduce overfitting. The dropout layers have a $0.5$ chance to deactivate a neuron. This forces the layer to learn the same concept with different neurons, improving generalization.
 \par
 
 \begin{figure}[h!]
@@ -120,22 +134,22 @@ The proposed architecture is similar to the AlexNet \cite{alexnet} (Figure \ref{
 \end{figure}
 
 
-Three activation functions were tested in the hidden layers for the monophonic scenario as this was the first milestone. Without a good accuracy here there's no point going further:
+Three activation functions were tested in the hidden layers for the monophonic scenario as this was the first milestone. Without good accuracy here there's no point going further:
 \begin{itemize}
 	\item \textbf{Sigmoid}: 30\% accuracy
 	\item \textbf{ReLu}: 83\% accuracy
 	\item \textbf{Tanh}: 99.9\% accuracy
 \end{itemize}
 
-The model performed better using Tanh as the activation function inside the hidden layers. As for the output layer Softmax was used as this is a multi class classification problem.
+The model performed better using Tanh as the activation function inside the hidden layers. As for the output layer, Softmax was used as this is a multi class classification problem.
 
 \par
 The accuracy of the model was tested using custom made song with predetermined note overlap percentage. 
-The results can be seen in Table \ref{table:results}. As the amount of overlapping notes increases the accuracy of the model decreases. This happens because the system can't predict with a big enough accuracy all the notes from a window when their number increases. It works almost perfectly for monophonic songs, reaching an accuracy of 99.9\%. The sweet spot of the system is a combination of one, two and three overlapping notes with no more than 50\% and 10\% overlapping time for two and three notes respectively. This combination provides an overall accuracy of about 70\%.
+The results can be seen in Table \ref{table:results}. As the amount of overlapping notes increases the accuracy of the model decreases. This happens because the system can't predict with high confidence all the notes from a window when their number increases. It works almost perfectly for monophonic songs, reaching an accuracy of 99.9\%. The sweet spot of the system is a combination of one, two and three overlapping notes with no more than 50\% and 10\% overlapping time for two and three notes respectively. This combination provides an overall accuracy of about 70\%.
 
 \begin{table} [H]
 	\centering
-	\caption{Initial cnn architecture}
+	\caption{Initial CNN architecture}
 	\begin{tabular}{ |c|c|c|} 
 		\hline
 		Max number of overlapping notes & Overlapping Time & Accuracy\\ \hline
@@ -151,7 +165,7 @@ The results can be seen in Table \ref{table:results}. As the amount of overlappi
 \end{table}
 
 \begin{figure}[H]
-	\caption[AlexNet Architecture]{ Original AlexNet architecture \cite{alexnet}}
+	\caption[AlexNet Architecture]{ Original AlexNet architecture~\cite{alexnet}}
 	\centering
 	\label{fig:alexnet}
 	\includegraphics[width=1\textwidth, height=\textheight, keepaspectratio]{"resources/alexnet"}
@@ -179,29 +193,30 @@ The results can be seen in Table \ref{table:results}. As the amount of overlappi
 \end{table}
 \newpage
 
-\subsection{Application architecture}
+\section{Application architecture}
 
 \begin{figure}[H]
 	\caption[Class diagram]{ Application class diagram }
 	\centering
 	\label{fig:class_diag}
-	\includegraphics[width=1\textwidth, height=0.9\textheight, keepaspectratio]{"resources/class_diagram"}
+	\includegraphics[width=1\textwidth, height=1\textheight, keepaspectratio]{"resources/class_diagram"}
 \end{figure}
+\clearpage
 
-Theia7 has a layered application without the data layer. For the model and loggers creation the abstract factory design pattern was used in order to facilitate an easy creation and scaling for these features. The main business logic happens in the controller with the trainer and preprocessor at its disposal.
+Theia7 has a layered application without the data layer. For the model and loggers creation, the abstract factory design pattern was used in order to facilitate easy creation and scaling for these features. The main business logic happens in the controller with the trainer and preprocessor at its disposal.
 \par
 
-The configuration of the application is contained inside a json configuration file. A wrapper over it was created to facilitate reading fields from it inside the classes \ref{fig:utils_diag}
+The configuration of the application is contained inside a json configuration file. A wrapper over it was created to facilitate reading fields from it inside the classes (Figure \ref{fig:utils_diag}).
 
 \begin{figure}[H]
 	\caption[Utils diagram]{ Static classes diagram }
 	\centering
 	\label{fig:utils_diag}
-	\includegraphics[width=1\textwidth, height=\textheight, keepaspectratio]{"resources/utils_diagram"}
+	\includegraphics[width=1\textwidth, height=1\textheight, keepaspectratio]{"resources/utils_diagram"}
 \end{figure}
 
-\subsection{Output}
-The output of the prediction will be a one-hot encoding of the song as described in Table \ref{table:one_hot}. This will be transformed into a midi file using the pretty midi library \cite{pretty_midi}. Knowing that each window is a $\frac{1}{16}$ of a second we can find an approximation of the original note length by concatenating all consecutive windows predicted for it. The midi is then converted to wav using fluidsynth \cite{fluidsynth} to have a sound comparison and the spreadsheet is created using the Sheet software \cite{sheet}. An output example can be found in Figure \ref{fig:sheet_output}.
+\section{Output}
+The output of the prediction will be a one-hot encoding of the song as described in Table \ref{table:one_hot}. This will be transformed into a MIDI file using the \textit{pretty-MIDI} library~\cite{pretty_midi}. Knowing that each window is a $\frac{1}{16}$ of a second we can find an approximation of the original note length by concatenating all consecutive windows predicted for it. The MIDI is then converted to wav using fluidsynth~\cite{fluidsynth} to have a sound comparison and the spreadsheet is created using the Sheet software~\cite{sheet}. An output example can be found in Figure \ref{fig:sheet_output}.
 
 
 \begin{figure}[H]
@@ -211,19 +226,19 @@ The output of the prediction will be a one-hot encoding of the song as described
 	\includegraphics[width=1\textwidth, height=\textheight, keepaspectratio]{"resources/sheet_example"}
 \end{figure}
 
-\subsection{Technologies used}
+\section{Technologies used}
 List of used technologies:
 \begin{itemize}
-	\item Python \cite{python}
-	\item Anaconda \cite{anaconda}
-	\item Librosa \cite{librosa}
-	\item Keras \cite{keras}
-	\item Tensorflow \cite{tensorflow}
-	\item Pretty-midi \cite{pretty_midi}
-	\item Sheet \cite{sheet}
-	\item Numpy \cite{numpy}
-	\item Pydub \cite{pydub}
-	\item Mido \cite{mido}
-	\item Cuda \cite{cuda}
+	\item Python~\cite{python}
+	\item Anaconda~\cite{anaconda}
+	\item Librosa~\cite{librosa}
+	\item Keras~\cite{keras}
+	\item Tensorflow~\cite{tensorflow}
+	\item Pretty-midi~\cite{pretty_midi}
+	\item Sheet~\cite{sheet}
+	\item Numpy~\cite{numpy}
+	\item Pydub~\cite{pydub}
+	\item Mido~\cite{mido}
+	\item Cuda~\cite{cuda}
 	
 \end{itemize}

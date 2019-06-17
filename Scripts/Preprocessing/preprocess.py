@@ -18,6 +18,7 @@ from Utils.cfg_reader import CfgReader
 import re
 import mido
 from Utils.logger import LoggerFactory
+import Utils.utils as utils
 
 class Preprocessor:
     def __init__(self, cfg):
@@ -28,6 +29,7 @@ class Preprocessor:
 
         self.midiUtils = None
         self.converter = None
+        self.prediction_note = "pred_note.txt"
 
     def setMidiUtil(self, newMidi):
         self.midiUtils = newMidi
@@ -46,24 +48,34 @@ class Preprocessor:
         return newPath
 
     def preprocessOne(self, inPath, outPath):
-        self.midiUtils.clearChunks()
-        tempo = self.midiUtils.split_midi(inPath, outPath)
-        #tempo = 44000
-        chunks = self.midiUtils.getChunks()
-        self.converter.MidiToWav("test.mid", "test.wav")
+        tempo = 44000
+        tpb = 3
 
-        for source in chunks.keys():
-            for midi in chunks[source]:
-                print(midi)
-                self.converter.MidiToWav(midi, midi[:-4] + ".wav")
-                self.converter.WavToSpec(midi[:-4] + ".wav", midi[:-4] + ".jpg")
+        if os.path.exists(os.path.join(outPath, self.prediction_note)):
+            with open(os.path.join(outPath, self.prediction_note)) as f:
+                lines = f.read().splitlines()
+                tempo = int(lines[0])
+                tpb = int(lines[1])
+        else:
+            self.midiUtils.clearChunks()
+            tempo, tpb = self.midiUtils.split_midi(inPath, outPath)
+            chunks = self.midiUtils.getChunks()
+            self.converter.MidiToWav(inPath, os.path.join(outPath, "original.wav"))
+            with open(os.path.join(outPath, self.prediction_note), 'w') as f:
+                f.write(str(tempo) + "\n" + str(tpb))
+
+
+            for source in chunks.keys():
+                for midi in chunks[source]:
+                    self.__logger.logInfo("Converting " + midi)
+                    self.converter.MidiToWav(midi, midi[:-4] + ".wav")
+                    self.converter.WavToSpec(midi[:-4] + ".wav", midi[:-4] + ".jpg")
 
         x = []
         filenums = []
+        jpg = [x for x in os.listdir(outPath) if x.endswith(".jpg")]
 
-        for filename in os.listdir(outPath):
-            if not filename.endswith(".jpg"):
-                continue
+        for filename in jpg:
             self.__logger.logInfo("Loading " + filename)
 
             im = Image.open(os.path.join(outPath, filename))
@@ -78,7 +90,7 @@ class Preprocessor:
 
         x = np.array(x)
         x /= 255.0
-        return x, filenums, tempo
+        return x, filenums, tempo, tpb
 
     def preprocessOneWav(self, inPath, outPath):
         chunks, tempo = self.midiUtils.split_wav(inPath, outPath)

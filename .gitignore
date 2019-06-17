@@ -6,6 +6,7 @@ models/
 baseline/
 saved_models/
 test/
+predictions/
 temp*
 
 # Compiled source #

@@ -46,7 +46,7 @@ def pretty_midi_to_one_hot(pm, fs=18):
     one_hot = np.clip(one_hot,-1,1)
     return one_hot
 
-def one_hots_to_pretty_midi(one_hots, tempo, fs=18, program=1,bpm=120):
+def one_hots_to_pretty_midi(one_hots, tempo, tpb, fs=18, program=1,bpm=120):
     '''Convert a Piano Roll array into a PrettyMidi object
      with a single instrument.
     Parameters
@@ -66,13 +66,17 @@ def one_hots_to_pretty_midi(one_hots, tempo, fs=18, program=1,bpm=120):
         A pretty_midi.PrettyMIDI class instance describing
         the piano roll.
     '''
-    pm = pretty_midi.PrettyMIDI()
-    instrument = pretty_midi.Instrument(program=program)
+    print(tempo)
+    print(mido.tempo2bpm(tempo))
+    bpm = mido.tempo2bpm(tempo)
+    #tempo = int(tempo*0.8)
+    #pm = pretty_midi.PrettyMIDI(initial_tempo=bpm)
+    #instrument = pretty_midi.Instrument(program=program)
+    mid = mido.MidiFile()
+    track = mido.MidiTrack()
+    mid.tracks.append(track)
 
-    bps = int(mido.tempo2bpm(tempo)) / 60
-    beat_interval = fs / bps
-    strong_beats = beat_interval * 2 #(for 4/4 timing)
-
+    track.append(mido.MetaMessage('set_tempo', tempo=tempo))
 
     one_hot = np.zeros((128, len(one_hots)))
     for i in range(len(one_hots)):
@@ -81,12 +85,14 @@ def one_hots_to_pretty_midi(one_hots, tempo, fs=18, program=1,bpm=120):
                 one_hot[j][i] = one_hots[i][j]
 
     notes, frames = one_hot.shape
-    print(notes)
-    print(frames)
+    #print(notes)
+    #print(frames)
+    #mid.ticks_per_beat = tpb * 2
 
 
     frame_t = one_hot.T
-
+    last_msg = 0
+    toGenerate = []
     for frame in range(frames):
         current_notes = []
         current_notes_begin = {}
@@ -103,20 +109,59 @@ def one_hots_to_pretty_midi(one_hots, tempo, fs=18, program=1,bpm=120):
                         frame_t[k][j] = 0
                     else:
                         break
-
+        m = 0
         for note in current_notes:
-            print(current_notes_begin[note]*1/16)
-            print(current_notes_end[note]*1/16)
-            print()
-            pm_note = pretty_midi.Note(
-                    velocity=100,
-                    pitch=note,
-                    start=current_notes_begin[note]*1/16,
-                    end=current_notes_end[note]*1/16)
-            instrument.notes.append(pm_note)
+            #print(current_notes_begin[note]*1/16)
+            #print(current_notes_end[note]*1/16)
+            #print()
+            #pm_note = pretty_midi.Note(
+            #        velocity=100,
+            #        pitch=note,
+            #        start=current_notes_begin[note]*1/16,
+            #        end=current_notes_end[note]*1/16)
+            #instrument.notes.append(pm_note)
+            #track.append(mido.Message('note_on', note=note,
+            #time=int(mido.second2tick(current_notes_begin[note]*1/16 - last_msg,
+            #mid.ticks_per_beat, tempo))))
+            #track.append(mido.Message('note_off', note=note,
+            #time=int(mido.second2tick((current_notes_end[note] - current_notes_begin[note])*1/16,
+            #mid.ticks_per_beat, tempo))))
+            #print(current_notes_begin[note])
+            #print(1/16)
+            #input()
+            begin = (note, current_notes_begin[note]*1/16, 'begin')
+            end = (note, current_notes_end[note]*1/16, 'end')
+            toGenerate.append(begin)
+            toGenerate.append(end)
+            #print(mido.second2tick(current_notes_begin[note]*1/16 - last_msg,
+            #mid.ticks_per_beat, tempo))
+            #print(current_notes_begin[note]*1/16)
+            #print(last_msg)
+            #print(current_notes_begin[note]*1/16 - last_msg)
+            #input()
 
-    pm.instruments.append(instrument)
-    return pm
+            #m = current_notes_begin[note]*1/16 - last_msg
+
+            #last_msg += m
+
+    last_msg = 0
+
+    sortedNotes = sorted(toGenerate, key=lambda x: x[1])
+    for note in sortedNotes:
+        print(note)
+        if note[2] == 'end':
+            track.append(mido.Message('note_off', note=note[0],
+            time=int(mido.second2tick(note[1] - last_msg, mid.ticks_per_beat, int(tempo*1.5)))))
+        else:
+            track.append(mido.Message('note_on', note=note[0],
+            time=int(mido.second2tick(note[1] - last_msg, mid.ticks_per_beat, int(tempo*1.5)))))
+        last_msg = note[1]
+
+    track.append(mido.MetaMessage('end_of_track'))
+    for msg in track:
+        print(msg)
+        
+    return mid
 
 def slice_to_categories(piano_roll):
     notes_list = np.zeros(128)

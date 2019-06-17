@@ -1,8 +1,8 @@
-\subsection{MIDI format}
-The Musical Instrument Digital Interface (MIDI) protocol is an industry-standard defined in early 80's to represent musical information \cite{midi_history}. It is the most spread binary protocol for communication intended to connect electronic musical instruments such as synthesizers, in a computer for the purpose of recording and editing.\cite{midi_power} Unlike other formats (.wav or .mp3), midi files don't contain any audio by themselves, only the instructions to reproduce it. It allows sending of messages over 16 channels, each of them could be a different instrument.
+\section{MIDI format}
+The Musical Instrument Digital Interface (MIDI) protocol is an industry-standard defined in the early '80s to represent musical information~\cite{midi_history}. It is the most spread binary protocol for communication intended to connect electronic musical instruments such as synthesizers, to a computer for the purpose of recording and editing~\cite{midi_power}. Unlike other formats (.wav or .mp3), MIDI files don't contain any audio by themselves, only the instructions to reproduce it. It allows sending of messages over 16 channels, each of them could be a different instrument.
 
-\subsubsection{Structure of the MIDI file}
-MIDI files contain at the top level things called events. Each event consists of two parts: MIDI time and MIDI message. They follow each other in a successive manner as shown in Figure \ref{fig:midi_messages}. The time value represents the time to wait before playing the next message. This method of specification is called delta time($\Delta time$) (Table \ref{table:midi_time}).
+\subsection{Structure of the MIDI file}
+At the top level, MIDI files contain events. Each event consists of two parts: MIDI time and MIDI message. They follow each other in a successive manner as shown in Figure \ref{fig:midi_messages}. The time value represents the time to wait before playing the next message. This method of specification is called delta time($\Delta time$) (Table \ref{table:midi_time}).
 
 \begin{table} [H]
 	\centering
@@ -27,14 +27,14 @@ MIDI files contain at the top level things called events. Each event consists of
 \end{figure}
 
 
-\subsubsection{MIDI messages}
-The main messages of a MIDI file are \textbf{note on} and \textbf{note off}. The former is sent when a key is pressed on the music keyboard. It contains parameters such as the pitch and velocity (intensity) of the note. When a synthesizer receives this message it starts playing that note until a \textbf{note off} event arrives for that pitch.
+\subsection{MIDI messages}
+The main messages of a MIDI file are \textbf{note on} and \textbf{note off}. The former is sent when a key is pressed on the music keyboard. It contains parameters such as the pitch and velocity (i.e. intensity) of the note. When a synthesizer receives this message it starts playing that note until a \textbf{note off} event arrives for that pitch.
 
 \par
-The velocity ranges between 1 and 127. It corresponds to the nuances (dynamics) found in music notation as shown in Figure \ref{fig:midi_velocity}.
+The velocity ranges between 1 and 127. It corresponds to the nuances (i.e. dynamics) found in music notation as shown in Figure \ref{fig:midi_velocity}.
 
 \begin{figure}[H]
-	\caption[Dynamics and velocity associations]{Dynamics and velocity associations \cite{midi_dynamics}}
+	\caption[Dynamics and velocity associations]{Dynamics and velocity associations~\cite{midi_dynamics}}
 	\centering
 	\label{fig:midi_velocity}
 	\includegraphics[width=1\textwidth, height=0.9\textheight, keepaspectratio]{"resources/note_velocity"}

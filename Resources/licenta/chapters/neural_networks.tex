@@ -1,14 +1,14 @@
-\subsection{Neural Networks}
-This section introduces the main concepts related to neural networks. Neural networks have been around since the 1940s and could initially handle only one hidden layer. But with the development of technologies and hardware it became possible to build deeper, more effective architectures, which leads to deep learning as we know it today. \par
+\section{Neural Networks}
+This section introduces the main concepts related to neural networks. Neural networks have been around since the 1940s and could initially handle only one hidden layer. But with the development of technologies and hardware, it became possible to build deeper, more effective architectures, which lead to deep learning as we know it today. \par
 
 
 
-\subsubsection{Brief History}
+\subsection{Brief History}
 
 
-At first, neural networks were inspired by how the biological brain works, which is why deep learning was also called artificial neural networks (ANNs)\cite{Goodfellow-et-al-2016}. In biology, a neuron is the cell that receives, processes and transmits information to other neurons through connections called synapses \cite{neuron}. On the other hand, artificial neurons are defined as computational units (usually mathematical functions) that take one or more inputs and generate an output. \par
+At first, neural networks were inspired by the functioning of the biological brain, which is why deep learning is also called artificial neural networks (ANNs)~\cite{Goodfellow-et-al-2016}. In biology, a neuron is the cell that receives, processes and transmits information to other neurons through connections called synapses~\cite{neuron}. On the other hand, artificial neurons are defined as computational units (usually mathematical functions) that take one or more inputs and generate an output. \par
 
-McCulloch and Pits designed an initial version of the neuron as a linear model in 1943, aiming to replicate brain function \cite{REF:11}:
+McCulloch and Pits designed an initial version of the neuron as a linear model in 1943, aiming to replicate brain function~\cite{REF:11}:
 
 
 \begin{equation}
@@ -16,15 +16,15 @@ f(x,w)=x_1*w_1 +x_2*w_2 +...+x_n*w_n
 \end{equation}
 where $x_1, ..., x_n$ are the input values and $w_1, ..., w_2$ is a set of hand-chosen weights.
 
-\subsubsection{Components of an artificial neural network}
+\subsection{Components of an artificial neural network}
 
-A simple artificial neural network (ANN) consists of input layer, hidden layer and output layer, where the values of the hidden layer are used as inputs for the output layer. A network with several layers is known as a deep neural network. Data flows through the neurons of the layer. Each neuron transforms the input it receives and sends it to the next layer. The neurons share the same characteristics regardless of the layer they are part of. \par
+A simple artificial neural network (ANN) consists of an input layer, hidden layer and output layer, where the values of the hidden layer are used as inputs for the output layer. A network with several layers is known as a deep neural network. Data flows through the neurons of the layer. Each neuron transforms the input it receives and sends it to the next layer. The neurons share the same characteristics regardless of the layer they are part of. \par
 
 
 
-The Neuron, also called node, is the basic unit of a neural network. Its main components include inputs,
-weights, activation function and output(s). From a high level point of view the inputs are multiplied by 
-weights, then an activation function is applied to the result and finally, another function computes the output\cite{REF:12}\cite{REF:13}. \par
+The Neuron, also called a node, is the basic unit of a neural network. Its main components include inputs,
+weights, activation function and output(s). From a high-level point of view, the inputs are multiplied by 
+weights, then an activation function is applied to the result and finally, another function computes the output~\cite{REF:12}~\cite{REF:13}. \par
 
 
 \begin{itemize}
@@ -37,20 +37,20 @@ weights, then an activation function is applied to the result and finally, anoth
 	\end{equation}
 
 	
-	The summation function could instead compute the minimum, maximum etc. depending on the designated network architecture.The simplest form of an artificial neuron is a linear function which computes the weighted sum of inputs, to which, optionally, bias can be added:
+	The summation function could instead compute the minimum, maximum, etc. depending on the designated network architecture. The simplest form of an artificial neuron is a linear function which computes the weighted sum of inputs, to which, optionally, bias can be added:
 	\begin{equation}
-		y = \sum_{i=1}^{i=n}(x_i \cdot w_i) + b \textnormal{, where b is the bias, $x_i \in X, w_i \in W$}
+		y = \sum_{i=1}^{i=n}(x_i \cdot w_i) + b \textnormal{, where $b$ is the bias, $x_i \in X, w_i \in W$}
 	\end{equation}
 
 	
-	\item The activation function transforms the result of the summation function (usually) in a non-linear way. Typically, it has a squashing effect. It serves as a threshold. It divides the original space into two partitions. It's main purpose is to make the neural network non-linear. We denote the activation function as g
+	\item The activation function transforms the result of the summation function (usually) in a non-linear way. Typically, it has a squashing effect. It serves as a threshold. It divides the original space into two partitions. Its main purpose is to make the neural network non-linear. We denote the activation function as $g$
 	\begin{equation}
-		y = g(\sum_{i=1}^{i=n}(x_i \cdot w_i) + b) \textnormal{, where b is the bias, $x_i \in X, w_i \in W$}
+		y = g(\sum_{i=1}^{i=n}(x_i \cdot w_i) + b) \textnormal{, where $b$ is the bias, $x_i \in X, w_i \in W$}
 	\end{equation}
 
 	
 	\begin{figure}[h]
-		\caption[Common activation functions]{Common activation functions \cite{activation_fig} }
+		\caption[Common activation functions]{Common activation functions~\cite{activation_fig} }
 		\centering
 		\includegraphics[width=1\textwidth, height=\textheight, keepaspectratio]{activation}
 	\end{figure}
@@ -59,43 +59,42 @@ weights, then an activation function is applied to the result and finally, anoth
 \end{itemize}
 
 \clearpage
-\subsubsection{Under-fitting and Over-fitting}
+\subsection{Under-fitting and Over-fitting}
 %reformulat + surse noi
 
 Neural networks are able to learn complicated non-linear functions to fit any training set. On the downside, this may lead to over-fitting where the neural network learns the training data so well that it is unable to generalize on new, unseen data. This problem can especially occur on datasets with a small amount of data to learn from. \par
 
-Under-fitting, the counterpart of over-fitting, happens when a machine learning model isn’t complex enough to accurately capture relationships between a dataset’s features and a target variable. An under-fitted model results in problematic outcomes on new data, or data that it wasn’t trained on, and many times performs poorly even on training data. \par
+Under-fitting, the counterpart of over-fitting, happens when a machine learning model isn’t complex enough to accurately capture relationships between a dataset’s features and a target variable. Under-fitted models result in problematic outcomes on new data or data that they  were not trained on, and many times perform poorly even on training data. \par
 
 
 \begin{figure}[h]
-	\caption[Example of over-fitting and under-fitting]{Example of over-fitting and under-fitting \cite{vitaflux}}
+	\caption[Example of over-fitting and under-fitting]{Example of over-fitting and under-fitting~\cite{vitaflux}}
 	\centering
 	\includegraphics[width=1\textwidth, height=\textheight, keepaspectratio]{"resources/overfitting"}
 \end{figure}
 
-\subsubsection{Convolutional Neural Networks}
+\subsection{Convolutional Neural Networks}
 \par
 Convolutional Neural Networks (CNNs) are a class of Deep Neural Networks,
-specialized in analyzing images. They were inspired by biological processes.
-The connectivity pattern between neurons resembles the animal visual cortex.
-\cite{cnn} \par
+specialized in analyzing images. Their development was inspired by biological processes.
+The connectivity pattern between neurons resembles the animal visual cortex~\cite{cnn}. \par
 
 \begin{figure}[h]
 	\centering
-	\caption[Typical convolutional neural network architecture]{Typical CNN architecture \cite{cnn_fig}}
+	\caption[Typical convolutional neural network architecture]{Typical CNN architecture~\cite{cnn_fig}}
 	\label{fig:cnn}
 	\includegraphics[width=1.1\textwidth, height=1.5\textheight, keepaspectratio]{"resources/typical_cnn"}
 \end{figure}
 
 \par
-A convolutional neural network consists of an input and an output layer, as well as multiple hidden layers. The hidden layers are typically convolutional layers, RELU layers, pooling layers, fully connected layers and normalization layers. \cite{cnn_git}
+A convolutional neural network consists of an input and an output layer, as well as multiple hidden layers. The hidden layers are typically convolutional layers, RELU layers, pooling layers, fully connected layers and normalization layers~\cite{cnn_git}.
 
 \begin{itemize}
-	\item \textbf{Convolutional} layers are the core building block of a Convolutional network. It does most of the computation
+	\item \textbf{Convolutional} layers are the core building block of convolutional networks. They are responsible for feature extraction and do most of the computation
 	\item \textbf{Pooling} layers reduce the dimension of the data by combining the outputs of neuron clusters at one layer into a single neuron in the next layer
 	\item \textbf{Normalization} layers apply a transformation that maintains the mean activation close to 0 and the activation standard deviation close to 1
 	\item \textbf{Fully connected} layers link every neuron in one layer to every neuron in another layer
-	\item \textbf{Dropout} layers have a \% chance to deactivate the neurons of a particular layer. This is a technique used to improve over-fitting by improving generalization. Forcing neurons to deactivate forces the network to learn the same "concept" with different neurons. Mostly used after fully connected or pooling layers
+	\item \textbf{Dropout} layers have a \% chance to deactivate the neurons of a particular layer. This is a technique used to improve over-fitting by improving generalization. Forcing neurons to deactivate forces the network to learn the same "concept" with different neurons. It is mostly used after fully connected or pooling layers
 \end{itemize}
 
 

@@ -1,26 +1,23 @@
 \newpage
-\section{Conclusion}
+\chapter{Conclusion}
 
-The recognition of musical notes played in a song is a complex problem to deal with because of the polyphonic aspect of music and it's still an unsolved problem. The neural network has to be able to distinguish the notes from different instruments. Because of this a Constant-Q transform was applied. This removes instruments from the equation, normalizing the data and obtains valuable information from the song. The MAPS dataset \cite{maps} provides raw labels for each song but they don't fit the expected output of the network. Because of this each midi provided needs to be analyzed and one-shot encodings of size 128 are extracted for each $\frac{1}{6}$ of a second window of the song to determine what notes are played during this time frame. The windows are then converted into wav format and then into spectrograms using the Librosa \cite{librosa} library. The spectrograms are then fed to the network's learning process. The learning set is split $80\%$ for training, $20\%$ for testing and $10\%$ of the training set is used for validation.
-
-\par
-The output is a one-shot encoding of each window. These are then glued together and a midi file is created. From this midi file a wav file is exported for comparison and the music sheet is generated using the Sheet freeware. \cite{sheet}
+The recognition of musical notes played in a song is a complex problem to deal with because of the polyphonic aspect of music and it's still an unsolved problem. The neural network has to be able to distinguish the notes from different instruments. Because of this, a Constant-Q transform was applied. This removes instruments from the equation, normalizing the data and obtains valuable information from the song. The MAPS dataset~\cite{maps} provides raw labels for each song but they don't fit the expected output of the network. Because of this, each MIDI provided needs to be analyzed and one-shot encodings of size 128 are extracted for each $\frac{1}{6}$ of a second window of the song to determine what notes are played during this time frame. The windows are then converted into wav format and then into spectrograms using the Librosa~\cite{librosa} library. The spectrograms are then fed to the network's learning process. The learning set is split $80\%$ for training, $20\%$ for testing and $10\%$ of the training set is used for validation.
 
 \par
-The biggest difficulty encountered was the digital signal processing parts of the project in the preprocessing as well as postprocessing. Because of this barrier the approach chosen was the CNN one as it provides way for beginners in this field to tackle some problems and get a grip of what's happening. 
+The output is a one-shot encoding of each window. These are then glued together and a MIDI file is created. From this MIDI file, a wav file is exported for comparison and the music sheet is generated using the Sheet freeware~\cite{sheet}. 
 
 \par
 The proposed model reached a 99.9\% accuracy for the monophonic part of the problem. With a combination of one, two and three overlapping notes with no more than 50\% and 10\% overlapping time for two and three notes respectively the system achieved an accuracy of 70\% which is the state of the art method from Google Magenta. That accuracy is achieved for songs way more complicated, but their system is far more complex than the one proposed in this thesis. Going into more complicated songs with the proposed model drops the accuracy significantly as it can't give a strong enough prediction about any playing notes at a certain time if there's too much noise and overlapping sounds.
 
 \par
 
-There are ways to improve the accuracy further:
+The proposed solution for automatic music transcription consists of creative and heuristic methods to overcome the lack of digital processing knowledge necessary to solve this problem. There are ways to improve accuracy further:
 
 \begin{itemize}
 	\item A long short-term memory network could be added to aid with the classification and detect the length of the notes
 	\item Genre detection could also aid with the classification as it will tell if a note makes sense in a progression
 	\item Further improvements in the preprocessing. By changing the spectrogram from a STFT to a Constant-Q the accuracy improved significantly. There are more ways the make the input clearer by reducing the noise and improve the window splitting. For this task more knowledge of digital signal processing is needed.
-	\item Train on more data. Converting one window takes ~0.3 seconds. A song is split into $16*n$ windows, where n is the song length in seconds. More than two billion midi windows were created but only 160 thousands were actually converted into spectrograms due to time constraints.
+	\item Train on more data. Converting one window takes ~0.3 seconds. A song is split into $16*n$ windows, where n is the song length in seconds. More than two billion MIDI windows were created but only 160 thousand were actually converted into spectrograms due to time constraints.
 \end{itemize}
 
-The final goal of Theia7 is to be integrated in a mobile music teaching and music sheet database application, where people could share their ideas and music sheets with everyone. Theia would aid people with no musical theory knowledge by creating the sheets for them. This would disrupt the market as many people ask for money in exchange for their music sheets, a common practice for youtube cover channels.
+The final goal for Theia7 is to be integrated into a mobile music teaching and music sheet database application, where people could share their ideas and music sheets with everyone. Theia7 would aid people with no musical theory knowledge by creating the musical sheets for them. This would disrupt the market as many people ask for money in exchange for their music sheets, a common practice for YouTube cover channels.
