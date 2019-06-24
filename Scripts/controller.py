@@ -74,7 +74,6 @@ class Controller:
             for i in range(len(notes[n])):
                 if notes[n][i] > 0.25:
                     actives.append(i)
-            #print(actives)
             notes[n] = actives
 
         i=0

@@ -27,9 +27,7 @@ class MidiUtils:
         if not isdir(self.__sourceDir):
             raise Exception("{0} is not a valid Directory".format(self.__sourceDir))
 
-        #print(listdir(self.__sourceDir))
         self.__midis = [join(self.__sourceDir, x) for x in listdir(self.__sourceDir) if x.endswith('.mid')]
-        #print(self.__midis)
 
     def split_all(self, train=False):
         print(self.__midis)
@@ -60,7 +58,6 @@ class MidiUtils:
             if msg.type == 'set_tempo':
                 tempo = msg.tempo
             if msg.is_meta:
-                #print(msg)
                 metas.append(msg)
 
         target = MidiFile()
@@ -78,7 +75,6 @@ class MidiUtils:
             track.append(msg)
 
         target.save("test.mid")
-        #input()
 
         mid = MidiFile("test.mid")
         self.__chunks["test.mid"] = []
@@ -91,11 +87,10 @@ class MidiUtils:
             if msg.type == 'set_tempo':
                 tempo = msg.tempo
             if msg.is_meta:
-                #print(msg)
                 metas.append(msg)
 
         for i in range(len(metas)):
-            metas[i].time = 0#int(mido.second2tick(metas[i].time, mid.ticks_per_beat, tempo))
+            metas[i].time = 0
 
         target = MidiFile()
         track = MidiTrack()
@@ -113,11 +108,7 @@ class MidiUtils:
 
             t = msg.time
             if msg.type is not 'end_of_track':
-                #print(msg)
-                #input()
-                #print(msg.time)
                 msg.time = int(mido.second2tick(msg.time, mid.ticks_per_beat, tempo))
-                #print(mido.tick2second(msg.time, mid.ticks_per_beat, tempo))
                 track.append(msg)
                 if msg.type in ['note_on', 'note_off']:
                     ct+=1
@@ -128,10 +119,6 @@ class MidiUtils:
 
                 if ct > 0:
                     for i in range(int(t/self.__target_segment_len)):
-                        #print()
-                        #for msg in track:
-                        #    print(msg)
-                        #input()
                         dest = join(destinationDir, song_name + '_{}.mid'.format(prefix))
                         target.save(dest)
                         prefix += 1
@@ -177,7 +164,6 @@ class MidiUtils:
             track.append(msg)
 
         target.save("original.mid")
-        #input()
 
         mid = MidiFile("original.mid")
         self.__chunks["original.mid"] = []
@@ -191,7 +177,7 @@ class MidiUtils:
                 metas.append(msg)
 
         for i in range(len(metas)):
-            metas[i].time = 0#int(mido.second2tick(metas[i].time, mid.ticks_per_beat, tempo))
+            metas[i].time = 0
 
         target = MidiFile()
         track = MidiTrack()

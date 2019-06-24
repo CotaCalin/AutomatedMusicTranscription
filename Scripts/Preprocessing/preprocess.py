@@ -127,7 +127,7 @@ class Preprocessor:
             if not midi.endswith(".mid"):
                 continue
 
-            print(midi)
+            self.__logger.logInfo(midi)
             midi = os.path.join(self.__cfg.getValue("OutputDir"), midi)
             if os.path.isfile(midi[:-4] + ".jpg"):
                 continue
@@ -138,6 +138,7 @@ class Preprocessor:
         chunks = self.midiUtils.getChunks()
         for source in chunks.keys():
             for midi in chunks[source]:
-                print(midi)
+                self.__logger.logInfo(midi)
+
                 self.converter.MidiToWav(midi, midi[:-4] + ".wav")
                 self.converter.WavToSpec(midi[:-4] + ".wav", midi[:-4] + ".jpg")

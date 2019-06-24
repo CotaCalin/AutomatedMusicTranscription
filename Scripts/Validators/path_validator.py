@@ -8,6 +8,11 @@ class PathValidator:
 
     def validate(self):
         isDir =  os.path.isdir(self.__path)
+        exists = os.path.exists(self.__path)
+
+        if not exists:
+            raise Exception("{0} doesn't exist!".format(self.__path))
+
         if self.__isDir and not isDir:
             raise Exception("{0} is not a valid directory!".format(self.__path))
         elif isDir:

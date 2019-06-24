@@ -1,5 +1,4 @@
 from Utils.logger import LoggerFactory
-from Model.data_gen import DataGen
 from Model.train import linear_decay, half_decay, Threshold
 
 import matplotlib.pyplot as plt

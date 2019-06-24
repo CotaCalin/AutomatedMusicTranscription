@@ -143,10 +143,6 @@ class Window(QtWidgets.QMainWindow):
         self.popup = None
         self.threads = []
 
-        #x = threading.Thread(target=self.__controller.loadModel, args=())
-        #self.threads.append(x)
-        #x.start()
-        #self.__controller.loadModel()
         exitAction = QtWidgets.QAction("&Exit", self)
         exitAction.setShortcut("ctrl+Q")
         exitAction.setStatusTip("Exit the application")
@@ -183,8 +179,6 @@ class Window(QtWidgets.QMainWindow):
 
         self.layout.addWidget(self.progress)
 
-        #self.label.move(50, 50)
-
         icon = QtGui.QIcon('logo.png')
 
         btn = QtWidgets.QPushButton("Transpose", self)
@@ -199,9 +193,6 @@ class Window(QtWidgets.QMainWindow):
         predictAction = QtWidgets.QAction(QtGui.QIcon('logo.png'), "Predict", self)
         predictAction.triggered.connect(self.onPredictClicked)
 
-
-        #self.progress.setGeometry(200, 80, 250, 20)
-
         c = 0
 
         self.progress.setValue(c)
@@ -214,7 +205,6 @@ class Window(QtWidgets.QMainWindow):
         QtWidgets.QMessageBox.about(self, "Prediction notification", "Select a valid .mid file")
 
         name = QtWidgets.QFileDialog.getOpenFileName(self, 'Open File')
-        #name = ["d:\\datasets\\licenta_demo\\BACH No-03.mid"]
         if not name[0].endswith(".mid"):
             QtWidgets.QMessageBox.about(self, "Bad file selected", "Please select a valid .mid file")
             return
