@@ -4,7 +4,6 @@ someOtherfoler/
 Output/
 models/
 baseline/
-saved_models/
 test/
 predictions/
 temp*
@@ -29,7 +28,5 @@ temp*
 *.gz
 *.iso
 *.jar
-*.rar
 *.tar
-*.zip
 *.wav*
