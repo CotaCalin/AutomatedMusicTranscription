@@ -13,7 +13,6 @@ temp*
 *.com
 *.class
 *.dll
-*.exe
 *.o
 *.so
 
